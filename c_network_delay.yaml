@@ -1,0 +1,15 @@
+apiVersion: chaos-mesh.org/v1alpha1
+kind: NetworkChaos
+metadata:
+  name: network-delay
+spec:
+  action: delay
+  mode: one
+  selector:
+    namespaces:
+      - default
+    labelSelectors:
+      app: frontend
+  delay:
+    latency: "200ms"
+  duration: "1m"

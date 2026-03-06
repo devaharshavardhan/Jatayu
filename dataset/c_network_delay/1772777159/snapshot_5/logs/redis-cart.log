@@ -1,0 +1,96 @@
+Starting Redis Server
+1:C 06 Mar 2026 05:35:39.149 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+1:C 06 Mar 2026 05:35:39.149 * Redis version=8.6.1, bits=64, commit=00000000, modified=1, pid=1, just started
+1:C 06 Mar 2026 05:35:39.149 * Configuration loaded
+1:M 06 Mar 2026 05:35:39.149 * monotonic clock: POSIX clock_gettime
+1:M 06 Mar 2026 05:35:39.150 * Running mode=standalone, port=6379.
+1:M 06 Mar 2026 05:35:39.150 * <bf> RedisBloom version 8.6.0 (Git=unknown)
+1:M 06 Mar 2026 05:35:39.150 * <bf> Registering configuration options: [
+1:M 06 Mar 2026 05:35:39.150 * <bf> 	{ bf-error-rate       :      0.01 }
+1:M 06 Mar 2026 05:35:39.150 * <bf> 	{ bf-initial-size     :       100 }
+1:M 06 Mar 2026 05:35:39.150 * <bf> 	{ bf-expansion-factor :         2 }
+1:M 06 Mar 2026 05:35:39.150 * <bf> 	{ cf-bucket-size      :         2 }
+1:M 06 Mar 2026 05:35:39.150 * <bf> 	{ cf-initial-size     :      1024 }
+1:M 06 Mar 2026 05:35:39.150 * <bf> 	{ cf-max-iterations   :        20 }
+1:M 06 Mar 2026 05:35:39.150 * <bf> 	{ cf-expansion-factor :         1 }
+1:M 06 Mar 2026 05:35:39.150 * <bf> 	{ cf-max-expansions   :        32 }
+1:M 06 Mar 2026 05:35:39.150 * <bf> ]
+1:M 06 Mar 2026 05:35:39.150 * Module 'bf' loaded from /usr/local/lib/redis/modules//redisbloom.so
+1:M 06 Mar 2026 05:35:39.213 * <search> Redis version found by RedisSearch : 8.6.1 - oss
+1:M 06 Mar 2026 05:35:39.213 * <search> RediSearch version 8.6.0 (Git=7782b97)
+1:M 06 Mar 2026 05:35:39.213 * <search> Low level api version 1 initialized successfully
+1:M 06 Mar 2026 05:35:39.213 * <search> gc: ON, prefix min length: 2, min word length to stem: 4, prefix max expansions: 200, query timeout (ms): 500, timeout policy: return, oom policy: return, cursor read size: 1000, cursor max idle (ms): 300000, max doctable size: 1000000, max number of search results:  1000000, default scorer: BM25STD, 
+1:M 06 Mar 2026 05:35:39.213 * <search> Initialized thread pools!
+1:M 06 Mar 2026 05:35:39.213 * <search> Disabled workers threadpool of size 0
+1:M 06 Mar 2026 05:35:39.213 * <search> Subscribe to config changes
+1:M 06 Mar 2026 05:35:39.213 * <search> Subscribe to cluster slot migration events
+1:M 06 Mar 2026 05:35:39.213 * <search> Enabled role change notification
+1:M 06 Mar 2026 05:35:39.214 * <search> Cluster configuration: AUTO partitions, type: 0, coordinator timeout: 0ms
+1:M 06 Mar 2026 05:35:39.218 * Module 'search' loaded from /usr/local/lib/redis/modules//redisearch.so
+1:M 06 Mar 2026 05:35:39.218 * <timeseries> RedisTimeSeries version 80600, git_sha=05fd355db748676861dc4c17d19c8c1ca74c0154
+1:M 06 Mar 2026 05:35:39.218 * <timeseries> Redis version found by RedisTimeSeries : 8.6.1 - oss
+1:M 06 Mar 2026 05:35:39.218 * <timeseries> Registering configuration options: [
+1:M 06 Mar 2026 05:35:39.218 * <timeseries> 	{ ts-compaction-policy   :              }
+1:M 06 Mar 2026 05:35:39.218 * <timeseries> 	{ ts-num-threads         :            3 }
+1:M 06 Mar 2026 05:35:39.218 * <timeseries> 	{ ts-retention-policy    :            0 }
+1:M 06 Mar 2026 05:35:39.218 * <timeseries> 	{ ts-duplicate-policy    :        block }
+1:M 06 Mar 2026 05:35:39.218 * <timeseries> 	{ ts-chunk-size-bytes    :         4096 }
+1:M 06 Mar 2026 05:35:39.218 * <timeseries> 	{ ts-encoding            :   compressed }
+1:M 06 Mar 2026 05:35:39.218 * <timeseries> 	{ ts-ignore-max-time-diff:            0 }
+1:M 06 Mar 2026 05:35:39.218 * <timeseries> 	{ ts-ignore-max-val-diff :     0.000000 }
+1:M 06 Mar 2026 05:35:39.218 * <timeseries> ]
+1:M 06 Mar 2026 05:35:39.218 * <timeseries> Detected redis oss
+1:M 06 Mar 2026 05:35:39.219 * <timeseries> Subscribe to ASM events
+1:M 06 Mar 2026 05:35:39.219 * <timeseries> Enabled diskless replication
+1:M 06 Mar 2026 05:35:39.219 * Module 'timeseries' loaded from /usr/local/lib/redis/modules//redistimeseries.so
+1:M 06 Mar 2026 05:35:39.219 * <ReJSON> Created new data type 'ReJSON-RL'
+1:M 06 Mar 2026 05:35:39.220 * <ReJSON> version: 80600 git sha: unknown branch: unknown
+1:M 06 Mar 2026 05:35:39.220 * <ReJSON> Exported RedisJSON_V1 API
+1:M 06 Mar 2026 05:35:39.220 * <ReJSON> Exported RedisJSON_V2 API
+1:M 06 Mar 2026 05:35:39.220 * <ReJSON> Exported RedisJSON_V3 API
+1:M 06 Mar 2026 05:35:39.220 * <ReJSON> Exported RedisJSON_V4 API
+1:M 06 Mar 2026 05:35:39.220 * <ReJSON> Exported RedisJSON_V5 API
+1:M 06 Mar 2026 05:35:39.220 * <ReJSON> Exported RedisJSON_V6 API
+1:M 06 Mar 2026 05:35:39.220 * <ReJSON> Enabled diskless replication
+1:M 06 Mar 2026 05:35:39.220 * <ReJSON> Initialized shared string cache, thread safe: true.
+1:M 06 Mar 2026 05:35:39.220 * Module 'ReJSON' loaded from /usr/local/lib/redis/modules//rejson.so
+1:M 06 Mar 2026 05:35:39.220 * <search> Acquired RedisJSON_V6 API
+1:M 06 Mar 2026 05:35:39.282 * Server initialized
+1:M 06 Mar 2026 05:35:39.312 * Ready to accept connections tcp
+1:M 06 Mar 2026 05:35:39.312 # WARNING: Redis does not require authentication and is not protected by network restrictions. Redis will accept connections from any IP address on any network interface.
+1:M 06 Mar 2026 05:40:40.059 * 100 changes in 300 seconds. Saving...
+1:M 06 Mar 2026 05:40:40.060 * Background saving started by pid 18
+18:C 06 Mar 2026 05:40:40.062 * BGSAVE done, 10 keys saved, 0 keys skipped, 1220 bytes written.
+18:C 06 Mar 2026 05:40:40.072 * DB saved on disk
+18:C 06 Mar 2026 05:40:40.074 * Fork CoW for RDB: current 0 MB, peak 0 MB, average 0 MB
+1:M 06 Mar 2026 05:40:40.160 * Background saving terminated with success
+1:M 06 Mar 2026 05:45:41.084 * 100 changes in 300 seconds. Saving...
+1:M 06 Mar 2026 05:45:41.084 * Background saving started by pid 19
+19:C 06 Mar 2026 05:45:41.085 * BGSAVE done, 10 keys saved, 0 keys skipped, 947 bytes written.
+19:C 06 Mar 2026 05:45:41.093 * DB saved on disk
+19:C 06 Mar 2026 05:45:41.093 * Fork CoW for RDB: current 0 MB, peak 0 MB, average 0 MB
+1:M 06 Mar 2026 05:45:41.185 * Background saving terminated with success
+1:M 06 Mar 2026 05:50:42.069 * 100 changes in 300 seconds. Saving...
+1:M 06 Mar 2026 05:50:42.069 * Background saving started by pid 20
+20:C 06 Mar 2026 05:50:42.071 * BGSAVE done, 10 keys saved, 0 keys skipped, 980 bytes written.
+20:C 06 Mar 2026 05:50:42.084 * DB saved on disk
+20:C 06 Mar 2026 05:50:42.084 * Fork CoW for RDB: current 0 MB, peak 0 MB, average 0 MB
+1:M 06 Mar 2026 05:50:42.170 * Background saving terminated with success
+1:M 06 Mar 2026 05:55:43.704 * 100 changes in 300 seconds. Saving...
+1:M 06 Mar 2026 05:55:43.704 * Background saving started by pid 21
+21:C 06 Mar 2026 05:55:43.706 * BGSAVE done, 10 keys saved, 0 keys skipped, 993 bytes written.
+21:C 06 Mar 2026 05:55:43.722 * DB saved on disk
+21:C 06 Mar 2026 05:55:43.722 * Fork CoW for RDB: current 0 MB, peak 0 MB, average 0 MB
+1:M 06 Mar 2026 05:55:43.805 * Background saving terminated with success
+1:M 06 Mar 2026 06:00:44.075 * 100 changes in 300 seconds. Saving...
+1:M 06 Mar 2026 06:00:44.075 * Background saving started by pid 22
+22:C 06 Mar 2026 06:00:44.076 * BGSAVE done, 10 keys saved, 0 keys skipped, 964 bytes written.
+22:C 06 Mar 2026 06:00:44.082 * DB saved on disk
+22:C 06 Mar 2026 06:00:44.083 * Fork CoW for RDB: current 0 MB, peak 0 MB, average 0 MB
+1:M 06 Mar 2026 06:00:44.176 * Background saving terminated with success
+1:M 06 Mar 2026 06:05:45.099 * 100 changes in 300 seconds. Saving...
+1:M 06 Mar 2026 06:05:45.100 * Background saving started by pid 23
+23:C 06 Mar 2026 06:05:45.102 * BGSAVE done, 10 keys saved, 0 keys skipped, 963 bytes written.
+23:C 06 Mar 2026 06:05:45.117 * DB saved on disk
+23:C 06 Mar 2026 06:05:45.117 * Fork CoW for RDB: current 0 MB, peak 0 MB, average 0 MB
+1:M 06 Mar 2026 06:05:45.201 * Background saving terminated with success

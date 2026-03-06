@@ -1,0 +1,13 @@
+NAME                                    CPU(cores)   MEMORY(bytes)   
+adservice-8576649cff-rvdb4              12m          88Mi            
+cartservice-546c548494-j4j6h            8m           50Mi            
+checkoutservice-75b9cd684f-dc5tt        2m           11Mi            
+currencyservice-fd8f5dfb7-cljwx         18m          35Mi            
+emailservice-7466dc585-cj92q            3m           42Mi            
+frontend-694b9f76cd-tpp7j               25m          16Mi            
+loadgenerator-7dd458dd5b-8s9hz          8m           55Mi            
+paymentservice-6b76dfb449-m2g8g         2m           25Mi            
+productcatalogservice-fb49fc9cc-gh6hr   10m          15Mi            
+recommendationservice-6f8f67d69-7cw9t   112m         56Mi            
+redis-cart-6899b65948-rdm8k             4m           7Mi             
+shippingservice-55656785c7-b48d2        2m           10Mi            

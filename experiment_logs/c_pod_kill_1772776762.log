@@ -1,0 +1,7 @@
+[2026-03-06 05:59:22] Starting Chaos Experiments
+[2026-03-06 05:59:22] ------------------------------------
+[2026-03-06 05:59:22] Running scenario: c_pod_kill
+[2026-03-06 05:59:22] Applying chaos scenario: c_pod_kill
+podchaos.chaos-mesh.org/frontend-podkill unchanged
+[2026-03-06 05:59:22] Waiting for chaos to take effect...
+[2026-03-06 06:00:03] Collecting telemetry for c_pod_kill

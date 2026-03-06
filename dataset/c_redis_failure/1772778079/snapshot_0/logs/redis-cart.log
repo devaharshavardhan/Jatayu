@@ -1,0 +1,1 @@
+Error from server (BadRequest): container "redis" in pod "redis-cart-6899b65948-hs7h2" is waiting to start: ContainerCreating
