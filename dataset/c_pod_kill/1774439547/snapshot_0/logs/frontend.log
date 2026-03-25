@@ -1,0 +1,3 @@
+{"message":"Tracing disabled.","severity":"info","timestamp":"2026-03-25T11:52:31.91743288Z"}
+{"message":"Profiling disabled.","severity":"info","timestamp":"2026-03-25T11:52:31.91785739Z"}
+{"message":"starting server on :8080","severity":"info","timestamp":"2026-03-25T11:52:32.40647309Z"}

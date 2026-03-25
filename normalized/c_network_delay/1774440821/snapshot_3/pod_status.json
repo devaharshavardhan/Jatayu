@@ -1,0 +1,134 @@
+[
+  {
+    "service": "adservice",
+    "pod": "adservice-8576649cff-rvdb4",
+    "ready": "1/1",
+    "status": "Running",
+    "restarts": 9,
+    "age": null,
+    "ip": "10.244.0.180",
+    "node": "minikube",
+    "snapshot_time": "2026-03-25 12:14:39+00:00"
+  },
+  {
+    "service": "cartservice",
+    "pod": "cartservice-546c548494-j4j6h",
+    "ready": "1/1",
+    "status": "Running",
+    "restarts": 7,
+    "age": null,
+    "ip": "10.244.0.172",
+    "node": "minikube",
+    "snapshot_time": "2026-03-25 12:14:39+00:00"
+  },
+  {
+    "service": "checkoutservice",
+    "pod": "checkoutservice-75b9cd684f-dc5tt",
+    "ready": "1/1",
+    "status": "Running",
+    "restarts": 7,
+    "age": null,
+    "ip": "10.244.0.175",
+    "node": "minikube",
+    "snapshot_time": "2026-03-25 12:14:39+00:00"
+  },
+  {
+    "service": "currencyservice",
+    "pod": "currencyservice-fd8f5dfb7-cljwx",
+    "ready": "1/1",
+    "status": "Running",
+    "restarts": 10,
+    "age": null,
+    "ip": "10.244.0.173",
+    "node": "minikube",
+    "snapshot_time": "2026-03-25 12:14:39+00:00"
+  },
+  {
+    "service": "emailservice",
+    "pod": "emailservice-7466dc585-cj92q",
+    "ready": "1/1",
+    "status": "Running",
+    "restarts": 30,
+    "age": null,
+    "ip": "10.244.0.182",
+    "node": "minikube",
+    "snapshot_time": "2026-03-25 12:14:39+00:00"
+  },
+  {
+    "service": "frontend",
+    "pod": "frontend-694b9f76cd-2cgdd",
+    "ready": "1/1",
+    "status": "Running",
+    "restarts": 0,
+    "age": null,
+    "ip": "10.244.0.190",
+    "node": "minikube",
+    "snapshot_time": "2026-03-25 12:14:39+00:00"
+  },
+  {
+    "service": "loadgenerator",
+    "pod": "loadgenerator-7dd458dd5b-8s9hz",
+    "ready": "1/1",
+    "status": "Running",
+    "restarts": 7,
+    "age": null,
+    "ip": "10.244.0.178",
+    "node": "minikube",
+    "snapshot_time": "2026-03-25 12:14:39+00:00"
+  },
+  {
+    "service": "paymentservice",
+    "pod": "paymentservice-6b76dfb449-m2g8g",
+    "ready": "1/1",
+    "status": "Running",
+    "restarts": 9,
+    "age": null,
+    "ip": "10.244.0.171",
+    "node": "minikube",
+    "snapshot_time": "2026-03-25 12:14:39+00:00"
+  },
+  {
+    "service": "productcatalogservice",
+    "pod": "productcatalogservice-fb49fc9cc-gh6hr",
+    "ready": "1/1",
+    "status": "Running",
+    "restarts": 7,
+    "age": null,
+    "ip": "10.244.0.176",
+    "node": "minikube",
+    "snapshot_time": "2026-03-25 12:14:39+00:00"
+  },
+  {
+    "service": "recommendationservice",
+    "pod": "recommendationservice-6f8f67d69-7cw9t",
+    "ready": "1/1",
+    "status": "Running",
+    "restarts": 27,
+    "age": null,
+    "ip": "10.244.0.181",
+    "node": "minikube",
+    "snapshot_time": "2026-03-25 12:14:39+00:00"
+  },
+  {
+    "service": "redis-cart",
+    "pod": "redis-cart-6899b65948-k49pt",
+    "ready": "1/1",
+    "status": "Running",
+    "restarts": 0,
+    "age": null,
+    "ip": "10.244.0.189",
+    "node": "minikube",
+    "snapshot_time": "2026-03-25 12:14:39+00:00"
+  },
+  {
+    "service": "shippingservice",
+    "pod": "shippingservice-55656785c7-b48d2",
+    "ready": "1/1",
+    "status": "Running",
+    "restarts": 7,
+    "age": null,
+    "ip": "10.244.0.177",
+    "node": "minikube",
+    "snapshot_time": "2026-03-25 12:14:39+00:00"
+  }
+]

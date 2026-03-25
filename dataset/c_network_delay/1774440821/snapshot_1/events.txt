@@ -1,0 +1,684 @@
+LAST SEEN   TYPE      REASON                              OBJECT                                      MESSAGE
+3h12m       Warning   Failed                              podnetworkchaos/frontend-694b9f76cd-7wmx2   Failed to set tc: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+3h12m       Normal    Updated                             podnetworkchaos/frontend-694b9f76cd-7wmx2   Successfully update ObservedGeneration and FailedMessage of resource
+178m        Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+178m        Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+178m        Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+178m        Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+174m        Normal    Updated                             podnetworkchaos/frontend-694b9f76cd-7wmx2   Successfully update ObservedGeneration and FailedMessage of resource
+174m        Warning   Failed                              podnetworkchaos/frontend-694b9f76cd-7wmx2   Failed to set tc: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+160m        Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+160m        Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+160m        Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+160m        Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+157m        Warning   Unhealthy                           pod/currencyservice-fd8f5dfb7-cljwx         Liveness probe failed: timeout: failed to connect service "10.244.0.120:7000" within 1s: context deadline exceeded
+157m        Warning   Unhealthy                           pod/currencyservice-fd8f5dfb7-cljwx         Readiness probe failed: timeout: health rpc did not complete within 1s
+157m        Warning   Unhealthy                           pod/currencyservice-fd8f5dfb7-cljwx         Liveness probe failed: timeout: health rpc did not complete within 1s
+157m        Normal    Killing                             pod/currencyservice-fd8f5dfb7-cljwx         Container server failed liveness probe, will be restarted
+157m        Warning   Unhealthy                           pod/currencyservice-fd8f5dfb7-cljwx         Readiness probe failed: timeout: failed to connect service "10.244.0.120:7000" within 1s: context deadline exceeded
+157m        Normal    Created                             pod/currencyservice-fd8f5dfb7-cljwx         Container created
+157m        Normal    Pulled                              pod/currencyservice-fd8f5dfb7-cljwx         Container image "us-central1-docker.pkg.dev/google-samples/microservices-demo/currencyservice:v0.10.4" already present on machine and can be accessed by the pod
+157m        Normal    Started                             pod/currencyservice-fd8f5dfb7-cljwx         Container started
+157m        Normal    Updated                             podnetworkchaos/frontend-694b9f76cd-7wmx2   Successfully update ObservedGeneration and FailedMessage of resource
+157m        Warning   Failed                              podnetworkchaos/frontend-694b9f76cd-7wmx2   Failed to set tc: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+142m        Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+142m        Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+142m        Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+142m        Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+139m        Normal    Updated                             podnetworkchaos/frontend-694b9f76cd-7wmx2   Successfully update ObservedGeneration and FailedMessage of resource
+139m        Warning   Failed                              podnetworkchaos/frontend-694b9f76cd-7wmx2   Failed to set tc: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+128m        Normal    Starting                            node/minikube                               Starting kubelet.
+128m        Normal    NodeHasSufficientPID                node/minikube                               Node minikube status is now: NodeHasSufficientPID
+128m        Warning   PossibleMemoryBackedVolumesOnDisk   node/minikube                               The tmpfs noswap option is not supported. Memory-backed volumes (e.g. secrets, emptyDirs, etc.) might be swapped to disk and should no longer be considered secure.
+128m        Warning   CgroupV1                            node/minikube                               cgroup v1 detected. cgroup v1 support is deprecated and will be removed in a future release. Please migrate to cgroup v2. More information at https://git.k8s.io/enhancements/keps/sig-node/5573-remove-cgroup-v1
+128m        Normal    NodeHasSufficientMemory             node/minikube                               Node minikube status is now: NodeHasSufficientMemory
+128m        Normal    NodeHasNoDiskPressure               node/minikube                               Node minikube status is now: NodeHasNoDiskPressure
+128m        Normal    NodeAllocatableEnforced             node/minikube                               Updated Node Allocatable limit across pods
+128m        Normal    SandboxChanged                      pod/checkoutservice-75b9cd684f-dc5tt        Pod sandbox changed, it will be killed and re-created.
+128m        Normal    SandboxChanged                      pod/shippingservice-55656785c7-b48d2        Pod sandbox changed, it will be killed and re-created.
+128m        Normal    SandboxChanged                      pod/recommendationservice-6f8f67d69-7cw9t   Pod sandbox changed, it will be killed and re-created.
+128m        Normal    SandboxChanged                      pod/adservice-8576649cff-rvdb4              Pod sandbox changed, it will be killed and re-created.
+128m        Normal    SandboxChanged                      pod/emailservice-7466dc585-cj92q            Pod sandbox changed, it will be killed and re-created.
+128m        Normal    SandboxChanged                      pod/paymentservice-6b76dfb449-m2g8g         Pod sandbox changed, it will be killed and re-created.
+128m        Normal    SandboxChanged                      pod/frontend-694b9f76cd-7wmx2               Pod sandbox changed, it will be killed and re-created.
+128m        Normal    SandboxChanged                      pod/currencyservice-fd8f5dfb7-cljwx         Pod sandbox changed, it will be killed and re-created.
+128m        Normal    SandboxChanged                      pod/cartservice-546c548494-j4j6h            Pod sandbox changed, it will be killed and re-created.
+128m        Normal    SandboxChanged                      pod/loadgenerator-7dd458dd5b-8s9hz          Pod sandbox changed, it will be killed and re-created.
+128m        Normal    SandboxChanged                      pod/productcatalogservice-fb49fc9cc-gh6hr   Pod sandbox changed, it will be killed and re-created.
+128m        Normal    SandboxChanged                      pod/redis-cart-6899b65948-8cq58             Pod sandbox changed, it will be killed and re-created.
+128m        Normal    Created                             pod/checkoutservice-75b9cd684f-dc5tt        Container created
+128m        Normal    Pulled                              pod/adservice-8576649cff-rvdb4              Container image "us-central1-docker.pkg.dev/google-samples/microservices-demo/adservice:v0.10.4" already present on machine and can be accessed by the pod
+128m        Normal    Pulled                              pod/checkoutservice-75b9cd684f-dc5tt        Container image "us-central1-docker.pkg.dev/google-samples/microservices-demo/checkoutservice:v0.10.4" already present on machine and can be accessed by the pod
+128m        Normal    Created                             pod/adservice-8576649cff-rvdb4              Container created
+128m        Normal    Pulled                              pod/shippingservice-55656785c7-b48d2        Container image "us-central1-docker.pkg.dev/google-samples/microservices-demo/shippingservice:v0.10.4" already present on machine and can be accessed by the pod
+128m        Normal    RegisteredNode                      node/minikube                               Node minikube event: Registered Node minikube in Controller
+128m        Normal    Created                             pod/shippingservice-55656785c7-b48d2        Container created
+127m        Normal    Pulled                              pod/recommendationservice-6f8f67d69-7cw9t   Container image "us-central1-docker.pkg.dev/google-samples/microservices-demo/recommendationservice:v0.10.4" already present on machine and can be accessed by the pod
+128m        Normal    Started                             pod/checkoutservice-75b9cd684f-dc5tt        Container started
+128m        Normal    Started                             pod/adservice-8576649cff-rvdb4              Container started
+127m        Normal    Created                             pod/recommendationservice-6f8f67d69-7cw9t   Container created
+128m        Normal    Pulled                              pod/paymentservice-6b76dfb449-m2g8g         Container image "us-central1-docker.pkg.dev/google-samples/microservices-demo/paymentservice:v0.10.4" already present on machine and can be accessed by the pod
+128m        Normal    Pulled                              pod/frontend-694b9f76cd-7wmx2               Container image "us-central1-docker.pkg.dev/google-samples/microservices-demo/frontend:v0.10.4" already present on machine and can be accessed by the pod
+128m        Normal    Created                             pod/frontend-694b9f76cd-7wmx2               Container created
+128m        Normal    Started                             pod/shippingservice-55656785c7-b48d2        Container started
+128m        Normal    Pulled                              pod/cartservice-546c548494-j4j6h            Container image "us-central1-docker.pkg.dev/google-samples/microservices-demo/cartservice:v0.10.4" already present on machine and can be accessed by the pod
+128m        Normal    Created                             pod/paymentservice-6b76dfb449-m2g8g         Container created
+127m        Normal    Started                             pod/recommendationservice-6f8f67d69-7cw9t   Container started
+128m        Normal    Pulled                              pod/emailservice-7466dc585-cj92q            Container image "us-central1-docker.pkg.dev/google-samples/microservices-demo/emailservice:v0.10.4" already present on machine and can be accessed by the pod
+128m        Normal    Pulled                              pod/currencyservice-fd8f5dfb7-cljwx         Container image "us-central1-docker.pkg.dev/google-samples/microservices-demo/currencyservice:v0.10.4" already present on machine and can be accessed by the pod
+128m        Normal    Pulled                              pod/productcatalogservice-fb49fc9cc-gh6hr   Container image "us-central1-docker.pkg.dev/google-samples/microservices-demo/productcatalogservice:v0.10.4" already present on machine and can be accessed by the pod
+128m        Normal    Pulling                             pod/loadgenerator-7dd458dd5b-8s9hz          Pulling image "busybox:latest"
+128m        Normal    Created                             pod/cartservice-546c548494-j4j6h            Container created
+128m        Normal    Created                             pod/emailservice-7466dc585-cj92q            Container created
+128m        Normal    Pulled                              pod/redis-cart-6899b65948-8cq58             Container image "redis:alpine" already present on machine and can be accessed by the pod
+128m        Normal    Created                             pod/currencyservice-fd8f5dfb7-cljwx         Container created
+128m        Normal    Created                             pod/redis-cart-6899b65948-8cq58             Container created
+128m        Normal    Started                             pod/paymentservice-6b76dfb449-m2g8g         Container started
+128m        Normal    Started                             pod/frontend-694b9f76cd-7wmx2               Container started
+128m        Normal    Created                             pod/productcatalogservice-fb49fc9cc-gh6hr   Container created
+127m        Warning   Unhealthy                           pod/recommendationservice-6f8f67d69-7cw9t   Readiness probe failed: timeout: failed to connect service "10.244.0.149:8080" within 1s: context deadline exceeded
+127m        Warning   Unhealthy                           pod/recommendationservice-6f8f67d69-7cw9t   Liveness probe failed: timeout: failed to connect service "10.244.0.149:8080" within 1s: context deadline exceeded
+128m        Normal    Starting                            node/minikube                               
+128m        Normal    Started                             pod/cartservice-546c548494-j4j6h            Container started
+128m        Normal    Started                             pod/emailservice-7466dc585-cj92q            Container started
+128m        Normal    Started                             pod/redis-cart-6899b65948-8cq58             Container started
+128m        Normal    Started                             pod/currencyservice-fd8f5dfb7-cljwx         Container started
+128m        Normal    Started                             pod/productcatalogservice-fb49fc9cc-gh6hr   Container started
+128m        Warning   Unhealthy                           pod/currencyservice-fd8f5dfb7-cljwx         Readiness probe failed: timeout: failed to connect service "10.244.0.155:7000" within 1s: context deadline exceeded
+128m        Warning   Unhealthy                           pod/adservice-8576649cff-rvdb4              Readiness probe failed: timeout: failed to connect service "10.244.0.145:9555" within 1s: context deadline exceeded
+128m        Warning   Unhealthy                           pod/emailservice-7466dc585-cj92q            Readiness probe failed: timeout: failed to connect service "10.244.0.157:8080" within 1s: context deadline exceeded
+128m        Normal    Pulled                              pod/loadgenerator-7dd458dd5b-8s9hz          Successfully pulled image "busybox:latest" in 15.585s (15.585s including waiting). Image size: 4421262 bytes.
+128m        Warning   Unhealthy                           pod/currencyservice-fd8f5dfb7-cljwx         Liveness probe failed: timeout: failed to connect service "10.244.0.155:7000" within 1s: context deadline exceeded
+128m        Normal    Created                             pod/loadgenerator-7dd458dd5b-8s9hz          Container created
+128m        Normal    Started                             pod/loadgenerator-7dd458dd5b-8s9hz          Container started
+128m        Normal    Killing                             pod/recommendationservice-6f8f67d69-7cw9t   Container server failed liveness probe, will be restarted
+127m        Warning   Unhealthy                           pod/emailservice-7466dc585-cj92q            Liveness probe failed: timeout: failed to connect service "10.244.0.157:8080" within 1s: context deadline exceeded
+128m        Warning   Unhealthy                           pod/cartservice-546c548494-j4j6h            Readiness probe failed: timeout: failed to connect service "10.244.0.156:7070" within 1s: context deadline exceeded
+128m        Warning   Unhealthy                           pod/adservice-8576649cff-rvdb4              Liveness probe failed: timeout: failed to connect service "10.244.0.145:9555" within 1s: context deadline exceeded
+128m        Warning   Unhealthy                           pod/cartservice-546c548494-j4j6h            Liveness probe failed: timeout: health rpc did not complete within 1s
+127m        Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+127m        Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+127m        Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+127m        Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+127m        Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+127m        Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+127m        Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+127m        Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+127m        Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+127m        Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+127m        Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+127m        Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+127m        Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+127m        Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+127m        Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+127m        Normal    Updated                             podnetworkchaos/frontend-694b9f76cd-7wmx2   Successfully update ObservedGeneration and FailedMessage of resource
+127m        Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+127m        Normal    Updated                             podnetworkchaos/frontend-694b9f76cd-7wmx2   Successfully update ObservedGeneration and FailedMessage of resource
+127m        Warning   Failed                              podnetworkchaos/frontend-694b9f76cd-7wmx2   Failed to set tc: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+127m        Warning   Failed                              podnetworkchaos/frontend-694b9f76cd-7wmx2   Failed to set tc: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+127m        Normal    Updated                             podnetworkchaos/frontend-694b9f76cd-7wmx2   Successfully update ObservedGeneration and FailedMessage of resource
+127m        Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+127m        Warning   Failed                              podnetworkchaos/frontend-694b9f76cd-7wmx2   Failed to set tc: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+127m        Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+127m        Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+127m        Normal    Updated                             podnetworkchaos/frontend-694b9f76cd-7wmx2   Successfully update ObservedGeneration and FailedMessage of resource
+127m        Normal    Updated                             podnetworkchaos/frontend-694b9f76cd-7wmx2   Successfully update ObservedGeneration and FailedMessage of resource
+127m        Warning   Failed                              podnetworkchaos/frontend-694b9f76cd-7wmx2   Failed to set tc: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+127m        Normal    Updated                             podnetworkchaos/frontend-694b9f76cd-7wmx2   Successfully update ObservedGeneration and FailedMessage of resource
+127m        Warning   Failed                              podnetworkchaos/frontend-694b9f76cd-7wmx2   Failed to set tc: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+127m        Warning   Failed                              podnetworkchaos/frontend-694b9f76cd-7wmx2   Failed to set tc: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+127m        Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+127m        Normal    Updated                             podnetworkchaos/frontend-694b9f76cd-7wmx2   Successfully update ObservedGeneration and FailedMessage of resource
+127m        Warning   Failed                              podnetworkchaos/frontend-694b9f76cd-7wmx2   Failed to set tc: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+127m        Normal    Updated                             podnetworkchaos/frontend-694b9f76cd-7wmx2   Successfully update ObservedGeneration and FailedMessage of resource
+127m        Warning   Failed                              podnetworkchaos/frontend-694b9f76cd-7wmx2   Failed to set tc: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+127m        Warning   Failed                              podnetworkchaos/frontend-694b9f76cd-7wmx2   Failed to set tc: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+127m        Normal    Updated                             podnetworkchaos/frontend-694b9f76cd-7wmx2   Successfully update ObservedGeneration and FailedMessage of resource
+127m        Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+127m        Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+127m        Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+127m        Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+127m        Warning   Failed                              podnetworkchaos/frontend-694b9f76cd-7wmx2   Failed to set tc: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+127m        Normal    Updated                             podnetworkchaos/frontend-694b9f76cd-7wmx2   Successfully update ObservedGeneration and FailedMessage of resource
+127m        Warning   Failed                              podnetworkchaos/frontend-694b9f76cd-7wmx2   Failed to set tc: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+127m        Normal    Updated                             podnetworkchaos/frontend-694b9f76cd-7wmx2   Successfully update ObservedGeneration and FailedMessage of resource
+127m        Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+127m        Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+127m        Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+127m        Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+127m        Warning   Unhealthy                           pod/adservice-8576649cff-rvdb4              Readiness probe failed: timeout: health rpc did not complete within 1s
+127m        Warning   Failed                              podnetworkchaos/frontend-694b9f76cd-7wmx2   Failed to set tc: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+127m        Normal    Updated                             podnetworkchaos/frontend-694b9f76cd-7wmx2   Successfully update ObservedGeneration and FailedMessage of resource
+127m        Warning   Failed                              podnetworkchaos/frontend-694b9f76cd-7wmx2   Failed to set tc: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+127m        Normal    Updated                             podnetworkchaos/frontend-694b9f76cd-7wmx2   Successfully update ObservedGeneration and FailedMessage of resource
+127m        Normal    Started                             pod/loadgenerator-7dd458dd5b-8s9hz          Container started
+127m        Normal    Created                             pod/loadgenerator-7dd458dd5b-8s9hz          Container created
+127m        Normal    Pulled                              pod/loadgenerator-7dd458dd5b-8s9hz          Container image "us-central1-docker.pkg.dev/google-samples/microservices-demo/loadgenerator:v0.10.4" already present on machine and can be accessed by the pod
+127m        Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+127m        Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+127m        Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+127m        Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+127m        Normal    Updated                             podnetworkchaos/frontend-694b9f76cd-7wmx2   Successfully update ObservedGeneration and FailedMessage of resource
+127m        Warning   Failed                              podnetworkchaos/frontend-694b9f76cd-7wmx2   Failed to set tc: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+126m        Normal    Updated                             podnetworkchaos/frontend-694b9f76cd-7wmx2   Successfully update ObservedGeneration and FailedMessage of resource
+126m        Warning   Failed                              podnetworkchaos/frontend-694b9f76cd-7wmx2   Failed to set tc: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+125m        Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+125m        Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+125m        Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+125m        Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+125m        Normal    Updated                             podnetworkchaos/frontend-694b9f76cd-7wmx2   Successfully update ObservedGeneration and FailedMessage of resource
+125m        Warning   Failed                              podnetworkchaos/frontend-694b9f76cd-7wmx2   Failed to set tc: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+122m        Normal    Updated                             podnetworkchaos/frontend-694b9f76cd-7wmx2   Successfully update ObservedGeneration and FailedMessage of resource
+122m        Warning   Failed                              podnetworkchaos/frontend-694b9f76cd-7wmx2   Failed to set tc: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+120m        Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+120m        Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+120m        Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+120m        Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+116m        Warning   Failed                              podnetworkchaos/frontend-694b9f76cd-7wmx2   Failed to set tc: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+116m        Normal    Updated                             podnetworkchaos/frontend-694b9f76cd-7wmx2   Successfully update ObservedGeneration and FailedMessage of resource
+105m        Normal    Updated                             podnetworkchaos/frontend-694b9f76cd-7wmx2   Successfully update ObservedGeneration and FailedMessage of resource
+105m        Warning   Failed                              podnetworkchaos/frontend-694b9f76cd-7wmx2   Failed to set tc: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+102m        Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+102m        Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+102m        Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+102m        Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+87m         Warning   Failed                              podnetworkchaos/frontend-694b9f76cd-7wmx2   Failed to set tc: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+87m         Normal    Updated                             podnetworkchaos/frontend-694b9f76cd-7wmx2   Successfully update ObservedGeneration and FailedMessage of resource
+85m         Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+85m         Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+85m         Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+85m         Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+37m         Warning   PossibleMemoryBackedVolumesOnDisk   node/minikube                               The tmpfs noswap option is not supported. Memory-backed volumes (e.g. secrets, emptyDirs, etc.) might be swapped to disk and should no longer be considered secure.
+37m         Warning   CgroupV1                            node/minikube                               cgroup v1 detected. cgroup v1 support is deprecated and will be removed in a future release. Please migrate to cgroup v2. More information at https://git.k8s.io/enhancements/keps/sig-node/5573-remove-cgroup-v1
+37m         Normal    NodeHasNoDiskPressure               node/minikube                               Node minikube status is now: NodeHasNoDiskPressure
+37m         Normal    Starting                            node/minikube                               Starting kubelet.
+37m         Normal    NodeHasSufficientMemory             node/minikube                               Node minikube status is now: NodeHasSufficientMemory
+37m         Normal    NodeHasSufficientPID                node/minikube                               Node minikube status is now: NodeHasSufficientPID
+37m         Normal    NodeAllocatableEnforced             node/minikube                               Updated Node Allocatable limit across pods
+36m         Normal    SandboxChanged                      pod/currencyservice-fd8f5dfb7-cljwx         Pod sandbox changed, it will be killed and re-created.
+36m         Normal    SandboxChanged                      pod/productcatalogservice-fb49fc9cc-gh6hr   Pod sandbox changed, it will be killed and re-created.
+36m         Normal    SandboxChanged                      pod/shippingservice-55656785c7-b48d2        Pod sandbox changed, it will be killed and re-created.
+36m         Normal    SandboxChanged                      pod/checkoutservice-75b9cd684f-dc5tt        Pod sandbox changed, it will be killed and re-created.
+36m         Normal    SandboxChanged                      pod/redis-cart-6899b65948-8cq58             Pod sandbox changed, it will be killed and re-created.
+36m         Normal    SandboxChanged                      pod/loadgenerator-7dd458dd5b-8s9hz          Pod sandbox changed, it will be killed and re-created.
+36m         Normal    SandboxChanged                      pod/cartservice-546c548494-j4j6h            Pod sandbox changed, it will be killed and re-created.
+36m         Normal    SandboxChanged                      pod/frontend-694b9f76cd-7wmx2               Pod sandbox changed, it will be killed and re-created.
+36m         Normal    SandboxChanged                      pod/recommendationservice-6f8f67d69-7cw9t   Pod sandbox changed, it will be killed and re-created.
+36m         Normal    SandboxChanged                      pod/paymentservice-6b76dfb449-m2g8g         Pod sandbox changed, it will be killed and re-created.
+36m         Normal    SandboxChanged                      pod/emailservice-7466dc585-cj92q            Pod sandbox changed, it will be killed and re-created.
+36m         Normal    SandboxChanged                      pod/adservice-8576649cff-rvdb4              Pod sandbox changed, it will be killed and re-created.
+36m         Normal    Pulled                              pod/paymentservice-6b76dfb449-m2g8g         Container image "us-central1-docker.pkg.dev/google-samples/microservices-demo/paymentservice:v0.10.4" already present on machine and can be accessed by the pod
+36m         Normal    Pulled                              pod/cartservice-546c548494-j4j6h            Container image "us-central1-docker.pkg.dev/google-samples/microservices-demo/cartservice:v0.10.4" already present on machine and can be accessed by the pod
+36m         Normal    Created                             pod/paymentservice-6b76dfb449-m2g8g         Container created
+36m         Normal    Created                             pod/cartservice-546c548494-j4j6h            Container created
+36m         Normal    Pulled                              pod/checkoutservice-75b9cd684f-dc5tt        Container image "us-central1-docker.pkg.dev/google-samples/microservices-demo/checkoutservice:v0.10.4" already present on machine and can be accessed by the pod
+36m         Normal    Pulled                              pod/productcatalogservice-fb49fc9cc-gh6hr   Container image "us-central1-docker.pkg.dev/google-samples/microservices-demo/productcatalogservice:v0.10.4" already present on machine and can be accessed by the pod
+36m         Normal    Created                             pod/checkoutservice-75b9cd684f-dc5tt        Container created
+36m         Normal    Pulled                              pod/currencyservice-fd8f5dfb7-cljwx         Container image "us-central1-docker.pkg.dev/google-samples/microservices-demo/currencyservice:v0.10.4" already present on machine and can be accessed by the pod
+36m         Normal    Pulled                              pod/shippingservice-55656785c7-b48d2        Container image "us-central1-docker.pkg.dev/google-samples/microservices-demo/shippingservice:v0.10.4" already present on machine and can be accessed by the pod
+36m         Normal    Pulling                             pod/loadgenerator-7dd458dd5b-8s9hz          Pulling image "busybox:latest"
+36m         Normal    Pulled                              pod/adservice-8576649cff-rvdb4              Container image "us-central1-docker.pkg.dev/google-samples/microservices-demo/adservice:v0.10.4" already present on machine and can be accessed by the pod
+36m         Normal    Pulled                              pod/frontend-694b9f76cd-7wmx2               Container image "us-central1-docker.pkg.dev/google-samples/microservices-demo/frontend:v0.10.4" already present on machine and can be accessed by the pod
+36m         Normal    Started                             pod/paymentservice-6b76dfb449-m2g8g         Container started
+36m         Normal    Pulled                              pod/redis-cart-6899b65948-8cq58             Container image "redis:alpine" already present on machine and can be accessed by the pod
+36m         Normal    Created                             pod/shippingservice-55656785c7-b48d2        Container created
+34m         Normal    Pulled                              pod/recommendationservice-6f8f67d69-7cw9t   Container image "us-central1-docker.pkg.dev/google-samples/microservices-demo/recommendationservice:v0.10.4" already present on machine and can be accessed by the pod
+36m         Normal    Created                             pod/productcatalogservice-fb49fc9cc-gh6hr   Container created
+24m         Normal    Pulled                              pod/emailservice-7466dc585-cj92q            Container image "us-central1-docker.pkg.dev/google-samples/microservices-demo/emailservice:v0.10.4" already present on machine and can be accessed by the pod
+36m         Normal    Started                             pod/cartservice-546c548494-j4j6h            Container started
+36m         Normal    Created                             pod/frontend-694b9f76cd-7wmx2               Container created
+36m         Normal    Created                             pod/currencyservice-fd8f5dfb7-cljwx         Container created
+24m         Normal    Created                             pod/emailservice-7466dc585-cj92q            Container created
+36m         Warning   Unhealthy                           pod/paymentservice-6b76dfb449-m2g8g         Readiness probe failed: timeout: failed to connect service "10.244.0.171:50051" within 1s: context deadline exceeded
+34m         Normal    Created                             pod/recommendationservice-6f8f67d69-7cw9t   Container created
+36m         Normal    Started                             pod/checkoutservice-75b9cd684f-dc5tt        Container started
+36m         Normal    Created                             pod/redis-cart-6899b65948-8cq58             Container created
+36m         Normal    Created                             pod/adservice-8576649cff-rvdb4              Container created
+36m         Normal    Started                             pod/shippingservice-55656785c7-b48d2        Container started
+36m         Normal    Started                             pod/productcatalogservice-fb49fc9cc-gh6hr   Container started
+36m         Normal    Started                             pod/currencyservice-fd8f5dfb7-cljwx         Container started
+36m         Normal    Started                             pod/frontend-694b9f76cd-7wmx2               Container started
+29m         Normal    Started                             pod/emailservice-7466dc585-cj92q            Container started
+36m         Warning   Unhealthy                           pod/paymentservice-6b76dfb449-m2g8g         Liveness probe failed: timeout: failed to connect service "10.244.0.171:50051" within 1s: context deadline exceeded
+36m         Normal    Started                             pod/adservice-8576649cff-rvdb4              Container started
+36m         Normal    Started                             pod/redis-cart-6899b65948-8cq58             Container started
+34m         Normal    Started                             pod/recommendationservice-6f8f67d69-7cw9t   Container started
+36m         Warning   Failed                              pod/loadgenerator-7dd458dd5b-8s9hz          Failed to pull image "busybox:latest": Error response from daemon: Get "https://registry-1.docker.io/v2/": net/http: TLS handshake timeout
+36m         Warning   Failed                              pod/loadgenerator-7dd458dd5b-8s9hz          Error: ErrImagePull
+29m         Warning   Unhealthy                           pod/emailservice-7466dc585-cj92q            Readiness probe failed: timeout: failed to connect service "10.244.0.182:8080" within 1s: context deadline exceeded
+36m         Normal    Starting                            node/minikube                               
+36m         Normal    RegisteredNode                      node/minikube                               Node minikube event: Registered Node minikube in Controller
+36m         Warning   Unhealthy                           pod/cartservice-546c548494-j4j6h            Liveness probe failed: timeout: failed to connect service "10.244.0.172:7070" within 1s: context deadline exceeded
+34m         Warning   Unhealthy                           pod/emailservice-7466dc585-cj92q            Liveness probe failed: timeout: failed to connect service "10.244.0.182:8080" within 1s: context deadline exceeded
+35m         Warning   Unhealthy                           pod/recommendationservice-6f8f67d69-7cw9t   Readiness probe failed: timeout: failed to connect service "10.244.0.181:8080" within 1s: context deadline exceeded
+36m         Warning   Unhealthy                           pod/cartservice-546c548494-j4j6h            Readiness probe failed: timeout: health rpc did not complete within 1s
+35m         Warning   Unhealthy                           pod/recommendationservice-6f8f67d69-7cw9t   Liveness probe failed: timeout: failed to connect service "10.244.0.181:8080" within 1s: context deadline exceeded
+35m         Warning   Unhealthy                           pod/currencyservice-fd8f5dfb7-cljwx         Readiness probe failed: timeout: failed to connect service "10.244.0.173:7000" within 1s: context deadline exceeded
+35m         Normal    Pulled                              pod/loadgenerator-7dd458dd5b-8s9hz          Successfully pulled image "busybox:latest" in 3.516s (3.516s including waiting). Image size: 4421262 bytes.
+35m         Normal    Created                             pod/loadgenerator-7dd458dd5b-8s9hz          Container created
+35m         Normal    Started                             pod/loadgenerator-7dd458dd5b-8s9hz          Container started
+29m         Normal    Killing                             pod/emailservice-7466dc585-cj92q            Container server failed liveness probe, will be restarted
+35m         Warning   Unhealthy                           pod/adservice-8576649cff-rvdb4              Readiness probe failed: timeout: failed to connect service "10.244.0.180:9555" within 1s: context deadline exceeded
+35m         Normal    Killing                             pod/recommendationservice-6f8f67d69-7cw9t   Container server failed liveness probe, will be restarted
+35m         Warning   Unhealthy                           pod/adservice-8576649cff-rvdb4              Liveness probe failed: timeout: failed to connect service "10.244.0.180:9555" within 1s: context deadline exceeded
+35m         Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+35m         Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+35m         Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+35m         Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+35m         Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+35m         Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+35m         Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+35m         Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+35m         Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+35m         Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+35m         Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+35m         Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+35m         Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+35m         Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+35m         Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+35m         Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+35m         Warning   Failed                              podnetworkchaos/frontend-694b9f76cd-7wmx2   Failed to set tc: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+35m         Normal    Updated                             podnetworkchaos/frontend-694b9f76cd-7wmx2   Successfully update ObservedGeneration and FailedMessage of resource
+35m         Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+35m         Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+35m         Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+35m         Warning   Failed                              podnetworkchaos/frontend-694b9f76cd-7wmx2   Failed to set tc: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+35m         Normal    Updated                             podnetworkchaos/frontend-694b9f76cd-7wmx2   Successfully update ObservedGeneration and FailedMessage of resource
+35m         Warning   Failed                              podnetworkchaos/frontend-694b9f76cd-7wmx2   Failed to set tc: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+35m         Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+35m         Normal    Updated                             podnetworkchaos/frontend-694b9f76cd-7wmx2   Successfully update ObservedGeneration and FailedMessage of resource
+35m         Warning   Failed                              podnetworkchaos/frontend-694b9f76cd-7wmx2   Failed to set tc: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+35m         Warning   Failed                              podnetworkchaos/frontend-694b9f76cd-7wmx2   Failed to set tc: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+35m         Normal    Updated                             podnetworkchaos/frontend-694b9f76cd-7wmx2   Successfully update ObservedGeneration and FailedMessage of resource
+35m         Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+35m         Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+35m         Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+35m         Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+35m         Normal    Updated                             podnetworkchaos/frontend-694b9f76cd-7wmx2   Successfully update ObservedGeneration and FailedMessage of resource
+35m         Warning   Failed                              podnetworkchaos/frontend-694b9f76cd-7wmx2   Failed to set tc: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+35m         Normal    Updated                             podnetworkchaos/frontend-694b9f76cd-7wmx2   Successfully update ObservedGeneration and FailedMessage of resource
+35m         Warning   Failed                              podnetworkchaos/frontend-694b9f76cd-7wmx2   Failed to set tc: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+35m         Warning   Failed                              podnetworkchaos/frontend-694b9f76cd-7wmx2   Failed to set tc: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+24m         Warning   BackOff                             pod/emailservice-7466dc585-cj92q            Back-off restarting failed container server in pod emailservice-7466dc585-cj92q_default(70d7db41-ec9a-49f0-94b2-2f803b95ecfb)
+35m         Normal    Updated                             podnetworkchaos/frontend-694b9f76cd-7wmx2   Successfully update ObservedGeneration and FailedMessage of resource
+35m         Normal    Updated                             podnetworkchaos/frontend-694b9f76cd-7wmx2   Successfully update ObservedGeneration and FailedMessage of resource
+35m         Warning   Failed                              podnetworkchaos/frontend-694b9f76cd-7wmx2   Failed to set tc: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+35m         Normal    Updated                             podnetworkchaos/frontend-694b9f76cd-7wmx2   Successfully update ObservedGeneration and FailedMessage of resource
+35m         Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+35m         Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+35m         Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+35m         Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+35m         Normal    Updated                             podnetworkchaos/frontend-694b9f76cd-7wmx2   Successfully update ObservedGeneration and FailedMessage of resource
+35m         Warning   Failed                              podnetworkchaos/frontend-694b9f76cd-7wmx2   Failed to set tc: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+35m         Warning   Unhealthy                           pod/adservice-8576649cff-rvdb4              Readiness probe failed: timeout: health rpc did not complete within 1s
+35m         Normal    Updated                             podnetworkchaos/frontend-694b9f76cd-7wmx2   Successfully update ObservedGeneration and FailedMessage of resource
+35m         Warning   Failed                              podnetworkchaos/frontend-694b9f76cd-7wmx2   Failed to set tc: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+35m         Normal    Started                             pod/loadgenerator-7dd458dd5b-8s9hz          Container started
+35m         Normal    Pulled                              pod/loadgenerator-7dd458dd5b-8s9hz          Container image "us-central1-docker.pkg.dev/google-samples/microservices-demo/loadgenerator:v0.10.4" already present on machine and can be accessed by the pod
+35m         Normal    Created                             pod/loadgenerator-7dd458dd5b-8s9hz          Container created
+35m         Normal    Updated                             podnetworkchaos/frontend-694b9f76cd-7wmx2   Successfully update ObservedGeneration and FailedMessage of resource
+35m         Warning   Failed                              podnetworkchaos/frontend-694b9f76cd-7wmx2   Failed to set tc: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+35m         Normal    Updated                             podnetworkchaos/frontend-694b9f76cd-7wmx2   Successfully update ObservedGeneration and FailedMessage of resource
+35m         Warning   Failed                              podnetworkchaos/frontend-694b9f76cd-7wmx2   Failed to set tc: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+35m         Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+35m         Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+35m         Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+35m         Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+35m         Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+35m         Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+34m         Normal    Updated                             podnetworkchaos/frontend-694b9f76cd-7wmx2   Successfully update ObservedGeneration and FailedMessage of resource
+34m         Warning   Failed                              podnetworkchaos/frontend-694b9f76cd-7wmx2   Failed to set tc: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+34m         Normal    Updated                             podnetworkchaos/frontend-694b9f76cd-7wmx2   Successfully update ObservedGeneration and FailedMessage of resource
+34m         Warning   Failed                              podnetworkchaos/frontend-694b9f76cd-7wmx2   Failed to set tc: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+33m         Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+33m         Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+33m         Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+33m         Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+32m         Warning   Failed                              podnetworkchaos/frontend-694b9f76cd-7wmx2   Failed to set tc: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+32m         Normal    Updated                             podnetworkchaos/frontend-694b9f76cd-7wmx2   Successfully update ObservedGeneration and FailedMessage of resource
+31m         Normal    SuccessfulCreate                    replicaset/redis-cart-6899b65948            Created pod: redis-cart-6899b65948-fpgb6
+31m         Normal    Killing                             pod/redis-cart-6899b65948-8cq58             Stopping container redis
+31m         Normal    Scheduled                           pod/redis-cart-6899b65948-fpgb6             Successfully assigned default/redis-cart-6899b65948-fpgb6 to minikube
+31m         Normal    Created                             pod/redis-cart-6899b65948-fpgb6             Container created
+31m         Normal    Pulled                              pod/redis-cart-6899b65948-fpgb6             Container image "redis:alpine" already present on machine and can be accessed by the pod
+31m         Warning   Unhealthy                           pod/redis-cart-6899b65948-fpgb6             Readiness probe failed: dial tcp 10.244.0.185:6379: connect: connection refused
+31m         Normal    Started                             pod/redis-cart-6899b65948-fpgb6             Container started
+29m         Warning   Failed                              podnetworkchaos/frontend-694b9f76cd-7wmx2   Failed to set tc: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+29m         Normal    Updated                             podnetworkchaos/frontend-694b9f76cd-7wmx2   Successfully update ObservedGeneration and FailedMessage of resource
+23m         Warning   Failed                              podnetworkchaos/frontend-694b9f76cd-7wmx2   Failed to set tc: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+23m         Normal    Updated                             podnetworkchaos/frontend-694b9f76cd-7wmx2   Successfully update ObservedGeneration and FailedMessage of resource
+22m         Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+22m         Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+22m         Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-7wmx2: unable to set tcs for pod frontend-694b9f76cd-7wmx2
+22m         Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+21m         Normal    Killing                             pod/frontend-694b9f76cd-7wmx2               Stopping container server
+21m         Normal    Updated                             podchaos/frontend-podkill                   Successfully update finalizer of resource
+21m         Normal    SuccessfulCreate                    replicaset/frontend-694b9f76cd              Created pod: frontend-694b9f76cd-qtvd9
+21m         Normal    FinalizerInited                     podchaos/frontend-podkill                   Finalizer has been inited
+21m         Normal    Updated                             podchaos/frontend-podkill                   Successfully update records of resource
+21m         Normal    Applied                             podchaos/frontend-podkill                   Successfully apply chaos for default/frontend-694b9f76cd-7wmx2
+21m         Normal    Updated                             podchaos/frontend-podkill                   Successfully update desiredPhase of resource
+21m         Normal    Scheduled                           pod/frontend-694b9f76cd-qtvd9               Successfully assigned default/frontend-694b9f76cd-qtvd9 to minikube
+21m         Normal    Updated                             networkchaos/network-delay                  Successfully update finalizer of resource
+21m         Normal    FinalizerInited                     networkchaos/network-delay                  Finalizer has been removed
+21m         Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+21m         Normal    Pulled                              pod/frontend-694b9f76cd-qtvd9               Container image "us-central1-docker.pkg.dev/google-samples/microservices-demo/frontend:v0.10.4" already present on machine and can be accessed by the pod
+21m         Normal    Created                             pod/frontend-694b9f76cd-qtvd9               Container created
+21m         Normal    Started                             pod/frontend-694b9f76cd-qtvd9               Container started
+20m         Normal    Updated                             podchaos/frontend-podkill                   Successfully update desiredPhase of resource
+20m         Normal    Recovered                           podchaos/frontend-podkill                   Successfully recover chaos for default/frontend-694b9f76cd-7wmx2
+20m         Normal    Deleted                             podchaos/frontend-podkill                   Experiment has been deleted
+20m         Normal    FinalizerInited                     podchaos/frontend-podkill                   Finalizer has been removed
+20m         Normal    Updated                             podchaos/frontend-podkill                   Successfully update records of resource
+20m         Normal    Updated                             podchaos/frontend-podkill                   Successfully update finalizer of resource
+19m         Normal    Updated                             stresschaos/cpu-stress                      Successfully update finalizer of resource
+19m         Normal    FinalizerInited                     stresschaos/cpu-stress                      Finalizer has been inited
+19m         Normal    Updated                             stresschaos/cpu-stress                      Successfully update desiredPhase of resource
+19m         Normal    Started                             stresschaos/cpu-stress                      Experiment has started
+19m         Normal    Applied                             stresschaos/cpu-stress                      Successfully apply chaos for default/recommendationservice-6f8f67d69-7cw9t/server
+19m         Normal    Updated                             stresschaos/cpu-stress                      Successfully update records of resource
+18m         Normal    Deleted                             stresschaos/cpu-stress                      Experiment has been deleted
+18m         Normal    FinalizerInited                     stresschaos/cpu-stress                      Finalizer has been removed
+18m         Normal    Updated                             stresschaos/cpu-stress                      Successfully update finalizer of resource
+18m         Normal    Updated                             stresschaos/cpu-stress                      Successfully update records of resource
+18m         Normal    Recovered                           stresschaos/cpu-stress                      Successfully recover chaos for default/recommendationservice-6f8f67d69-7cw9t/server
+18m         Normal    Updated                             stresschaos/cpu-stress                      Successfully update desiredPhase of resource
+17m         Normal    FinalizerInited                     networkchaos/network-delay                  Finalizer has been inited
+17m         Warning   Failed                              podnetworkchaos/frontend-694b9f76cd-qtvd9   Failed to set tc: failed to apply for pod default/frontend-694b9f76cd-qtvd9: unable to set tcs for pod frontend-694b9f76cd-qtvd9
+17m         Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+17m         Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-qtvd9: unable to set tcs for pod frontend-694b9f76cd-qtvd9
+17m         Normal    Updated                             networkchaos/network-delay                  Successfully update finalizer of resource
+17m         Normal    Updated                             podnetworkchaos/frontend-694b9f76cd-qtvd9   Successfully update ObservedGeneration and FailedMessage of resource
+17m         Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+17m         Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-qtvd9: unable to set tcs for pod frontend-694b9f76cd-qtvd9
+17m         Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+17m         Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-qtvd9: unable to set tcs for pod frontend-694b9f76cd-qtvd9
+17m         Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+17m         Normal    Updated                             networkchaos/network-delay                  Successfully update desiredPhase of resource
+17m         Normal    Started                             networkchaos/network-delay                  Experiment has started
+17m         Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+17m         Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-qtvd9: unable to set tcs for pod frontend-694b9f76cd-qtvd9
+17m         Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-qtvd9: unable to set tcs for pod frontend-694b9f76cd-qtvd9
+17m         Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+17m         Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-qtvd9: unable to set tcs for pod frontend-694b9f76cd-qtvd9
+17m         Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-qtvd9: unable to set tcs for pod frontend-694b9f76cd-qtvd9
+17m         Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+17m         Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-qtvd9: unable to set tcs for pod frontend-694b9f76cd-qtvd9
+17m         Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+17m         Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+17m         Warning   Failed                              podnetworkchaos/frontend-694b9f76cd-qtvd9   Failed to set tc: failed to apply for pod default/frontend-694b9f76cd-qtvd9: unable to set tcs for pod frontend-694b9f76cd-qtvd9
+17m         Normal    Updated                             podnetworkchaos/frontend-694b9f76cd-qtvd9   Successfully update ObservedGeneration and FailedMessage of resource
+17m         Warning   Failed                              podnetworkchaos/frontend-694b9f76cd-qtvd9   Failed to set tc: failed to apply for pod default/frontend-694b9f76cd-qtvd9: unable to set tcs for pod frontend-694b9f76cd-qtvd9
+17m         Normal    Updated                             podnetworkchaos/frontend-694b9f76cd-qtvd9   Successfully update ObservedGeneration and FailedMessage of resource
+17m         Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-qtvd9: unable to set tcs for pod frontend-694b9f76cd-qtvd9
+17m         Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+17m         Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-qtvd9: unable to set tcs for pod frontend-694b9f76cd-qtvd9
+17m         Normal    Updated                             podnetworkchaos/frontend-694b9f76cd-qtvd9   Successfully update ObservedGeneration and FailedMessage of resource
+17m         Warning   Failed                              podnetworkchaos/frontend-694b9f76cd-qtvd9   Failed to set tc: failed to apply for pod default/frontend-694b9f76cd-qtvd9: unable to set tcs for pod frontend-694b9f76cd-qtvd9
+17m         Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-qtvd9: unable to set tcs for pod frontend-694b9f76cd-qtvd9
+17m         Warning   Failed                              podnetworkchaos/frontend-694b9f76cd-qtvd9   Failed to set tc: failed to apply for pod default/frontend-694b9f76cd-qtvd9: unable to set tcs for pod frontend-694b9f76cd-qtvd9
+17m         Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+17m         Warning   Failed                              podnetworkchaos/frontend-694b9f76cd-qtvd9   Failed to set tc: failed to apply for pod default/frontend-694b9f76cd-qtvd9: unable to set tcs for pod frontend-694b9f76cd-qtvd9
+17m         Normal    Updated                             podnetworkchaos/frontend-694b9f76cd-qtvd9   Successfully update ObservedGeneration and FailedMessage of resource
+17m         Warning   Failed                              podnetworkchaos/frontend-694b9f76cd-qtvd9   Failed to set tc: failed to apply for pod default/frontend-694b9f76cd-qtvd9: unable to set tcs for pod frontend-694b9f76cd-qtvd9
+17m         Normal    Updated                             podnetworkchaos/frontend-694b9f76cd-qtvd9   Successfully update ObservedGeneration and FailedMessage of resource
+17m         Normal    Updated                             podnetworkchaos/frontend-694b9f76cd-qtvd9   Successfully update ObservedGeneration and FailedMessage of resource
+17m         Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+17m         Normal    Updated                             podnetworkchaos/frontend-694b9f76cd-qtvd9   Successfully update ObservedGeneration and FailedMessage of resource
+17m         Warning   Failed                              podnetworkchaos/frontend-694b9f76cd-qtvd9   Failed to set tc: failed to apply for pod default/frontend-694b9f76cd-qtvd9: unable to set tcs for pod frontend-694b9f76cd-qtvd9
+17m         Normal    Updated                             podnetworkchaos/frontend-694b9f76cd-qtvd9   Successfully update ObservedGeneration and FailedMessage of resource
+17m         Warning   Failed                              podnetworkchaos/frontend-694b9f76cd-qtvd9   Failed to set tc: failed to apply for pod default/frontend-694b9f76cd-qtvd9: unable to set tcs for pod frontend-694b9f76cd-qtvd9
+17m         Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+17m         Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-qtvd9: unable to set tcs for pod frontend-694b9f76cd-qtvd9
+17m         Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+17m         Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-qtvd9: unable to set tcs for pod frontend-694b9f76cd-qtvd9
+17m         Normal    Updated                             podnetworkchaos/frontend-694b9f76cd-qtvd9   Successfully update ObservedGeneration and FailedMessage of resource
+17m         Warning   Failed                              podnetworkchaos/frontend-694b9f76cd-qtvd9   Failed to set tc: failed to apply for pod default/frontend-694b9f76cd-qtvd9: unable to set tcs for pod frontend-694b9f76cd-qtvd9
+17m         Warning   Failed                              podnetworkchaos/frontend-694b9f76cd-qtvd9   Failed to set tc: failed to apply for pod default/frontend-694b9f76cd-qtvd9: unable to set tcs for pod frontend-694b9f76cd-qtvd9
+17m         Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+17m         Normal    Updated                             podnetworkchaos/frontend-694b9f76cd-qtvd9   Successfully update ObservedGeneration and FailedMessage of resource
+17m         Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-qtvd9: unable to set tcs for pod frontend-694b9f76cd-qtvd9
+17m         Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+17m         Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-qtvd9: unable to set tcs for pod frontend-694b9f76cd-qtvd9
+17m         Normal    Updated                             podnetworkchaos/frontend-694b9f76cd-qtvd9   Successfully update ObservedGeneration and FailedMessage of resource
+17m         Warning   Failed                              podnetworkchaos/frontend-694b9f76cd-qtvd9   Failed to set tc: failed to apply for pod default/frontend-694b9f76cd-qtvd9: unable to set tcs for pod frontend-694b9f76cd-qtvd9
+17m         Normal    Updated                             podnetworkchaos/frontend-694b9f76cd-qtvd9   Successfully update ObservedGeneration and FailedMessage of resource
+17m         Warning   Failed                              podnetworkchaos/frontend-694b9f76cd-qtvd9   Failed to set tc: failed to apply for pod default/frontend-694b9f76cd-qtvd9: unable to set tcs for pod frontend-694b9f76cd-qtvd9
+16m         Normal    Updated                             podnetworkchaos/frontend-694b9f76cd-qtvd9   Successfully update ObservedGeneration and FailedMessage of resource
+16m         Warning   Failed                              podnetworkchaos/frontend-694b9f76cd-qtvd9   Failed to set tc: failed to apply for pod default/frontend-694b9f76cd-qtvd9: unable to set tcs for pod frontend-694b9f76cd-qtvd9
+16m         Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-qtvd9: unable to set tcs for pod frontend-694b9f76cd-qtvd9
+16m         Normal    TimeUp                              networkchaos/network-delay                  Time up according to the duration
+16m         Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-qtvd9: unable to set tcs for pod frontend-694b9f76cd-qtvd9
+16m         Normal    Updated                             networkchaos/network-delay                  Successfully update desiredPhase of resource
+16m         Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+16m         Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+16m         Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-qtvd9: unable to set tcs for pod frontend-694b9f76cd-qtvd9
+16m         Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+16m         Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+16m         Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-qtvd9: unable to set tcs for pod frontend-694b9f76cd-qtvd9
+16m         Warning   Failed                              podnetworkchaos/frontend-694b9f76cd-qtvd9   Failed to set tc: failed to apply for pod default/frontend-694b9f76cd-qtvd9: unable to set tcs for pod frontend-694b9f76cd-qtvd9
+16m         Normal    Updated                             podnetworkchaos/frontend-694b9f76cd-qtvd9   Successfully update ObservedGeneration and FailedMessage of resource
+15m         Normal    Killing                             pod/redis-cart-6899b65948-fpgb6             Stopping container redis
+15m         Normal    SuccessfulCreate                    replicaset/redis-cart-6899b65948            Created pod: redis-cart-6899b65948-nfzmx
+15m         Normal    Scheduled                           pod/redis-cart-6899b65948-nfzmx             Successfully assigned default/redis-cart-6899b65948-nfzmx to minikube
+15m         Normal    Pulled                              pod/redis-cart-6899b65948-nfzmx             Container image "redis:alpine" already present on machine and can be accessed by the pod
+15m         Normal    Created                             pod/redis-cart-6899b65948-nfzmx             Container created
+15m         Normal    Started                             pod/redis-cart-6899b65948-nfzmx             Container started
+15m         Warning   Unhealthy                           pod/redis-cart-6899b65948-nfzmx             Readiness probe failed: dial tcp 10.244.0.187:6379: connect: connection refused
+14m         Normal    Updated                             podnetworkchaos/frontend-694b9f76cd-qtvd9   Successfully update ObservedGeneration and FailedMessage of resource
+14m         Warning   Failed                              podnetworkchaos/frontend-694b9f76cd-qtvd9   Failed to set tc: failed to apply for pod default/frontend-694b9f76cd-qtvd9: unable to set tcs for pod frontend-694b9f76cd-qtvd9
+13m         Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-qtvd9: unable to set tcs for pod frontend-694b9f76cd-qtvd9
+13m         Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-qtvd9: unable to set tcs for pod frontend-694b9f76cd-qtvd9
+13m         Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+13m         Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+13m         Normal    SuccessfulCreate                    replicaset/frontend-694b9f76cd              Created pod: frontend-694b9f76cd-m7sj7
+13m         Normal    FinalizerInited                     podchaos/frontend-podkill                   Finalizer has been inited
+13m         Normal    Updated                             podchaos/frontend-podkill                   Successfully update records of resource
+13m         Normal    Killing                             pod/frontend-694b9f76cd-qtvd9               Stopping container server
+13m         Normal    Updated                             podchaos/frontend-podkill                   Successfully update finalizer of resource
+13m         Normal    Updated                             podchaos/frontend-podkill                   Successfully update desiredPhase of resource
+13m         Normal    Applied                             podchaos/frontend-podkill                   Successfully apply chaos for default/frontend-694b9f76cd-qtvd9
+13m         Normal    Scheduled                           pod/frontend-694b9f76cd-m7sj7               Successfully assigned default/frontend-694b9f76cd-m7sj7 to minikube
+13m         Normal    Failed                              networkchaos/network-delay                  Failed to update conditions: networkchaos.chaos-mesh.org "network-delay" not found
+13m         Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+13m         Normal    FinalizerInited                     networkchaos/network-delay                  Finalizer has been removed
+13m         Normal    Updated                             networkchaos/network-delay                  Successfully update finalizer of resource
+13m         Normal    Started                             pod/frontend-694b9f76cd-m7sj7               Container started
+13m         Normal    Created                             pod/frontend-694b9f76cd-m7sj7               Container created
+13m         Normal    Pulled                              pod/frontend-694b9f76cd-m7sj7               Container image "us-central1-docker.pkg.dev/google-samples/microservices-demo/frontend:v0.10.4" already present on machine and can be accessed by the pod
+12m         Normal    Updated                             podchaos/frontend-podkill                   Successfully update desiredPhase of resource
+12m         Normal    FinalizerInited                     podchaos/frontend-podkill                   Finalizer has been removed
+12m         Normal    Deleted                             podchaos/frontend-podkill                   Experiment has been deleted
+12m         Normal    Recovered                           podchaos/frontend-podkill                   Successfully recover chaos for default/frontend-694b9f76cd-qtvd9
+12m         Normal    Updated                             podchaos/frontend-podkill                   Successfully update records of resource
+12m         Normal    Updated                             podchaos/frontend-podkill                   Successfully update finalizer of resource
+11m         Normal    FinalizerInited                     stresschaos/cpu-stress                      Finalizer has been inited
+11m         Normal    Updated                             stresschaos/cpu-stress                      Successfully update finalizer of resource
+11m         Normal    Started                             stresschaos/cpu-stress                      Experiment has started
+11m         Normal    Updated                             stresschaos/cpu-stress                      Successfully update desiredPhase of resource
+11m         Normal    Applied                             stresschaos/cpu-stress                      Successfully apply chaos for default/recommendationservice-6f8f67d69-7cw9t/server
+11m         Normal    Updated                             stresschaos/cpu-stress                      Successfully update records of resource
+10m         Normal    Updated                             stresschaos/cpu-stress                      Successfully update desiredPhase of resource
+10m         Normal    Updated                             stresschaos/cpu-stress                      Successfully update records of resource
+10m         Normal    Recovered                           stresschaos/cpu-stress                      Successfully recover chaos for default/recommendationservice-6f8f67d69-7cw9t/server
+10m         Normal    Deleted                             stresschaos/cpu-stress                      Experiment has been deleted
+10m         Normal    FinalizerInited                     stresschaos/cpu-stress                      Finalizer has been removed
+10m         Normal    Updated                             stresschaos/cpu-stress                      Successfully update finalizer of resource
+9m14s       Normal    FinalizerInited                     networkchaos/network-delay                  Finalizer has been inited
+9m13s       Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-m7sj7: unable to set tcs for pod frontend-694b9f76cd-m7sj7
+9m13s       Normal    Updated                             podnetworkchaos/frontend-694b9f76cd-m7sj7   Successfully update ObservedGeneration and FailedMessage of resource
+9m13s       Warning   Failed                              podnetworkchaos/frontend-694b9f76cd-m7sj7   Failed to set tc: failed to apply for pod default/frontend-694b9f76cd-m7sj7: unable to set tcs for pod frontend-694b9f76cd-m7sj7
+9m13s       Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+9m13s       Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-m7sj7: unable to set tcs for pod frontend-694b9f76cd-m7sj7
+9m13s       Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+9m13s       Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-m7sj7: unable to set tcs for pod frontend-694b9f76cd-m7sj7
+9m13s       Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+9m13s       Normal    Updated                             networkchaos/network-delay                  Successfully update desiredPhase of resource
+9m14s       Normal    Started                             networkchaos/network-delay                  Experiment has started
+9m14s       Normal    Updated                             networkchaos/network-delay                  Successfully update finalizer of resource
+9m12s       Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-m7sj7: unable to set tcs for pod frontend-694b9f76cd-m7sj7
+9m12s       Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-m7sj7: unable to set tcs for pod frontend-694b9f76cd-m7sj7
+9m12s       Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+9m12s       Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+9m12s       Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-m7sj7: unable to set tcs for pod frontend-694b9f76cd-m7sj7
+9m12s       Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+9m12s       Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-m7sj7: unable to set tcs for pod frontend-694b9f76cd-m7sj7
+9m12s       Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+9m12s       Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+9m12s       Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-m7sj7: unable to set tcs for pod frontend-694b9f76cd-m7sj7
+9m12s       Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+9m12s       Warning   Failed                              podnetworkchaos/frontend-694b9f76cd-m7sj7   Failed to set tc: failed to apply for pod default/frontend-694b9f76cd-m7sj7: unable to set tcs for pod frontend-694b9f76cd-m7sj7
+9m12s       Normal    Updated                             podnetworkchaos/frontend-694b9f76cd-m7sj7   Successfully update ObservedGeneration and FailedMessage of resource
+9m12s       Warning   Failed                              podnetworkchaos/frontend-694b9f76cd-m7sj7   Failed to set tc: failed to apply for pod default/frontend-694b9f76cd-m7sj7: unable to set tcs for pod frontend-694b9f76cd-m7sj7
+9m12s       Normal    Updated                             podnetworkchaos/frontend-694b9f76cd-m7sj7   Successfully update ObservedGeneration and FailedMessage of resource
+9m12s       Warning   Failed                              podnetworkchaos/frontend-694b9f76cd-m7sj7   Failed to set tc: failed to apply for pod default/frontend-694b9f76cd-m7sj7: unable to set tcs for pod frontend-694b9f76cd-m7sj7
+9m12s       Normal    Updated                             podnetworkchaos/frontend-694b9f76cd-m7sj7   Successfully update ObservedGeneration and FailedMessage of resource
+9m11s       Warning   Failed                              podnetworkchaos/frontend-694b9f76cd-m7sj7   Failed to set tc: failed to apply for pod default/frontend-694b9f76cd-m7sj7: unable to set tcs for pod frontend-694b9f76cd-m7sj7
+9m11s       Normal    Updated                             podnetworkchaos/frontend-694b9f76cd-m7sj7   Successfully update ObservedGeneration and FailedMessage of resource
+9m11s       Warning   Failed                              podnetworkchaos/frontend-694b9f76cd-m7sj7   Failed to set tc: failed to apply for pod default/frontend-694b9f76cd-m7sj7: unable to set tcs for pod frontend-694b9f76cd-m7sj7
+9m11s       Normal    Updated                             podnetworkchaos/frontend-694b9f76cd-m7sj7   Successfully update ObservedGeneration and FailedMessage of resource
+9m11s       Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+9m11s       Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-m7sj7: unable to set tcs for pod frontend-694b9f76cd-m7sj7
+9m11s       Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+9m11s       Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-m7sj7: unable to set tcs for pod frontend-694b9f76cd-m7sj7
+9m11s       Normal    Updated                             podnetworkchaos/frontend-694b9f76cd-m7sj7   Successfully update ObservedGeneration and FailedMessage of resource
+9m11s       Warning   Failed                              podnetworkchaos/frontend-694b9f76cd-m7sj7   Failed to set tc: failed to apply for pod default/frontend-694b9f76cd-m7sj7: unable to set tcs for pod frontend-694b9f76cd-m7sj7
+9m10s       Normal    Updated                             podnetworkchaos/frontend-694b9f76cd-m7sj7   Successfully update ObservedGeneration and FailedMessage of resource
+9m10s       Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-m7sj7: unable to set tcs for pod frontend-694b9f76cd-m7sj7
+9m10s       Warning   Failed                              podnetworkchaos/frontend-694b9f76cd-m7sj7   Failed to set tc: failed to apply for pod default/frontend-694b9f76cd-m7sj7: unable to set tcs for pod frontend-694b9f76cd-m7sj7
+9m10s       Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+9m10s       Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-m7sj7: unable to set tcs for pod frontend-694b9f76cd-m7sj7
+9m10s       Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+9m9s        Normal    Updated                             podnetworkchaos/frontend-694b9f76cd-m7sj7   Successfully update ObservedGeneration and FailedMessage of resource
+9m9s        Warning   Failed                              podnetworkchaos/frontend-694b9f76cd-m7sj7   Failed to set tc: failed to apply for pod default/frontend-694b9f76cd-m7sj7: unable to set tcs for pod frontend-694b9f76cd-m7sj7
+9m8s        Warning   Failed                              podnetworkchaos/frontend-694b9f76cd-m7sj7   Failed to set tc: failed to apply for pod default/frontend-694b9f76cd-m7sj7: unable to set tcs for pod frontend-694b9f76cd-m7sj7
+9m8s        Normal    Updated                             podnetworkchaos/frontend-694b9f76cd-m7sj7   Successfully update ObservedGeneration and FailedMessage of resource
+9m5s        Normal    Updated                             podnetworkchaos/frontend-694b9f76cd-m7sj7   Successfully update ObservedGeneration and FailedMessage of resource
+9m5s        Warning   Failed                              podnetworkchaos/frontend-694b9f76cd-m7sj7   Failed to set tc: failed to apply for pod default/frontend-694b9f76cd-m7sj7: unable to set tcs for pod frontend-694b9f76cd-m7sj7
+9m5s        Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-m7sj7: unable to set tcs for pod frontend-694b9f76cd-m7sj7
+9m5s        Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-m7sj7: unable to set tcs for pod frontend-694b9f76cd-m7sj7
+9m5s        Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+9m4s        Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+9m          Warning   Failed                              podnetworkchaos/frontend-694b9f76cd-m7sj7   Failed to set tc: failed to apply for pod default/frontend-694b9f76cd-m7sj7: unable to set tcs for pod frontend-694b9f76cd-m7sj7
+9m          Normal    Updated                             podnetworkchaos/frontend-694b9f76cd-m7sj7   Successfully update ObservedGeneration and FailedMessage of resource
+8m48s       Normal    Updated                             podnetworkchaos/frontend-694b9f76cd-m7sj7   Successfully update ObservedGeneration and FailedMessage of resource
+8m48s       Warning   Failed                              podnetworkchaos/frontend-694b9f76cd-m7sj7   Failed to set tc: failed to apply for pod default/frontend-694b9f76cd-m7sj7: unable to set tcs for pod frontend-694b9f76cd-m7sj7
+8m42s       Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-m7sj7: unable to set tcs for pod frontend-694b9f76cd-m7sj7
+8m42s       Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+8m42s       Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-m7sj7: unable to set tcs for pod frontend-694b9f76cd-m7sj7
+8m42s       Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+8m27s       Normal    Updated                             podnetworkchaos/frontend-694b9f76cd-m7sj7   Successfully update ObservedGeneration and FailedMessage of resource
+8m27s       Warning   Failed                              podnetworkchaos/frontend-694b9f76cd-m7sj7   Failed to set tc: failed to apply for pod default/frontend-694b9f76cd-m7sj7: unable to set tcs for pod frontend-694b9f76cd-m7sj7
+8m11s       Normal    Deleted                             networkchaos/network-delay                  Experiment has been deleted
+8m11s       Normal    Updated                             networkchaos/network-delay                  Successfully update desiredPhase of resource
+8m11s       Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-m7sj7: unable to set tcs for pod frontend-694b9f76cd-m7sj7
+8m10s       Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-m7sj7: unable to set tcs for pod frontend-694b9f76cd-m7sj7
+8m10s       Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+8m10s       Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-m7sj7: unable to set tcs for pod frontend-694b9f76cd-m7sj7
+8m10s       Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+8m10s       Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+7m43s       Warning   Failed                              podnetworkchaos/frontend-694b9f76cd-m7sj7   Failed to set tc: failed to apply for pod default/frontend-694b9f76cd-m7sj7: unable to set tcs for pod frontend-694b9f76cd-m7sj7
+7m43s       Normal    Updated                             podnetworkchaos/frontend-694b9f76cd-m7sj7   Successfully update ObservedGeneration and FailedMessage of resource
+7m17s       Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+7m17s       Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-m7sj7: unable to set tcs for pod frontend-694b9f76cd-m7sj7
+7m17s       Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+7m17s       Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-m7sj7: unable to set tcs for pod frontend-694b9f76cd-m7sj7
+7m6s        Normal    SuccessfulCreate                    replicaset/redis-cart-6899b65948            Created pod: redis-cart-6899b65948-k49pt
+7m6s        Normal    Killing                             pod/redis-cart-6899b65948-nfzmx             Stopping container redis
+7m5s        Normal    Scheduled                           pod/redis-cart-6899b65948-k49pt             Successfully assigned default/redis-cart-6899b65948-k49pt to minikube
+7m3s        Normal    Pulled                              pod/redis-cart-6899b65948-k49pt             Container image "redis:alpine" already present on machine and can be accessed by the pod
+7m3s        Normal    Created                             pod/redis-cart-6899b65948-k49pt             Container created
+7m2s        Warning   Unhealthy                           pod/redis-cart-6899b65948-k49pt             Readiness probe failed: dial tcp 10.244.0.189:6379: connect: connection refused
+7m2s        Normal    Started                             pod/redis-cart-6899b65948-k49pt             Container started
+6m18s       Warning   Failed                              podnetworkchaos/frontend-694b9f76cd-m7sj7   Failed to set tc: failed to apply for pod default/frontend-694b9f76cd-m7sj7: unable to set tcs for pod frontend-694b9f76cd-m7sj7
+6m17s       Normal    Updated                             podnetworkchaos/frontend-694b9f76cd-m7sj7   Successfully update ObservedGeneration and FailedMessage of resource
+4m47s       Normal    Killing                             pod/frontend-694b9f76cd-m7sj7               Stopping container server
+4m47s       Normal    FinalizerInited                     podchaos/frontend-podkill                   Finalizer has been inited
+4m47s       Normal    Updated                             podchaos/frontend-podkill                   Successfully update finalizer of resource
+4m47s       Normal    Updated                             podchaos/frontend-podkill                   Successfully update desiredPhase of resource
+4m47s       Normal    Updated                             podchaos/frontend-podkill                   Successfully update records of resource
+4m47s       Normal    Applied                             podchaos/frontend-podkill                   Successfully apply chaos for default/frontend-694b9f76cd-m7sj7
+4m46s       Normal    Updated                             networkchaos/network-delay                  Successfully update finalizer of resource
+4m46s       Normal    SuccessfulCreate                    replicaset/frontend-694b9f76cd              Created pod: frontend-694b9f76cd-2cgdd
+4m46s       Normal    Scheduled                           pod/frontend-694b9f76cd-2cgdd               Successfully assigned default/frontend-694b9f76cd-2cgdd to minikube
+4m46s       Normal    FinalizerInited                     networkchaos/network-delay                  Finalizer has been removed
+4m46s       Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+4m43s       Normal    Pulled                              pod/frontend-694b9f76cd-2cgdd               Container image "us-central1-docker.pkg.dev/google-samples/microservices-demo/frontend:v0.10.4" already present on machine and can be accessed by the pod
+4m43s       Normal    Created                             pod/frontend-694b9f76cd-2cgdd               Container created
+4m42s       Normal    Started                             pod/frontend-694b9f76cd-2cgdd               Container started
+3m38s       Normal    FinalizerInited                     podchaos/frontend-podkill                   Finalizer has been removed
+3m38s       Normal    Updated                             podchaos/frontend-podkill                   Successfully update records of resource
+3m38s       Normal    Recovered                           podchaos/frontend-podkill                   Successfully recover chaos for default/frontend-694b9f76cd-m7sj7
+3m38s       Normal    Deleted                             podchaos/frontend-podkill                   Experiment has been deleted
+3m38s       Normal    Updated                             podchaos/frontend-podkill                   Successfully update desiredPhase of resource
+3m36s       Normal    Updated                             podchaos/frontend-podkill                   Successfully update finalizer of resource
+3m36s       Normal    Failed                              podchaos/frontend-podkill                   Failed to update conditions: podchaos.chaos-mesh.org "frontend-podkill" not found
+2m33s       Normal    Updated                             stresschaos/cpu-stress                      Successfully update desiredPhase of resource
+2m33s       Normal    Updated                             stresschaos/cpu-stress                      Successfully update finalizer of resource
+2m33s       Normal    Updated                             stresschaos/cpu-stress                      Successfully update records of resource
+2m33s       Normal    Applied                             stresschaos/cpu-stress                      Successfully apply chaos for default/recommendationservice-6f8f67d69-7cw9t/server
+2m33s       Normal    FinalizerInited                     stresschaos/cpu-stress                      Finalizer has been inited
+2m33s       Normal    Started                             stresschaos/cpu-stress                      Experiment has started
+91s         Normal    Updated                             stresschaos/cpu-stress                      Successfully update records of resource
+91s         Normal    Updated                             stresschaos/cpu-stress                      Successfully update desiredPhase of resource
+91s         Normal    TimeUp                              stresschaos/cpu-stress                      Time up according to the duration
+91s         Normal    Recovered                           stresschaos/cpu-stress                      Successfully recover chaos for default/recommendationservice-6f8f67d69-7cw9t/server
+85s         Normal    Updated                             stresschaos/cpu-stress                      Successfully update finalizer of resource
+85s         Normal    FinalizerInited                     stresschaos/cpu-stress                      Finalizer has been removed
+21s         Normal    FinalizerInited                     networkchaos/network-delay                  Finalizer has been inited
+21s         Normal    Started                             networkchaos/network-delay                  Experiment has started
+21s         Normal    Updated                             networkchaos/network-delay                  Successfully update finalizer of resource
+20s         Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+20s         Normal    Updated                             podnetworkchaos/frontend-694b9f76cd-2cgdd   Successfully update ObservedGeneration and FailedMessage of resource
+20s         Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-2cgdd: unable to set tcs for pod frontend-694b9f76cd-2cgdd
+20s         Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+20s         Normal    Updated                             networkchaos/network-delay                  Successfully update desiredPhase of resource
+20s         Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-2cgdd: unable to set tcs for pod frontend-694b9f76cd-2cgdd
+20s         Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+20s         Warning   Failed                              podnetworkchaos/frontend-694b9f76cd-2cgdd   Failed to set tc: failed to apply for pod default/frontend-694b9f76cd-2cgdd: unable to set tcs for pod frontend-694b9f76cd-2cgdd
+19s         Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+19s         Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+20s         Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-2cgdd: unable to set tcs for pod frontend-694b9f76cd-2cgdd
+19s         Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-2cgdd: unable to set tcs for pod frontend-694b9f76cd-2cgdd
+19s         Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+19s         Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-2cgdd: unable to set tcs for pod frontend-694b9f76cd-2cgdd
+19s         Warning   Failed                              podnetworkchaos/frontend-694b9f76cd-2cgdd   Failed to set tc: failed to apply for pod default/frontend-694b9f76cd-2cgdd: unable to set tcs for pod frontend-694b9f76cd-2cgdd
+19s         Normal    Updated                             podnetworkchaos/frontend-694b9f76cd-2cgdd   Successfully update ObservedGeneration and FailedMessage of resource
+19s         Warning   Failed                              podnetworkchaos/frontend-694b9f76cd-2cgdd   Failed to set tc: failed to apply for pod default/frontend-694b9f76cd-2cgdd: unable to set tcs for pod frontend-694b9f76cd-2cgdd
+19s         Normal    Updated                             podnetworkchaos/frontend-694b9f76cd-2cgdd   Successfully update ObservedGeneration and FailedMessage of resource
+19s         Warning   Failed                              podnetworkchaos/frontend-694b9f76cd-2cgdd   Failed to set tc: failed to apply for pod default/frontend-694b9f76cd-2cgdd: unable to set tcs for pod frontend-694b9f76cd-2cgdd
+19s         Normal    Updated                             podnetworkchaos/frontend-694b9f76cd-2cgdd   Successfully update ObservedGeneration and FailedMessage of resource
+19s         Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+19s         Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-2cgdd: unable to set tcs for pod frontend-694b9f76cd-2cgdd
+19s         Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+19s         Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-2cgdd: unable to set tcs for pod frontend-694b9f76cd-2cgdd
+19s         Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+19s         Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-2cgdd: unable to set tcs for pod frontend-694b9f76cd-2cgdd
+18s         Warning   Failed                              podnetworkchaos/frontend-694b9f76cd-2cgdd   Failed to set tc: failed to apply for pod default/frontend-694b9f76cd-2cgdd: unable to set tcs for pod frontend-694b9f76cd-2cgdd
+18s         Normal    Updated                             podnetworkchaos/frontend-694b9f76cd-2cgdd   Successfully update ObservedGeneration and FailedMessage of resource
+18s         Warning   Failed                              podnetworkchaos/frontend-694b9f76cd-2cgdd   Failed to set tc: failed to apply for pod default/frontend-694b9f76cd-2cgdd: unable to set tcs for pod frontend-694b9f76cd-2cgdd
+18s         Normal    Updated                             podnetworkchaos/frontend-694b9f76cd-2cgdd   Successfully update ObservedGeneration and FailedMessage of resource
+18s         Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+18s         Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-2cgdd: unable to set tcs for pod frontend-694b9f76cd-2cgdd
+18s         Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+18s         Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-2cgdd: unable to set tcs for pod frontend-694b9f76cd-2cgdd
+18s         Normal    Updated                             podnetworkchaos/frontend-694b9f76cd-2cgdd   Successfully update ObservedGeneration and FailedMessage of resource
+18s         Warning   Failed                              podnetworkchaos/frontend-694b9f76cd-2cgdd   Failed to set tc: failed to apply for pod default/frontend-694b9f76cd-2cgdd: unable to set tcs for pod frontend-694b9f76cd-2cgdd
+17s         Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+17s         Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+17s         Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-2cgdd: unable to set tcs for pod frontend-694b9f76cd-2cgdd
+17s         Warning   Failed                              podnetworkchaos/frontend-694b9f76cd-2cgdd   Failed to set tc: failed to apply for pod default/frontend-694b9f76cd-2cgdd: unable to set tcs for pod frontend-694b9f76cd-2cgdd
+17s         Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-2cgdd: unable to set tcs for pod frontend-694b9f76cd-2cgdd
+17s         Normal    Updated                             podnetworkchaos/frontend-694b9f76cd-2cgdd   Successfully update ObservedGeneration and FailedMessage of resource
+16s         Normal    Updated                             podnetworkchaos/frontend-694b9f76cd-2cgdd   Successfully update ObservedGeneration and FailedMessage of resource
+16s         Warning   Failed                              podnetworkchaos/frontend-694b9f76cd-2cgdd   Failed to set tc: failed to apply for pod default/frontend-694b9f76cd-2cgdd: unable to set tcs for pod frontend-694b9f76cd-2cgdd
+15s         Normal    Updated                             podnetworkchaos/frontend-694b9f76cd-2cgdd   Successfully update ObservedGeneration and FailedMessage of resource
+15s         Warning   Failed                              podnetworkchaos/frontend-694b9f76cd-2cgdd   Failed to set tc: failed to apply for pod default/frontend-694b9f76cd-2cgdd: unable to set tcs for pod frontend-694b9f76cd-2cgdd
+11s         Normal    Updated                             podnetworkchaos/frontend-694b9f76cd-2cgdd   Successfully update ObservedGeneration and FailedMessage of resource
+11s         Warning   Failed                              podnetworkchaos/frontend-694b9f76cd-2cgdd   Failed to set tc: failed to apply for pod default/frontend-694b9f76cd-2cgdd: unable to set tcs for pod frontend-694b9f76cd-2cgdd
+10s         Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-2cgdd: unable to set tcs for pod frontend-694b9f76cd-2cgdd
+10s         Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+10s         Normal    Updated                             networkchaos/network-delay                  Successfully update records of resource
+10s         Warning   Failed                              networkchaos/network-delay                  Failed to apply chaos: failed to apply for pod default/frontend-694b9f76cd-2cgdd: unable to set tcs for pod frontend-694b9f76cd-2cgdd
+5s          Normal    Updated                             podnetworkchaos/frontend-694b9f76cd-2cgdd   Successfully update ObservedGeneration and FailedMessage of resource
+5s          Warning   Failed                              podnetworkchaos/frontend-694b9f76cd-2cgdd   Failed to set tc: failed to apply for pod default/frontend-694b9f76cd-2cgdd: unable to set tcs for pod frontend-694b9f76cd-2cgdd

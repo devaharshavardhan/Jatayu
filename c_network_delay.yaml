@@ -2,6 +2,7 @@ apiVersion: chaos-mesh.org/v1alpha1
 kind: NetworkChaos
 metadata:
   name: network-delay
+  namespace: default
 spec:
   action: delay
   mode: one
@@ -12,4 +13,4 @@ spec:
       app: frontend
   delay:
     latency: "200ms"
-  duration: "1m"
+  duration: "45s"

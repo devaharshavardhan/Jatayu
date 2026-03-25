@@ -1,0 +1,79 @@
+[
+  {
+    "service": "adservice",
+    "pod": "adservice-8576649cff-rvdb4",
+    "cpu_millicores": 21,
+    "memory_mib": 113,
+    "snapshot_time": "2026-03-25 12:10:03+00:00"
+  },
+  {
+    "service": "cartservice",
+    "pod": "cartservice-546c548494-j4j6h",
+    "cpu_millicores": 10,
+    "memory_mib": 76,
+    "snapshot_time": "2026-03-25 12:10:03+00:00"
+  },
+  {
+    "service": "checkoutservice",
+    "pod": "checkoutservice-75b9cd684f-dc5tt",
+    "cpu_millicores": 3,
+    "memory_mib": 22,
+    "snapshot_time": "2026-03-25 12:10:03+00:00"
+  },
+  {
+    "service": "currencyservice",
+    "pod": "currencyservice-fd8f5dfb7-cljwx",
+    "cpu_millicores": 17,
+    "memory_mib": 63,
+    "snapshot_time": "2026-03-25 12:10:03+00:00"
+  },
+  {
+    "service": "emailservice",
+    "pod": "emailservice-7466dc585-cj92q",
+    "cpu_millicores": 4,
+    "memory_mib": 48,
+    "snapshot_time": "2026-03-25 12:10:03+00:00"
+  },
+  {
+    "service": "loadgenerator",
+    "pod": "loadgenerator-7dd458dd5b-8s9hz",
+    "cpu_millicores": 9,
+    "memory_mib": 83,
+    "snapshot_time": "2026-03-25 12:10:03+00:00"
+  },
+  {
+    "service": "paymentservice",
+    "pod": "paymentservice-6b76dfb449-m2g8g",
+    "cpu_millicores": 2,
+    "memory_mib": 57,
+    "snapshot_time": "2026-03-25 12:10:03+00:00"
+  },
+  {
+    "service": "productcatalogservice",
+    "pod": "productcatalogservice-fb49fc9cc-gh6hr",
+    "cpu_millicores": 16,
+    "memory_mib": 27,
+    "snapshot_time": "2026-03-25 12:10:03+00:00"
+  },
+  {
+    "service": "recommendationservice",
+    "pod": "recommendationservice-6f8f67d69-7cw9t",
+    "cpu_millicores": 16,
+    "memory_mib": 78,
+    "snapshot_time": "2026-03-25 12:10:03+00:00"
+  },
+  {
+    "service": "redis-cart",
+    "pod": "redis-cart-6899b65948-k49pt",
+    "cpu_millicores": 5,
+    "memory_mib": 11,
+    "snapshot_time": "2026-03-25 12:10:03+00:00"
+  },
+  {
+    "service": "shippingservice",
+    "pod": "shippingservice-55656785c7-b48d2",
+    "cpu_millicores": 3,
+    "memory_mib": 23,
+    "snapshot_time": "2026-03-25 12:10:03+00:00"
+  }
+]

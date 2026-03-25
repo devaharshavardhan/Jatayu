@@ -1,0 +1,12 @@
+{
+  "frontend": ["cartservice", "checkoutservice", "recommendationservice", "productcatalogservice"],
+  "cartservice": ["redis-cart"],
+  "checkoutservice": ["paymentservice", "shippingservice", "emailservice", "currencyservice", "cartservice", "productcatalogservice"],
+  "recommendationservice": ["productcatalogservice"],
+  "paymentservice": [],
+  "shippingservice": [],
+  "emailservice": [],
+  "currencyservice": [],
+  "productcatalogservice": [],
+  "redis-cart": []
+}

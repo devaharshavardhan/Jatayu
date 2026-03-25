@@ -2,19 +2,16 @@
 
 set -euo pipefail
 
-NAMESPACE="default"
-CHAOS_NAMESPACE="chaos-testing"
-
 DATASET_DIR="dataset"
 
 SCENARIOS=(
-c_pod_kill
-c_cpu_spike
-c_network_delay
-c_redis_failure
+  c_pod_kill
+  c_cpu_spike
+  c_network_delay
+  c_redis_failure
 )
 
-CHAOS_DURATION=40
+SNAPSHOT_COUNT=5
 SAMPLE_INTERVAL=5
 STABILIZE_TIME=60
 
@@ -34,35 +31,36 @@ do
   fi
 
   log "Running scenario: $SCENARIO"
+  log "Using manifest: $YAML_FILE"
 
   EXPERIMENT_TIME=$(date +%s)
-  EXP_DIR="$DATASET_DIR/$SCENARIO/$EXPERIMENT_TIME"
+  mkdir -p "$DATASET_DIR/$SCENARIO/$EXPERIMENT_TIME"
 
-  mkdir -p "$EXP_DIR"
-
+  log "Applying chaos manifest"
   kubectl apply -f "$YAML_FILE"
+  log "Chaos injected successfully"
 
-  log "Chaos injected. Collecting telemetry..."
+  log "Collecting telemetry..."
 
-  END_TIME=$((SECONDS + CHAOS_DURATION))
-  SNAPSHOT_ID=0
-
-  while [ $SECONDS -lt $END_TIME ]
+  for ((SNAPSHOT_ID=0; SNAPSHOT_ID<SNAPSHOT_COUNT; SNAPSHOT_ID++))
   do
+      log "Collecting snapshot $SNAPSHOT_ID for $SCENARIO"
       bash collect_telemetry.sh "$SCENARIO" "$EXPERIMENT_TIME" "$SNAPSHOT_ID"
-      SNAPSHOT_ID=$((SNAPSHOT_ID+1))
-      sleep $SAMPLE_INTERVAL
+
+      if [[ $SNAPSHOT_ID -lt $((SNAPSHOT_COUNT-1)) ]]; then
+          sleep "$SAMPLE_INTERVAL"
+      fi
   done
 
-  log "Removing chaos experiment"
-  kubectl delete -f "$YAML_FILE" --ignore-not-found
+  log "Removing chaos experiment for $SCENARIO"
+  kubectl delete -f "$YAML_FILE" --ignore-not-found --wait=false || true
+  log "Delete request sent for $SCENARIO"
 
-  log "Cluster stabilization"
-  sleep $STABILIZE_TIME
+  log "Cluster stabilization for $SCENARIO"
+  sleep "$STABILIZE_TIME"
 
   log "Scenario completed: $SCENARIO"
   echo "------------------------------------"
-
 done
 
 log "All experiments completed"

@@ -1,0 +1,235 @@
+[
+  {
+    "service": "adservice",
+    "snapshot_time": "2026-03-25 12:14:39+00:00",
+    "status": "failed",
+    "severity_score": 0.9,
+    "anomaly_flags": [
+      "high_restarts",
+      "pod_killed",
+      "readiness_probe_failed"
+    ],
+    "evidence": [
+      "9 restarts detected",
+      "Pod termination event detected",
+      "Readiness probe failure observed"
+    ]
+  },
+  {
+    "service": "cartservice",
+    "snapshot_time": "2026-03-25 12:14:39+00:00",
+    "status": "failed",
+    "severity_score": 0.9,
+    "anomaly_flags": [
+      "high_restarts",
+      "pod_killed",
+      "readiness_probe_failed"
+    ],
+    "evidence": [
+      "7 restarts detected",
+      "Pod termination event detected",
+      "Readiness probe failure observed"
+    ]
+  },
+  {
+    "service": "checkoutservice",
+    "snapshot_time": "2026-03-25 12:14:39+00:00",
+    "status": "degraded",
+    "severity_score": 0.4,
+    "anomaly_flags": [
+      "high_restarts",
+      "pod_killed"
+    ],
+    "evidence": [
+      "7 restarts detected",
+      "Pod termination event detected"
+    ]
+  },
+  {
+    "service": "currencyservice",
+    "snapshot_time": "2026-03-25 12:14:39+00:00",
+    "status": "failed",
+    "severity_score": 0.9,
+    "anomaly_flags": [
+      "high_restarts",
+      "pod_killed",
+      "readiness_probe_failed"
+    ],
+    "evidence": [
+      "10 restarts detected",
+      "Pod termination event detected",
+      "Readiness probe failure observed"
+    ]
+  },
+  {
+    "service": "emailservice",
+    "snapshot_time": "2026-03-25 12:14:39+00:00",
+    "status": "failed",
+    "severity_score": 0.9,
+    "anomaly_flags": [
+      "crash_loop",
+      "high_restarts",
+      "pod_killed",
+      "readiness_probe_failed"
+    ],
+    "evidence": [
+      "30 restarts detected",
+      "Crash loop/backoff condition observed",
+      "Pod termination event detected",
+      "Readiness probe failure observed"
+    ]
+  },
+  {
+    "service": "frontend",
+    "snapshot_time": "2026-03-25 12:14:39+00:00",
+    "status": "degraded",
+    "severity_score": 0.3,
+    "anomaly_flags": [
+      "pod_killed"
+    ],
+    "evidence": [
+      "Pod termination event detected"
+    ]
+  },
+  {
+    "service": "loadgenerator",
+    "snapshot_time": "2026-03-25 12:14:39+00:00",
+    "status": "degraded",
+    "severity_score": 0.4,
+    "anomaly_flags": [
+      "high_restarts",
+      "pod_killed"
+    ],
+    "evidence": [
+      "7 restarts detected",
+      "Pod termination event detected"
+    ]
+  },
+  {
+    "service": "paymentservice",
+    "snapshot_time": "2026-03-25 12:14:39+00:00",
+    "status": "failed",
+    "severity_score": 0.9,
+    "anomaly_flags": [
+      "high_restarts",
+      "pod_killed",
+      "readiness_probe_failed"
+    ],
+    "evidence": [
+      "9 restarts detected",
+      "Pod termination event detected",
+      "Readiness probe failure observed"
+    ]
+  },
+  {
+    "service": "productcatalogservice",
+    "snapshot_time": "2026-03-25 12:14:39+00:00",
+    "status": "degraded",
+    "severity_score": 0.4,
+    "anomaly_flags": [
+      "high_restarts",
+      "pod_killed"
+    ],
+    "evidence": [
+      "7 restarts detected",
+      "Pod termination event detected"
+    ]
+  },
+  {
+    "service": "recommendationservice",
+    "snapshot_time": "2026-03-25 12:14:39+00:00",
+    "status": "failed",
+    "severity_score": 0.9,
+    "anomaly_flags": [
+      "high_restarts",
+      "pod_killed",
+      "readiness_probe_failed"
+    ],
+    "evidence": [
+      "27 restarts detected",
+      "Pod termination event detected",
+      "Readiness probe failure observed"
+    ]
+  },
+  {
+    "service": "redis-cart",
+    "snapshot_time": "2026-03-25 12:14:39+00:00",
+    "status": "failed",
+    "severity_score": 1.0,
+    "anomaly_flags": [
+      "pod_killed",
+      "readiness_probe_failed"
+    ],
+    "evidence": [
+      "Error log detected",
+      "Pod termination event detected",
+      "Readiness probe failure observed"
+    ]
+  },
+  {
+    "service": "shippingservice",
+    "snapshot_time": "2026-03-25 12:14:39+00:00",
+    "status": "degraded",
+    "severity_score": 0.4,
+    "anomaly_flags": [
+      "high_restarts",
+      "pod_killed"
+    ],
+    "evidence": [
+      "7 restarts detected",
+      "Pod termination event detected"
+    ]
+  },
+  {
+    "service": "network-delay",
+    "snapshot_time": "2026-03-25 12:14:39+00:00",
+    "status": "healthy",
+    "severity_score": 0.0,
+    "anomaly_flags": [],
+    "evidence": []
+  },
+  {
+    "service": "minikube",
+    "snapshot_time": "2026-03-25 12:14:39+00:00",
+    "status": "healthy",
+    "severity_score": 0.0,
+    "anomaly_flags": [],
+    "evidence": []
+  },
+  {
+    "service": "redis",
+    "snapshot_time": "2026-03-25 12:14:39+00:00",
+    "status": "healthy",
+    "severity_score": 0.0,
+    "anomaly_flags": [],
+    "evidence": []
+  },
+  {
+    "service": "frontend-podkill",
+    "snapshot_time": "2026-03-25 12:14:39+00:00",
+    "status": "healthy",
+    "severity_score": 0.1,
+    "anomaly_flags": [
+      "pod_killed"
+    ],
+    "evidence": [
+      "Pod termination event detected"
+    ]
+  },
+  {
+    "service": "frontend-694b9f76cd",
+    "snapshot_time": "2026-03-25 12:14:39+00:00",
+    "status": "healthy",
+    "severity_score": 0.0,
+    "anomaly_flags": [],
+    "evidence": []
+  },
+  {
+    "service": "cpu-stress",
+    "snapshot_time": "2026-03-25 12:14:39+00:00",
+    "status": "healthy",
+    "severity_score": 0.0,
+    "anomaly_flags": [],
+    "evidence": []
+  }
+]

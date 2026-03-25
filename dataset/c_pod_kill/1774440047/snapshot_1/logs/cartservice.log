@@ -1,0 +1,100 @@
+GetCartAsync called with userId=fcb2831f-0627-4791-ac1d-23821dc5b140
+GetCartAsync called with userId=513dd945-739c-4fe3-8e54-6e6927fbb733
+GetCartAsync called with userId=827eab86-1aba-4a15-8740-5fee5900d10f
+GetCartAsync called with userId=2d3bf3d7-22b5-49c9-8227-12126292f393
+GetCartAsync called with userId=32217267-98ca-4d66-9fc8-3f088b8def0f
+Checking CartService Health
+GetCartAsync called with userId=fcb2831f-0627-4791-ac1d-23821dc5b140
+GetCartAsync called with userId=513dd945-739c-4fe3-8e54-6e6927fbb733
+AddItemAsync called with userId=513dd945-739c-4fe3-8e54-6e6927fbb733, productId=66VCHSJNUP, quantity=3
+GetCartAsync called with userId=513dd945-739c-4fe3-8e54-6e6927fbb733
+Checking CartService Health
+GetCartAsync called with userId=514e00c6-206e-4c6e-873f-852b796455de
+AddItemAsync called with userId=514e00c6-206e-4c6e-873f-852b796455de, productId=66VCHSJNUP, quantity=8
+GetCartAsync called with userId=514e00c6-206e-4c6e-873f-852b796455de
+GetCartAsync called with userId=2d3bf3d7-22b5-49c9-8227-12126292f393
+GetCartAsync called with userId=a38c2610-1665-4c93-8051-4c451f5de325
+GetCartAsync called with userId=ecb080bf-5333-403f-9547-c8725d499228
+AddItemAsync called with userId=ecb080bf-5333-403f-9547-c8725d499228, productId=LS4PSXUNUM, quantity=1
+GetCartAsync called with userId=ecb080bf-5333-403f-9547-c8725d499228
+GetCartAsync called with userId=ecb080bf-5333-403f-9547-c8725d499228
+EmptyCartAsync called with userId=ecb080bf-5333-403f-9547-c8725d499228
+GetCartAsync called with userId=694745d8-a179-4c65-83d6-9ed873a7b94b
+GetCartAsync called with userId=32217267-98ca-4d66-9fc8-3f088b8def0f
+GetCartAsync called with userId=df4ce93a-5d92-40a8-93c2-540bf11bbb4d
+GetCartAsync called with userId=fcb2831f-0627-4791-ac1d-23821dc5b140
+GetCartAsync called with userId=827eab86-1aba-4a15-8740-5fee5900d10f
+GetCartAsync called with userId=2d3bf3d7-22b5-49c9-8227-12126292f393
+GetCartAsync called with userId=a38c2610-1665-4c93-8051-4c451f5de325
+GetCartAsync called with userId=32217267-98ca-4d66-9fc8-3f088b8def0f
+GetCartAsync called with userId=ecb080bf-5333-403f-9547-c8725d499228
+GetCartAsync called with userId=2d3bf3d7-22b5-49c9-8227-12126292f393
+GetCartAsync called with userId=513dd945-739c-4fe3-8e54-6e6927fbb733
+GetCartAsync called with userId=df4ce93a-5d92-40a8-93c2-540bf11bbb4d
+Checking CartService Health
+GetCartAsync called with userId=514e00c6-206e-4c6e-873f-852b796455de
+GetCartAsync called with userId=827eab86-1aba-4a15-8740-5fee5900d10f
+Checking CartService Health
+GetCartAsync called with userId=ecb080bf-5333-403f-9547-c8725d499228
+GetCartAsync called with userId=fcb2831f-0627-4791-ac1d-23821dc5b140
+GetCartAsync called with userId=32217267-98ca-4d66-9fc8-3f088b8def0f
+GetCartAsync called with userId=514e00c6-206e-4c6e-873f-852b796455de
+GetCartAsync called with userId=fcb2831f-0627-4791-ac1d-23821dc5b140
+GetCartAsync called with userId=694745d8-a179-4c65-83d6-9ed873a7b94b
+GetCartAsync called with userId=513dd945-739c-4fe3-8e54-6e6927fbb733
+AddItemAsync called with userId=513dd945-739c-4fe3-8e54-6e6927fbb733, productId=66VCHSJNUP, quantity=5
+GetCartAsync called with userId=513dd945-739c-4fe3-8e54-6e6927fbb733
+GetCartAsync called with userId=513dd945-739c-4fe3-8e54-6e6927fbb733
+EmptyCartAsync called with userId=513dd945-739c-4fe3-8e54-6e6927fbb733
+GetCartAsync called with userId=32217267-98ca-4d66-9fc8-3f088b8def0f
+GetCartAsync called with userId=827eab86-1aba-4a15-8740-5fee5900d10f
+GetCartAsync called with userId=a38c2610-1665-4c93-8051-4c451f5de325
+GetCartAsync called with userId=514e00c6-206e-4c6e-873f-852b796455de
+AddItemAsync called with userId=514e00c6-206e-4c6e-873f-852b796455de, productId=9SIQT8TOJO, quantity=9
+GetCartAsync called with userId=514e00c6-206e-4c6e-873f-852b796455de
+GetCartAsync called with userId=514e00c6-206e-4c6e-873f-852b796455de
+EmptyCartAsync called with userId=514e00c6-206e-4c6e-873f-852b796455de
+GetCartAsync called with userId=fcb2831f-0627-4791-ac1d-23821dc5b140
+GetCartAsync called with userId=df4ce93a-5d92-40a8-93c2-540bf11bbb4d
+GetCartAsync called with userId=2d3bf3d7-22b5-49c9-8227-12126292f393
+GetCartAsync called with userId=513dd945-739c-4fe3-8e54-6e6927fbb733
+GetCartAsync called with userId=32217267-98ca-4d66-9fc8-3f088b8def0f
+Checking CartService Health
+GetCartAsync called with userId=fcb2831f-0627-4791-ac1d-23821dc5b140
+GetCartAsync called with userId=ecb080bf-5333-403f-9547-c8725d499228
+Checking CartService Health
+GetCartAsync called with userId=fcb2831f-0627-4791-ac1d-23821dc5b140
+GetCartAsync called with userId=514e00c6-206e-4c6e-873f-852b796455de
+GetCartAsync called with userId=2d3bf3d7-22b5-49c9-8227-12126292f393
+GetCartAsync called with userId=694745d8-a179-4c65-83d6-9ed873a7b94b
+GetCartAsync called with userId=df4ce93a-5d92-40a8-93c2-540bf11bbb4d
+GetCartAsync called with userId=a38c2610-1665-4c93-8051-4c451f5de325
+AddItemAsync called with userId=a38c2610-1665-4c93-8051-4c451f5de325, productId=2ZYFJ3GM2N, quantity=8
+GetCartAsync called with userId=a38c2610-1665-4c93-8051-4c451f5de325
+GetCartAsync called with userId=827eab86-1aba-4a15-8740-5fee5900d10f
+GetCartAsync called with userId=694745d8-a179-4c65-83d6-9ed873a7b94b
+AddItemAsync called with userId=694745d8-a179-4c65-83d6-9ed873a7b94b, productId=6E92ZMYYFZ, quantity=1
+GetCartAsync called with userId=694745d8-a179-4c65-83d6-9ed873a7b94b
+GetCartAsync called with userId=513dd945-739c-4fe3-8e54-6e6927fbb733
+GetCartAsync called with userId=2d3bf3d7-22b5-49c9-8227-12126292f393
+GetCartAsync called with userId=827eab86-1aba-4a15-8740-5fee5900d10f
+GetCartAsync called with userId=ecb080bf-5333-403f-9547-c8725d499228
+GetCartAsync called with userId=514e00c6-206e-4c6e-873f-852b796455de
+GetCartAsync called with userId=32217267-98ca-4d66-9fc8-3f088b8def0f
+Checking CartService Health
+GetCartAsync called with userId=df4ce93a-5d92-40a8-93c2-540bf11bbb4d
+GetCartAsync called with userId=fcb2831f-0627-4791-ac1d-23821dc5b140
+GetCartAsync called with userId=2d3bf3d7-22b5-49c9-8227-12126292f393
+GetCartAsync called with userId=df4ce93a-5d92-40a8-93c2-540bf11bbb4d
+Checking CartService Health
+GetCartAsync called with userId=827eab86-1aba-4a15-8740-5fee5900d10f
+Checking CartService Health
+Checking CartService Health
+GetCartAsync called with userId=514e00c6-206e-4c6e-873f-852b796455de
+GetCartAsync called with userId=2d3bf3d7-22b5-49c9-8227-12126292f393
+GetCartAsync called with userId=32217267-98ca-4d66-9fc8-3f088b8def0f
+Checking CartService Health
+GetCartAsync called with userId=fcb2831f-0627-4791-ac1d-23821dc5b140
+GetCartAsync called with userId=827eab86-1aba-4a15-8740-5fee5900d10f
+GetCartAsync called with userId=2d3bf3d7-22b5-49c9-8227-12126292f393
+GetCartAsync called with userId=df4ce93a-5d92-40a8-93c2-540bf11bbb4d

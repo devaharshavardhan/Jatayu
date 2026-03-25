@@ -18,7 +18,7 @@ date > "$DIR/time.txt"
 kubectl top pods -n $NAMESPACE > "$DIR/pod_metrics.txt" || true
 
 # Pod status
-kubectl get pods -n $NAMESPACE -o wide > "$DIR/pods.txt"
+kubectl get pods -n $NAMESPACE -o json > "$DIR/pods.json"
 
 # Events
 kubectl get events -n $NAMESPACE \

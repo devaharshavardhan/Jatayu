@@ -1,0 +1,86 @@
+[
+  {
+    "service": "adservice",
+    "pod": "adservice-8576649cff-rvdb4",
+    "cpu_millicores": 6,
+    "memory_mib": 114,
+    "snapshot_time": "2026-03-25 12:03:01+00:00"
+  },
+  {
+    "service": "cartservice",
+    "pod": "cartservice-546c548494-j4j6h",
+    "cpu_millicores": 8,
+    "memory_mib": 75,
+    "snapshot_time": "2026-03-25 12:03:01+00:00"
+  },
+  {
+    "service": "checkoutservice",
+    "pod": "checkoutservice-75b9cd684f-dc5tt",
+    "cpu_millicores": 1,
+    "memory_mib": 23,
+    "snapshot_time": "2026-03-25 12:03:01+00:00"
+  },
+  {
+    "service": "currencyservice",
+    "pod": "currencyservice-fd8f5dfb7-cljwx",
+    "cpu_millicores": 19,
+    "memory_mib": 64,
+    "snapshot_time": "2026-03-25 12:03:01+00:00"
+  },
+  {
+    "service": "emailservice",
+    "pod": "emailservice-7466dc585-cj92q",
+    "cpu_millicores": 3,
+    "memory_mib": 48,
+    "snapshot_time": "2026-03-25 12:03:01+00:00"
+  },
+  {
+    "service": "frontend",
+    "pod": "frontend-694b9f76cd-m7sj7",
+    "cpu_millicores": 26,
+    "memory_mib": 15,
+    "snapshot_time": "2026-03-25 12:03:01+00:00"
+  },
+  {
+    "service": "loadgenerator",
+    "pod": "loadgenerator-7dd458dd5b-8s9hz",
+    "cpu_millicores": 8,
+    "memory_mib": 85,
+    "snapshot_time": "2026-03-25 12:03:01+00:00"
+  },
+  {
+    "service": "paymentservice",
+    "pod": "paymentservice-6b76dfb449-m2g8g",
+    "cpu_millicores": 1,
+    "memory_mib": 57,
+    "snapshot_time": "2026-03-25 12:03:01+00:00"
+  },
+  {
+    "service": "productcatalogservice",
+    "pod": "productcatalogservice-fb49fc9cc-gh6hr",
+    "cpu_millicores": 11,
+    "memory_mib": 27,
+    "snapshot_time": "2026-03-25 12:03:01+00:00"
+  },
+  {
+    "service": "recommendationservice",
+    "pod": "recommendationservice-6f8f67d69-7cw9t",
+    "cpu_millicores": 21,
+    "memory_mib": 88,
+    "snapshot_time": "2026-03-25 12:03:01+00:00"
+  },
+  {
+    "service": "redis-cart",
+    "pod": "redis-cart-6899b65948-nfzmx",
+    "cpu_millicores": 4,
+    "memory_mib": 12,
+    "snapshot_time": "2026-03-25 12:03:01+00:00"
+  },
+  {
+    "service": "shippingservice",
+    "pod": "shippingservice-55656785c7-b48d2",
+    "cpu_millicores": 2,
+    "memory_mib": 23,
+    "snapshot_time": "2026-03-25 12:03:01+00:00"
+  }
+]

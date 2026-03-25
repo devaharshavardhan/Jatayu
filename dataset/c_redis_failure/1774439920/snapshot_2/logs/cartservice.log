@@ -1,0 +1,100 @@
+      Error status code 'FailedPrecondition' with detail 'Can't access cart storage. StackExchange.Redis.RedisConnectionException: The message timed out in the backlog attempting to send because no connection became available (5000ms) - Last Connection Exception: SocketClosed (ReadEndOfStream, last-recv: 0) on redis-cart:6379/Interactive, Idle/MarkProcessed, last: HMGET, origin: ReadFromPipe, outstanding: 0, last-read: 0s ago, last-write: 3s ago, keep-alive: 60s, state: ConnectedEstablished, mgr: 8 of 10 available, in: 0, in-pipe: 0, out-pipe: 0, last-heartbeat: 0s ago, last-mbeat: 0s ago, global: 0s ago, v: 2.7.27.49176, command=HMGET, timeout: 5000, inst: 0, qu: 6, qs: 0, aw: False, bw: CheckingForTimeout, rs: NotStarted, ws: Initializing, in: 0, last-in: 0, cur-in: 0, sync-ops: 2, async-ops: 3174, serverEndpoint: redis-cart:6379, conn-sec: n/a, aoc: 0, mc: 1/1/0, mgr: 10 of 10 available, clientName: cartservice-546c548494-j4j6h(SE.Redis-v2.7.27.49176), IOCP: (Busy=0,Free=1000,Min=1,Max=1000), WORKER: (Busy=1,Free=32766,Min=1,Max=32767), POOL: (Threads=4,QueuedItems=2,CompletedItems=43381,Timers=12), v: 2.7.27.49176 (Please take a look at this article for some common client-side issues that can cause timeouts: https://stackexchange.github.io/StackExchange.Redis/Timeouts)
+       ---> StackExchange.Redis.RedisConnectionException: SocketClosed (ReadEndOfStream, last-recv: 0) on redis-cart:6379/Interactive, Idle/MarkProcessed, last: HMGET, origin: ReadFromPipe, outstanding: 0, last-read: 0s ago, last-write: 3s ago, keep-alive: 60s, state: ConnectedEstablished, mgr: 8 of 10 available, in: 0, in-pipe: 0, out-pipe: 0, last-heartbeat: 0s ago, last-mbeat: 0s ago, global: 0s ago, v: 2.7.27.49176
+         --- End of inner exception stack trace ---
+         at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAndRefreshAsync(String key, Boolean getData, CancellationToken token)
+         at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+         at cartservice.cartstore.RedisCartStore.GetCartAsync(String userId) in /app/cartstore/RedisCartStore.cs:line 90' raised.
+Checking CartService Health
+info: Grpc.AspNetCore.Server.ServerCallHandler[7]
+      Error status code 'FailedPrecondition' with detail 'Can't access cart storage. StackExchange.Redis.RedisConnectionException: The message timed out in the backlog attempting to send because no connection became available (5000ms) - Last Connection Exception: SocketClosed (ReadEndOfStream, last-recv: 0) on redis-cart:6379/Interactive, Idle/MarkProcessed, last: HMGET, origin: ReadFromPipe, outstanding: 0, last-read: 0s ago, last-write: 3s ago, keep-alive: 60s, state: ConnectedEstablished, mgr: 8 of 10 available, in: 0, in-pipe: 0, out-pipe: 0, last-heartbeat: 0s ago, last-mbeat: 0s ago, global: 0s ago, v: 2.7.27.49176, command=HMGET, timeout: 5000, inst: 0, qu: 5, qs: 0, aw: False, bw: CheckingForTimeout, rs: NotStarted, ws: Idle, in: 0, last-in: 0, cur-in: 0, sync-ops: 2, async-ops: 3174, serverEndpoint: redis-cart:6379, conn-sec: n/a, aoc: 0, mc: 1/1/0, mgr: 10 of 10 available, clientName: cartservice-546c548494-j4j6h(SE.Redis-v2.7.27.49176), IOCP: (Busy=0,Free=1000,Min=1,Max=1000), WORKER: (Busy=1,Free=32766,Min=1,Max=32767), POOL: (Threads=4,QueuedItems=0,CompletedItems=43417,Timers=8), v: 2.7.27.49176 (Please take a look at this article for some common client-side issues that can cause timeouts: https://stackexchange.github.io/StackExchange.Redis/Timeouts)
+       ---> StackExchange.Redis.RedisConnectionException: SocketClosed (ReadEndOfStream, last-recv: 0) on redis-cart:6379/Interactive, Idle/MarkProcessed, last: HMGET, origin: ReadFromPipe, outstanding: 0, last-read: 0s ago, last-write: 3s ago, keep-alive: 60s, state: ConnectedEstablished, mgr: 8 of 10 available, in: 0, in-pipe: 0, out-pipe: 0, last-heartbeat: 0s ago, last-mbeat: 0s ago, global: 0s ago, v: 2.7.27.49176
+         --- End of inner exception stack trace ---
+         at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAndRefreshAsync(String key, Boolean getData, CancellationToken token)
+         at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+         at cartservice.cartstore.RedisCartStore.GetCartAsync(String userId) in /app/cartstore/RedisCartStore.cs:line 90' raised.
+info: Grpc.AspNetCore.Server.ServerCallHandler[7]
+      Error status code 'FailedPrecondition' with detail 'Can't access cart storage. StackExchange.Redis.RedisConnectionException: The message timed out in the backlog attempting to send because no connection became available (5000ms) - Last Connection Exception: SocketClosed (ReadEndOfStream, last-recv: 0) on redis-cart:6379/Interactive, Idle/MarkProcessed, last: HMGET, origin: ReadFromPipe, outstanding: 0, last-read: 0s ago, last-write: 3s ago, keep-alive: 60s, state: ConnectedEstablished, mgr: 8 of 10 available, in: 0, in-pipe: 0, out-pipe: 0, last-heartbeat: 0s ago, last-mbeat: 0s ago, global: 0s ago, v: 2.7.27.49176, command=HMGET, timeout: 5000, inst: 0, qu: 4, qs: 0, aw: False, bw: CheckingForTimeout, rs: NotStarted, ws: Idle, in: 0, last-in: 0, cur-in: 0, sync-ops: 2, async-ops: 3174, serverEndpoint: redis-cart:6379, conn-sec: n/a, aoc: 0, mc: 1/1/0, mgr: 10 of 10 available, clientName: cartservice-546c548494-j4j6h(SE.Redis-v2.7.27.49176), IOCP: (Busy=0,Free=1000,Min=1,Max=1000), WORKER: (Busy=2,Free=32765,Min=1,Max=32767), POOL: (Threads=4,QueuedItems=0,CompletedItems=43418,Timers=9), v: 2.7.27.49176 (Please take a look at this article for some common client-side issues that can cause timeouts: https://stackexchange.github.io/StackExchange.Redis/Timeouts)
+       ---> StackExchange.Redis.RedisConnectionException: SocketClosed (ReadEndOfStream, last-recv: 0) on redis-cart:6379/Interactive, Idle/MarkProcessed, last: HMGET, origin: ReadFromPipe, outstanding: 0, last-read: 0s ago, last-write: 3s ago, keep-alive: 60s, state: ConnectedEstablished, mgr: 8 of 10 available, in: 0, in-pipe: 0, out-pipe: 0, last-heartbeat: 0s ago, last-mbeat: 0s ago, global: 0s ago, v: 2.7.27.49176
+         --- End of inner exception stack trace ---
+         at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAndRefreshAsync(String key, Boolean getData, CancellationToken token)
+         at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+         at cartservice.cartstore.RedisCartStore.GetCartAsync(String userId) in /app/cartstore/RedisCartStore.cs:line 90' raised.
+info: Grpc.AspNetCore.Server.ServerCallHandler[7]
+      Error status code 'FailedPrecondition' with detail 'Can't access cart storage. StackExchange.Redis.RedisConnectionException: The message timed out in the backlog attempting to send because no connection became available (5000ms) - Last Connection Exception: SocketClosed (ReadEndOfStream, last-recv: 0) on redis-cart:6379/Interactive, Idle/MarkProcessed, last: HMGET, origin: ReadFromPipe, outstanding: 0, last-read: 0s ago, last-write: 3s ago, keep-alive: 60s, state: ConnectedEstablished, mgr: 8 of 10 available, in: 0, in-pipe: 0, out-pipe: 0, last-heartbeat: 0s ago, last-mbeat: 0s ago, global: 0s ago, v: 2.7.27.49176, command=HMGET, timeout: 5000, inst: 0, qu: 3, qs: 0, aw: False, bw: CheckingForTimeout, rs: NotStarted, ws: Idle, in: 0, last-in: 0, cur-in: 0, sync-ops: 2, async-ops: 3174, serverEndpoint: redis-cart:6379, conn-sec: n/a, aoc: 0, mc: 1/1/0, mgr: 10 of 10 available, clientName: cartservice-546c548494-j4j6h(SE.Redis-v2.7.27.49176), IOCP: (Busy=0,Free=1000,Min=1,Max=1000), WORKER: (Busy=1,Free=32766,Min=1,Max=32767), POOL: (Threads=4,QueuedItems=0,CompletedItems=43430,Timers=8), v: 2.7.27.49176 (Please take a look at this article for some common client-side issues that can cause timeouts: https://stackexchange.github.io/StackExchange.Redis/Timeouts)
+       ---> StackExchange.Redis.RedisConnectionException: SocketClosed (ReadEndOfStream, last-recv: 0) on redis-cart:6379/Interactive, Idle/MarkProcessed, last: HMGET, origin: ReadFromPipe, outstanding: 0, last-read: 0s ago, last-write: 3s ago, keep-alive: 60s, state: ConnectedEstablished, mgr: 8 of 10 available, in: 0, in-pipe: 0, out-pipe: 0, last-heartbeat: 0s ago, last-mbeat: 0s ago, global: 0s ago, v: 2.7.27.49176
+         --- End of inner exception stack trace ---
+         at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAndRefreshAsync(String key, Boolean getData, CancellationToken token)
+         at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+         at cartservice.cartstore.RedisCartStore.GetCartAsync(String userId) in /app/cartstore/RedisCartStore.cs:line 90' raised.
+Checking CartService Health
+AddItemAsync called with userId=2d3bf3d7-22b5-49c9-8227-12126292f393, productId=66VCHSJNUP, quantity=4
+info: Grpc.AspNetCore.Server.ServerCallHandler[7]
+      Error status code 'FailedPrecondition' with detail 'Can't access cart storage. StackExchange.Redis.RedisConnectionException: The message timed out in the backlog attempting to send because no connection became available (5000ms) - Last Connection Exception: SocketClosed (ReadEndOfStream, last-recv: 0) on redis-cart:6379/Interactive, Idle/MarkProcessed, last: HMGET, origin: ReadFromPipe, outstanding: 0, last-read: 0s ago, last-write: 3s ago, keep-alive: 60s, state: ConnectedEstablished, mgr: 8 of 10 available, in: 0, in-pipe: 0, out-pipe: 0, last-heartbeat: 0s ago, last-mbeat: 0s ago, global: 0s ago, v: 2.7.27.49176, command=HMGET, timeout: 5000, inst: 0, qu: 3, qs: 0, aw: False, bw: CheckingForTimeout, rs: NotStarted, ws: Idle, in: 0, last-in: 0, cur-in: 0, sync-ops: 2, async-ops: 3175, serverEndpoint: redis-cart:6379, conn-sec: n/a, aoc: 0, mc: 1/1/0, mgr: 10 of 10 available, clientName: cartservice-546c548494-j4j6h(SE.Redis-v2.7.27.49176), IOCP: (Busy=0,Free=1000,Min=1,Max=1000), WORKER: (Busy=1,Free=32766,Min=1,Max=32767), POOL: (Threads=4,QueuedItems=0,CompletedItems=43465,Timers=8), v: 2.7.27.49176 (Please take a look at this article for some common client-side issues that can cause timeouts: https://stackexchange.github.io/StackExchange.Redis/Timeouts)
+       ---> StackExchange.Redis.RedisConnectionException: SocketClosed (ReadEndOfStream, last-recv: 0) on redis-cart:6379/Interactive, Idle/MarkProcessed, last: HMGET, origin: ReadFromPipe, outstanding: 0, last-read: 0s ago, last-write: 3s ago, keep-alive: 60s, state: ConnectedEstablished, mgr: 8 of 10 available, in: 0, in-pipe: 0, out-pipe: 0, last-heartbeat: 0s ago, last-mbeat: 0s ago, global: 0s ago, v: 2.7.27.49176
+         --- End of inner exception stack trace ---
+         at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAndRefreshAsync(String key, Boolean getData, CancellationToken token)
+         at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+         at cartservice.cartstore.RedisCartStore.GetCartAsync(String userId) in /app/cartstore/RedisCartStore.cs:line 90' raised.
+info: Grpc.AspNetCore.Server.ServerCallHandler[7]
+      Error status code 'FailedPrecondition' with detail 'Can't access cart storage. StackExchange.Redis.RedisConnectionException: The message timed out in the backlog attempting to send because no connection became available (5000ms) - Last Connection Exception: SocketClosed (ReadEndOfStream, last-recv: 0) on redis-cart:6379/Interactive, Idle/MarkProcessed, last: HMGET, origin: ReadFromPipe, outstanding: 0, last-read: 0s ago, last-write: 3s ago, keep-alive: 60s, state: ConnectedEstablished, mgr: 8 of 10 available, in: 0, in-pipe: 0, out-pipe: 0, last-heartbeat: 0s ago, last-mbeat: 0s ago, global: 0s ago, v: 2.7.27.49176, command=HMGET, timeout: 5000, inst: 0, qu: 2, qs: 0, aw: False, bw: CheckingForTimeout, rs: NotStarted, ws: Idle, in: 0, last-in: 0, cur-in: 0, sync-ops: 2, async-ops: 3175, serverEndpoint: redis-cart:6379, conn-sec: n/a, aoc: 0, mc: 1/1/0, mgr: 10 of 10 available, clientName: cartservice-546c548494-j4j6h(SE.Redis-v2.7.27.49176), IOCP: (Busy=0,Free=1000,Min=1,Max=1000), WORKER: (Busy=1,Free=32766,Min=1,Max=32767), POOL: (Threads=4,QueuedItems=1,CompletedItems=43465,Timers=8), v: 2.7.27.49176 (Please take a look at this article for some common client-side issues that can cause timeouts: https://stackexchange.github.io/StackExchange.Redis/Timeouts)
+       ---> StackExchange.Redis.RedisConnectionException: SocketClosed (ReadEndOfStream, last-recv: 0) on redis-cart:6379/Interactive, Idle/MarkProcessed, last: HMGET, origin: ReadFromPipe, outstanding: 0, last-read: 0s ago, last-write: 3s ago, keep-alive: 60s, state: ConnectedEstablished, mgr: 8 of 10 available, in: 0, in-pipe: 0, out-pipe: 0, last-heartbeat: 0s ago, last-mbeat: 0s ago, global: 0s ago, v: 2.7.27.49176
+         --- End of inner exception stack trace ---
+         at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAndRefreshAsync(String key, Boolean getData, CancellationToken token)
+         at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+         at cartservice.cartstore.RedisCartStore.GetCartAsync(String userId) in /app/cartstore/RedisCartStore.cs:line 90' raised.
+GetCartAsync called with userId=2d3bf3d7-22b5-49c9-8227-12126292f393
+GetCartAsync called with userId=514e00c6-206e-4c6e-873f-852b796455de
+GetCartAsync called with userId=827eab86-1aba-4a15-8740-5fee5900d10f
+AddItemAsync called with userId=827eab86-1aba-4a15-8740-5fee5900d10f, productId=LS4PSXUNUM, quantity=6
+GetCartAsync called with userId=513dd945-739c-4fe3-8e54-6e6927fbb733
+GetCartAsync called with userId=827eab86-1aba-4a15-8740-5fee5900d10f
+GetCartAsync called with userId=df4ce93a-5d92-40a8-93c2-540bf11bbb4d
+AddItemAsync called with userId=df4ce93a-5d92-40a8-93c2-540bf11bbb4d, productId=0PUK6V6EV0, quantity=5
+GetCartAsync called with userId=df4ce93a-5d92-40a8-93c2-540bf11bbb4d
+GetCartAsync called with userId=2d3bf3d7-22b5-49c9-8227-12126292f393
+AddItemAsync called with userId=2d3bf3d7-22b5-49c9-8227-12126292f393, productId=L9ECAV7KIM, quantity=3
+GetCartAsync called with userId=2d3bf3d7-22b5-49c9-8227-12126292f393
+GetCartAsync called with userId=513dd945-739c-4fe3-8e54-6e6927fbb733
+GetCartAsync called with userId=fcb2831f-0627-4791-ac1d-23821dc5b140
+GetCartAsync called with userId=a38c2610-1665-4c93-8051-4c451f5de325
+AddItemAsync called with userId=a38c2610-1665-4c93-8051-4c451f5de325, productId=1YMWWN1N4O, quantity=5
+GetCartAsync called with userId=a38c2610-1665-4c93-8051-4c451f5de325
+GetCartAsync called with userId=a38c2610-1665-4c93-8051-4c451f5de325
+EmptyCartAsync called with userId=a38c2610-1665-4c93-8051-4c451f5de325
+Checking CartService Health
+GetCartAsync called with userId=513dd945-739c-4fe3-8e54-6e6927fbb733
+GetCartAsync called with userId=ecb080bf-5333-403f-9547-c8725d499228
+GetCartAsync called with userId=694745d8-a179-4c65-83d6-9ed873a7b94b
+Checking CartService Health
+GetCartAsync called with userId=fcb2831f-0627-4791-ac1d-23821dc5b140
+GetCartAsync called with userId=514e00c6-206e-4c6e-873f-852b796455de
+GetCartAsync called with userId=32217267-98ca-4d66-9fc8-3f088b8def0f
+GetCartAsync called with userId=827eab86-1aba-4a15-8740-5fee5900d10f
+GetCartAsync called with userId=694745d8-a179-4c65-83d6-9ed873a7b94b
+GetCartAsync called with userId=2d3bf3d7-22b5-49c9-8227-12126292f393
+GetCartAsync called with userId=df4ce93a-5d92-40a8-93c2-540bf11bbb4d
+GetCartAsync called with userId=ecb080bf-5333-403f-9547-c8725d499228
+GetCartAsync called with userId=fcb2831f-0627-4791-ac1d-23821dc5b140
+AddItemAsync called with userId=fcb2831f-0627-4791-ac1d-23821dc5b140, productId=L9ECAV7KIM, quantity=9
+GetCartAsync called with userId=fcb2831f-0627-4791-ac1d-23821dc5b140
+GetCartAsync called with userId=32217267-98ca-4d66-9fc8-3f088b8def0f
+GetCartAsync called with userId=a38c2610-1665-4c93-8051-4c451f5de325
+GetCartAsync called with userId=fcb2831f-0627-4791-ac1d-23821dc5b140
+GetCartAsync called with userId=2d3bf3d7-22b5-49c9-8227-12126292f393
+GetCartAsync called with userId=694745d8-a179-4c65-83d6-9ed873a7b94b
+GetCartAsync called with userId=513dd945-739c-4fe3-8e54-6e6927fbb733
+AddItemAsync called with userId=513dd945-739c-4fe3-8e54-6e6927fbb733, productId=9SIQT8TOJO, quantity=2
+GetCartAsync called with userId=513dd945-739c-4fe3-8e54-6e6927fbb733
+GetCartAsync called with userId=513dd945-739c-4fe3-8e54-6e6927fbb733
+EmptyCartAsync called with userId=513dd945-739c-4fe3-8e54-6e6927fbb733
+GetCartAsync called with userId=694745d8-a179-4c65-83d6-9ed873a7b94b
+Checking CartService Health
+GetCartAsync called with userId=514e00c6-206e-4c6e-873f-852b796455de
+Checking CartService Health
+GetCartAsync called with userId=df4ce93a-5d92-40a8-93c2-540bf11bbb4d
+GetCartAsync called with userId=694745d8-a179-4c65-83d6-9ed873a7b94b
+AddItemAsync called with userId=694745d8-a179-4c65-83d6-9ed873a7b94b, productId=6E92ZMYYFZ, quantity=5
+GetCartAsync called with userId=694745d8-a179-4c65-83d6-9ed873a7b94b
+GetCartAsync called with userId=694745d8-a179-4c65-83d6-9ed873a7b94b
+EmptyCartAsync called with userId=694745d8-a179-4c65-83d6-9ed873a7b94b
+GetCartAsync called with userId=827eab86-1aba-4a15-8740-5fee5900d10f

@@ -1,0 +1,100 @@
+GetCartAsync called with userId=514e00c6-206e-4c6e-873f-852b796455de
+Checking CartService Health
+GetCartAsync called with userId=ecb080bf-5333-403f-9547-c8725d499228
+GetCartAsync called with userId=2d3bf3d7-22b5-49c9-8227-12126292f393
+Checking CartService Health
+GetCartAsync called with userId=df4ce93a-5d92-40a8-93c2-540bf11bbb4d
+AddItemAsync called with userId=df4ce93a-5d92-40a8-93c2-540bf11bbb4d, productId=0PUK6V6EV0, quantity=2
+GetCartAsync called with userId=df4ce93a-5d92-40a8-93c2-540bf11bbb4d
+GetCartAsync called with userId=df4ce93a-5d92-40a8-93c2-540bf11bbb4d
+EmptyCartAsync called with userId=df4ce93a-5d92-40a8-93c2-540bf11bbb4d
+GetCartAsync called with userId=827eab86-1aba-4a15-8740-5fee5900d10f
+GetCartAsync called with userId=32217267-98ca-4d66-9fc8-3f088b8def0f
+GetCartAsync called with userId=fcb2831f-0627-4791-ac1d-23821dc5b140
+GetCartAsync called with userId=694745d8-a179-4c65-83d6-9ed873a7b94b
+info: Grpc.AspNetCore.Server.ServerCallHandler[7]
+      Error status code 'FailedPrecondition' with detail 'Can't access cart storage. StackExchange.Redis.RedisConnectionException: SocketFailure (ReadSocketError/ConnectionReset, last-recv: 210) on redis-cart:6379/Interactive, Idle/Faulted, last: HMGET, origin: ReadFromPipe, outstanding: 1, last-read: 0s ago, last-write: 0s ago, unanswered-write: 0s ago, keep-alive: 60s, state: ConnectedEstablished, mgr: 8 of 10 available, in: 0, in-pipe: 0, out-pipe: 0, last-heartbeat: 0s ago, last-mbeat: 0s ago, global: 0s ago, v: 2.7.27.49176
+       ---> Pipelines.Sockets.Unofficial.ConnectionResetException: Connection reset by peer
+       ---> System.Net.Sockets.SocketException (104): Connection reset by peer
+         at Pipelines.Sockets.Unofficial.Internal.Throw.Socket(Int32 errorCode) in /_/src/Pipelines.Sockets.Unofficial/Internal/Throw.cs:line 59
+         at Pipelines.Sockets.Unofficial.SocketConnection.DoReceiveAsync() in /_/src/Pipelines.Sockets.Unofficial/SocketConnection.Receive.cs:line 64
+         --- End of inner exception stack trace ---
+         at System.IO.Pipelines.Pipe.GetReadAsyncResult()
+         at StackExchange.Redis.PhysicalConnection.ReadFromPipe()
+         --- End of inner exception stack trace ---
+         at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAndRefreshAsync(String key, Boolean getData, CancellationToken token)
+         at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+         at cartservice.cartstore.RedisCartStore.GetCartAsync(String userId) in /app/cartstore/RedisCartStore.cs:line 90' raised.
+GetCartAsync called with userId=32217267-98ca-4d66-9fc8-3f088b8def0f
+GetCartAsync called with userId=a38c2610-1665-4c93-8051-4c451f5de325
+GetCartAsync called with userId=2d3bf3d7-22b5-49c9-8227-12126292f393
+GetCartAsync called with userId=fcb2831f-0627-4791-ac1d-23821dc5b140
+GetCartAsync called with userId=ecb080bf-5333-403f-9547-c8725d499228
+GetCartAsync called with userId=694745d8-a179-4c65-83d6-9ed873a7b94b
+GetCartAsync called with userId=df4ce93a-5d92-40a8-93c2-540bf11bbb4d
+GetCartAsync called with userId=514e00c6-206e-4c6e-873f-852b796455de
+GetCartAsync called with userId=827eab86-1aba-4a15-8740-5fee5900d10f
+GetCartAsync called with userId=513dd945-739c-4fe3-8e54-6e6927fbb733
+Checking CartService Health
+Checking CartService Health
+GetCartAsync called with userId=df4ce93a-5d92-40a8-93c2-540bf11bbb4d
+GetCartAsync called with userId=514e00c6-206e-4c6e-873f-852b796455de
+GetCartAsync called with userId=ecb080bf-5333-403f-9547-c8725d499228
+AddItemAsync called with userId=ecb080bf-5333-403f-9547-c8725d499228, productId=66VCHSJNUP, quantity=3
+GetCartAsync called with userId=ecb080bf-5333-403f-9547-c8725d499228
+GetCartAsync called with userId=df4ce93a-5d92-40a8-93c2-540bf11bbb4d
+GetCartAsync called with userId=32217267-98ca-4d66-9fc8-3f088b8def0f
+GetCartAsync called with userId=fcb2831f-0627-4791-ac1d-23821dc5b140
+GetCartAsync called with userId=2d3bf3d7-22b5-49c9-8227-12126292f393
+AddItemAsync called with userId=2d3bf3d7-22b5-49c9-8227-12126292f393, productId=OLJCESPC7Z, quantity=7
+GetCartAsync called with userId=2d3bf3d7-22b5-49c9-8227-12126292f393
+GetCartAsync called with userId=513dd945-739c-4fe3-8e54-6e6927fbb733
+GetCartAsync called with userId=827eab86-1aba-4a15-8740-5fee5900d10f
+GetCartAsync called with userId=a38c2610-1665-4c93-8051-4c451f5de325
+GetCartAsync called with userId=694745d8-a179-4c65-83d6-9ed873a7b94b
+GetCartAsync called with userId=2d3bf3d7-22b5-49c9-8227-12126292f393
+Checking CartService Health
+GetCartAsync called with userId=827eab86-1aba-4a15-8740-5fee5900d10f
+GetCartAsync called with userId=df4ce93a-5d92-40a8-93c2-540bf11bbb4d
+Checking CartService Health
+GetCartAsync called with userId=514e00c6-206e-4c6e-873f-852b796455de
+GetCartAsync called with userId=ecb080bf-5333-403f-9547-c8725d499228
+GetCartAsync called with userId=694745d8-a179-4c65-83d6-9ed873a7b94b
+AddItemAsync called with userId=ecb080bf-5333-403f-9547-c8725d499228, productId=L9ECAV7KIM, quantity=8
+GetCartAsync called with userId=ecb080bf-5333-403f-9547-c8725d499228
+GetCartAsync called with userId=2d3bf3d7-22b5-49c9-8227-12126292f393
+GetCartAsync called with userId=df4ce93a-5d92-40a8-93c2-540bf11bbb4d
+AddItemAsync called with userId=df4ce93a-5d92-40a8-93c2-540bf11bbb4d, productId=9SIQT8TOJO, quantity=2
+GetCartAsync called with userId=df4ce93a-5d92-40a8-93c2-540bf11bbb4d
+GetCartAsync called with userId=df4ce93a-5d92-40a8-93c2-540bf11bbb4d
+EmptyCartAsync called with userId=df4ce93a-5d92-40a8-93c2-540bf11bbb4d
+GetCartAsync called with userId=513dd945-739c-4fe3-8e54-6e6927fbb733
+AddItemAsync called with userId=513dd945-739c-4fe3-8e54-6e6927fbb733, productId=OLJCESPC7Z, quantity=9
+GetCartAsync called with userId=513dd945-739c-4fe3-8e54-6e6927fbb733
+GetCartAsync called with userId=513dd945-739c-4fe3-8e54-6e6927fbb733
+EmptyCartAsync called with userId=513dd945-739c-4fe3-8e54-6e6927fbb733
+GetCartAsync called with userId=fcb2831f-0627-4791-ac1d-23821dc5b140
+AddItemAsync called with userId=fcb2831f-0627-4791-ac1d-23821dc5b140, productId=LS4PSXUNUM, quantity=7
+GetCartAsync called with userId=fcb2831f-0627-4791-ac1d-23821dc5b140
+GetCartAsync called with userId=fcb2831f-0627-4791-ac1d-23821dc5b140
+EmptyCartAsync called with userId=fcb2831f-0627-4791-ac1d-23821dc5b140
+GetCartAsync called with userId=32217267-98ca-4d66-9fc8-3f088b8def0f
+GetCartAsync called with userId=514e00c6-206e-4c6e-873f-852b796455de
+GetCartAsync called with userId=a38c2610-1665-4c93-8051-4c451f5de325
+GetCartAsync called with userId=2d3bf3d7-22b5-49c9-8227-12126292f393
+GetCartAsync called with userId=514e00c6-206e-4c6e-873f-852b796455de
+AddItemAsync called with userId=514e00c6-206e-4c6e-873f-852b796455de, productId=66VCHSJNUP, quantity=9
+GetCartAsync called with userId=514e00c6-206e-4c6e-873f-852b796455de
+Checking CartService Health
+GetCartAsync called with userId=827eab86-1aba-4a15-8740-5fee5900d10f
+GetCartAsync called with userId=694745d8-a179-4c65-83d6-9ed873a7b94b
+Checking CartService Health
+GetCartAsync called with userId=514e00c6-206e-4c6e-873f-852b796455de
+GetCartAsync called with userId=ecb080bf-5333-403f-9547-c8725d499228
+GetCartAsync called with userId=df4ce93a-5d92-40a8-93c2-540bf11bbb4d
+GetCartAsync called with userId=fcb2831f-0627-4791-ac1d-23821dc5b140
+GetCartAsync called with userId=513dd945-739c-4fe3-8e54-6e6927fbb733
+AddItemAsync called with userId=fcb2831f-0627-4791-ac1d-23821dc5b140, productId=OLJCESPC7Z, quantity=1
+GetCartAsync called with userId=fcb2831f-0627-4791-ac1d-23821dc5b140
+GetCartAsync called with userId=32217267-98ca-4d66-9fc8-3f088b8def0f
+GetCartAsync called with userId=a38c2610-1665-4c93-8051-4c451f5de325
