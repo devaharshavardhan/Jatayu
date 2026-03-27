@@ -1,4 +1,4 @@
-"""Reporting Agent: generate incident summaries and operational reports."""
+"""Reporting Agent: generate comprehensive human-readable incident reports."""
 from __future__ import annotations
 
 import time
@@ -15,8 +15,8 @@ _INCIDENT_COUNTER = 0
 
 
 def _severity_from_failure_type(failure_type: str) -> str:
-    critical_types = {"pod_killed", "critical_failure", "readiness_failure"}
-    high_types = {"pod_instability", "cpu_saturation", "service_error"}
+    critical_types = {"pod_killed", "critical_failure", "readiness_failure", "pod_kill"}
+    high_types = {"pod_instability", "cpu_saturation", "service_error", "deployment_failure"}
     if failure_type in critical_types:
         return "SEV-1"
     if failure_type in high_types:
@@ -24,27 +24,149 @@ def _severity_from_failure_type(failure_type: str) -> str:
     return "SEV-3"
 
 
-def _generate_runbook_steps(action: str, service: str, kubectl_cmd: str) -> List[str]:
-    base = [
-        f"1. Verify current state: kubectl get pods -n default -l app={service}",
-        f"2. Check recent events: kubectl describe deployment/{service} -n default",
-        f"3. Execute remediation: {kubectl_cmd}",
+def _failure_type_human(failure_type: str) -> str:
+    mapping = {
+        "pod_killed": "Pod Termination",
+        "pod_instability": "Pod Crash Loop",
+        "readiness_failure": "Readiness Probe Failure",
+        "cpu_saturation": "CPU Resource Exhaustion",
+        "service_degradation": "Service Degradation",
+        "network_degradation": "Network Latency Spike",
+        "service_error": "Service Error Rate Spike",
+        "critical_failure": "Critical Service Failure",
+        "deployment_failure": "Deployment Failure",
+        "latency_degradation": "Latency Degradation",
+        "generic_service_risk": "Service Anomaly",
+    }
+    return mapping.get(failure_type, failure_type.replace("_", " ").title())
+
+
+def _generate_impact_assessment(
+    service: str,
+    failure_type: str,
+    impacted: List[str],
+    confidence: float,
+) -> str:
+    """Generate a detailed impact assessment narrative."""
+    impact_desc = {
+        "pod_killed": f"Complete service outage for {service}. All requests to this service will fail until the pod is restarted and passes health checks.",
+        "pod_instability": f"{service} is in crash-loop state, causing intermittent unavailability. Users may experience sporadic errors and increased latency.",
+        "readiness_failure": f"{service} is not serving traffic due to readiness probe failures. Traffic may be routing to unhealthy endpoints.",
+        "cpu_saturation": f"{service} CPU is saturated, causing response time degradation and potential request timeouts. Under high load, the service may become unresponsive.",
+        "service_degradation": f"{service} is partially functional with elevated error rates. Some requests may succeed while others fail.",
+        "network_degradation": f"Network latency to {service} is elevated, causing cascading timeout errors in dependent services.",
+        "service_error": f"{service} is returning elevated HTTP error responses, impacting all dependent services.",
+    }
+    base_impact = impact_desc.get(
+        failure_type,
+        f"{service} is experiencing service degradation affecting request processing."
+    )
+
+    if impacted:
+        cascade = f" Additionally, {len(impacted)} downstream service(s) are affected: {', '.join(impacted[:5])}."
+        base_impact += cascade
+
+    if confidence < 0.70:
+        base_impact += " Note: Root cause confidence is below 70%; impact assessment may be incomplete."
+
+    return base_impact
+
+
+def _generate_prevention_recommendations(failure_type: str, service: str) -> List[str]:
+    """Generate future prevention recommendations based on failure type."""
+    base_recommendations = [
+        "Configure appropriate resource requests and limits for all containers",
+        "Set up automated alerting with PagerDuty/OpsGenie integration for SEV-1/2 incidents",
+        "Implement circuit breakers between dependent services using Istio or Resilience4j",
+        "Schedule regular chaos engineering exercises to validate system resilience",
     ]
-    if action in ("rollout_restart", "restart_pod"):
-        base.append(f"4. Monitor rollout: kubectl rollout status deployment/{service} -n default")
-        base.append(f"5. Verify health: kubectl get pods -l app={service} -n default")
-    elif action == "scale_out":
-        base.append(f"4. Check new pods: kubectl get pods -l app={service} -n default")
-        base.append(f"5. Verify load distribution across replicas")
-    elif action == "manual_approval":
-        base = [
-            f"1. ESCALATION REQUIRED: Review incident details",
-            f"2. Assess blast radius: check {service} and downstream dependencies",
-            f"3. Coordinate with service owner team",
-            f"4. Execute approved remediation with change management",
-        ]
-    base.append(f"6. Update incident timeline and close ticket if resolved")
-    return base
+
+    specific_recommendations = {
+        "cpu_saturation": [
+            f"Implement Horizontal Pod Autoscaler (HPA) for {service} with CPU threshold at 70%",
+            "Set CPU limits to prevent resource starvation of other pods on the node",
+            "Profile application for CPU-intensive hot paths and optimize critical loops",
+            "Consider implementing request rate limiting to prevent traffic spikes",
+        ],
+        "pod_killed": [
+            f"Add pod disruption budgets (PDB) for {service} to prevent simultaneous pod terminations",
+            "Implement graceful shutdown handlers to complete in-flight requests before termination",
+            "Configure liveness probe parameters to allow sufficient startup time",
+            "Use pod anti-affinity rules to distribute replicas across availability zones",
+        ],
+        "pod_instability": [
+            "Investigate application startup logs for initialization failures",
+            "Configure appropriate JVM heap sizes or memory limits to prevent OOM kills",
+            "Review and fix any missing environment variables or configuration issues",
+            "Implement exponential backoff for external dependency connections at startup",
+        ],
+        "readiness_failure": [
+            "Tune readiness probe initialDelaySeconds and periodSeconds for slow-starting services",
+            "Ensure dependency health checks pass before marking the pod as ready",
+            "Review application initialization sequence and fix any blocking startup tasks",
+        ],
+        "network_degradation": [
+            "Implement service mesh-level timeout and retry policies",
+            "Add network policies to limit inter-service traffic and reduce noisy neighbor issues",
+            "Consider deploying services in the same availability zone to reduce network hops",
+            "Configure client-side load balancing to route around slow endpoints",
+        ],
+    }
+
+    recs = specific_recommendations.get(failure_type, [])
+    return (recs + base_recommendations)[:6]
+
+
+def _generate_runbook_steps(action: str, service: str, kubectl_cmd: str) -> List[str]:
+    """Generate detailed runbook steps for the remediation action."""
+    pre_steps = [
+        f"1. Acknowledge incident and notify on-call team via incident channel",
+        f"2. Verify current pod state: kubectl get pods -n default -l app={service}",
+        f"3. Review recent events: kubectl describe deployment/{service} -n default",
+        f"4. Check recent logs: kubectl logs -l app={service} --tail=100 -n default",
+    ]
+
+    action_steps = {
+        "rollout_restart": [
+            f"5. Execute rolling restart: {kubectl_cmd}",
+            f"6. Monitor rollout progress: kubectl rollout status deployment/{service} -n default",
+            f"7. Verify all pods are Running: kubectl get pods -l app={service} -n default",
+            f"8. Confirm service health by checking application endpoints",
+        ],
+        "restart_pod": [
+            f"5. Execute pod restart: {kubectl_cmd}",
+            f"6. Wait for pod to reach Running state (typically 30-60s)",
+            f"7. Verify readiness: kubectl get pods -l app={service} -n default",
+            f"8. Monitor error rates for 5 minutes post-restart",
+        ],
+        "scale_out": [
+            f"5. Scale deployment: {kubectl_cmd}",
+            f"6. Monitor new pod scheduling: kubectl get pods -l app={service} -w -n default",
+            f"7. Verify load distribution across replicas",
+            f"8. Monitor CPU utilization across new replicas",
+        ],
+        "manual_approval": [
+            f"5. ESCALATION REQUIRED — Do not proceed without approval",
+            f"6. Assess full blast radius with service owner team",
+            f"7. Create change request in ITSM tool",
+            f"8. Execute approved remediation in maintenance window",
+            f"9. Post-action validation and sign-off",
+        ],
+    }
+
+    specific = action_steps.get(action, [
+        f"5. Execute: {kubectl_cmd}",
+        f"6. Monitor service recovery",
+        f"7. Validate all health checks pass",
+    ])
+
+    post_steps = [
+        f"{len(pre_steps) + len(specific) + 1}. Update incident timeline with resolution notes",
+        f"{len(pre_steps) + len(specific) + 2}. Close incident after 15-minute stability window",
+        f"{len(pre_steps) + len(specific) + 3}. Schedule post-mortem within 48 hours (SEV-1/2)",
+    ]
+
+    return pre_steps + specific + post_steps
 
 
 def _generate_incident_report(result: Dict[str, Any]) -> Dict[str, Any]:
@@ -62,43 +184,143 @@ def _generate_incident_report(result: Dict[str, Any]) -> Dict[str, Any]:
     evidence = result.get("evidence_summary", [])
     kubectl_cmd = result.get("kubectl_command", "N/A")
     scenario = result.get("scenario", "unknown")
+    reasoning = result.get("reasoning", "")
+    reported_at = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
 
     severity = _severity_from_failure_type(failure_type)
+    failure_human = _failure_type_human(failure_type)
+    impact_assessment = _generate_impact_assessment(service, failure_type, impacted, confidence)
+    prevention_recs = _generate_prevention_recommendations(failure_type, service)
 
     # Generate timeline
+    detection_time = result.get("snapshot_time") or reported_at
     timeline = [
-        {"phase": "Detection", "agent": "Monitoring Agent", "action": f"Anomaly detected in {service}", "outcome": "Alert raised"},
-        {"phase": "Prediction", "agent": "Prediction Agent", "action": f"Risk scored for {service}", "outcome": "Failure risk predicted"},
-        {"phase": "Root Cause Analysis", "agent": "RCA Agent", "action": f"Dependency graph traversal", "outcome": f"Root cause: {service} ({failure_type})"},
-        {"phase": "Decision", "agent": "Decision Agent", "action": f"Policy evaluation + safety checks", "outcome": f"Action decided: {action}"},
-        {"phase": "Remediation", "agent": "Remediation Agent", "action": f"Execute: {action}", "outcome": f"Status: {status.upper()}"},
+        {
+            "phase": "Detection",
+            "agent": "Monitoring Agent",
+            "action": f"Anomaly detected in {service} — status={result.get('status', 'degraded')}",
+            "outcome": "Alert raised and incident created",
+            "timestamp": detection_time,
+        },
+        {
+            "phase": "Prediction",
+            "agent": "Prediction Agent",
+            "action": f"Risk analysis using heuristic scoring + Isolation Forest ML model",
+            "outcome": f"Failure risk predicted for {service}",
+            "timestamp": detection_time,
+        },
+        {
+            "phase": "Root Cause Analysis",
+            "agent": "RCA Agent",
+            "action": "Dependency graph traversal + telemetry correlation + LLM reasoning",
+            "outcome": f"Root cause identified: {service} ({failure_type}), confidence {confidence:.0%}",
+            "timestamp": detection_time,
+        },
+        {
+            "phase": "Decision",
+            "agent": "Decision Agent",
+            "action": f"Policy engine evaluation + safety checks for {service}",
+            "outcome": f"Remediation action decided: {action}",
+            "timestamp": reported_at,
+        },
+        {
+            "phase": "Remediation",
+            "agent": "Remediation Agent",
+            "action": f"Execute: {action} on {service}",
+            "outcome": f"Status: {status.upper()}",
+            "timestamp": reported_at,
+        },
+        {
+            "phase": "Reporting",
+            "agent": "Reporting Agent",
+            "action": "Generate comprehensive incident report",
+            "outcome": f"Incident {incident_id} created ({severity})",
+            "timestamp": reported_at,
+        },
     ]
 
-    # Generate summary text
+    # Generate summary based on outcome
     if status == "success":
         summary = (
-            f"Incident {incident_id}: {failure_type.replace('_', ' ').title()} detected in "
-            f"{service} (confidence {confidence:.0%}). "
+            f"[{severity}] {incident_id}: {failure_human} detected in {service} "
+            f"(confidence: {confidence:.0%}). "
             f"Autonomous remediation via '{action}' completed successfully. "
-            f"Impacted services: {', '.join(impacted) if impacted else 'none'}. "
+            f"System recovery time: ~{result.get('estimated_duration_s', 30)}s. "
             f"Scenario: {scenario}."
         )
+        resolution_status = "RESOLVED"
+        system_recovery_time = f"~{result.get('estimated_duration_s', 30)} seconds"
     elif status == "deferred":
         summary = (
-            f"Incident {incident_id}: {failure_type.replace('_', ' ').title()} detected in "
-            f"{service} (confidence {confidence:.0%}). "
-            f"Remediation DEFERRED -- manual approval required for {action}. "
-            f"Impacted services: {', '.join(impacted) if impacted else 'none'}."
+            f"[{severity}] {incident_id}: {failure_human} detected in {service} "
+            f"(confidence: {confidence:.0%}). "
+            f"Remediation PENDING MANUAL APPROVAL — action '{action}' requires operator sign-off. "
+            f"Scenario: {scenario}."
         )
+        resolution_status = "PENDING APPROVAL"
+        system_recovery_time = "Pending manual remediation"
     else:
         summary = (
-            f"Incident {incident_id}: {failure_type.replace('_', ' ').title()} detected in "
-            f"{service} (confidence {confidence:.0%}). "
-            f"Remediation '{action}' failed -- escalation required. "
-            f"Impacted services: {', '.join(impacted) if impacted else 'none'}."
+            f"[{severity}] {incident_id}: {failure_human} detected in {service} "
+            f"(confidence: {confidence:.0%}). "
+            f"Automated remediation '{action}' failed — manual intervention required. "
+            f"Scenario: {scenario}."
         )
+        resolution_status = "FAILED — MANUAL INTERVENTION REQUIRED"
+        system_recovery_time = "Unknown — manual recovery in progress"
 
     runbook = _generate_runbook_steps(action, service, kubectl_cmd)
+
+    # Full human-readable report text
+    human_report = f"""
+INCIDENT REPORT
+═══════════════════════════════════════════════════════════
+Incident ID:     {incident_id}
+Severity:        {severity}
+Status:          {resolution_status}
+Generated:       {reported_at}
+═══════════════════════════════════════════════════════════
+
+INCIDENT SUMMARY
+──────────────────────────────────────────────────────────
+{summary}
+
+ROOT CAUSE
+──────────────────────────────────────────────────────────
+Root Cause Service:  {service}
+Failure Type:        {failure_human} ({failure_type})
+Confidence:          {confidence:.0%}
+Scenario:            {scenario}
+{f"Analysis: {reasoning}" if reasoning else ""}
+
+AFFECTED SERVICES
+──────────────────────────────────────────────────────────
+Primary:    {service}
+Downstream: {', '.join(impacted) if impacted else 'None confirmed'}
+
+IMPACT ASSESSMENT
+──────────────────────────────────────────────────────────
+{impact_assessment}
+
+EVIDENCE
+──────────────────────────────────────────────────────────
+{chr(10).join(f"• {e}" for e in (evidence or ['No evidence captured'])[:5])}
+
+RESOLUTION STEPS
+──────────────────────────────────────────────────────────
+Action Taken:    {action}
+Command:         {kubectl_cmd}
+Execution:       {result.get('execution_method', 'N/A')}
+
+SYSTEM RECOVERY
+──────────────────────────────────────────────────────────
+Recovery Time:   {system_recovery_time}
+Final Status:    {resolution_status}
+
+FUTURE PREVENTION RECOMMENDATIONS
+──────────────────────────────────────────────────────────
+{chr(10).join(f"{i+1}. {r}" for i, r in enumerate(prevention_recs))}
+""".strip()
 
     return {
         "event_type": "incident_report",
@@ -106,6 +328,7 @@ def _generate_incident_report(result: Dict[str, Any]) -> Dict[str, Any]:
         "severity": severity,
         "service": service,
         "failure_type": failure_type,
+        "failure_type_human": failure_human,
         "confidence_score": confidence,
         "scenario": scenario,
         "run_id": result.get("run_id"),
@@ -115,11 +338,17 @@ def _generate_incident_report(result: Dict[str, Any]) -> Dict[str, Any]:
         "timeline": timeline,
         "remediation_action": action,
         "remediation_status": status,
+        "resolution_status": resolution_status,
         "kubectl_command": kubectl_cmd,
         "execution_method": result.get("execution_method"),
+        "system_recovery_time": system_recovery_time,
         "summary": summary,
+        "impact_assessment": impact_assessment,
         "runbook_steps": runbook,
-        "reported_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+        "prevention_recommendations": prevention_recs,
+        "human_report": human_report,
+        "reasoning": reasoning,
+        "reported_at": reported_at,
     }
 
 
@@ -154,7 +383,10 @@ def run() -> None:
             try:
                 future = producer.send(publish_topic, value=report, key=key)
                 future.get(timeout=10)
-                print(f"[Reporting] Incident report published: id={report['incident_id']}, severity={report['severity']}")
+                print(
+                    f"[Reporting] Incident report published: id={report['incident_id']}, "
+                    f"severity={report['severity']}, status={report['resolution_status']}"
+                )
             except (KafkaTimeoutError, NoBrokersAvailable) as exc:
                 print(f"[Reporting][ERROR] Kafka unavailable: {exc}")
                 break

@@ -1,123 +1,103 @@
 [Healthcheck] Kafka reachable at localhost:9092
 [Reporting] Starting agent | consume=jatayu.agent.remediation.results | publish=jatayu.agent.reporting.incidents
 [Reporting] Generating incident report for adservice
-[Reporting] Incident report published: id=INC-20260327-0001, severity=SEV-1
+[Reporting] Incident report published: id=INC-20260327-0001, severity=SEV-1, status=RESOLVED
 [Reporting] Generating incident report for adservice
-[Reporting] Incident report published: id=INC-20260327-0002, severity=SEV-1
+[Reporting] Incident report published: id=INC-20260327-0002, severity=SEV-1, status=RESOLVED
 [Reporting] Generating incident report for cartservice
-[Reporting] Incident report published: id=INC-20260327-0003, severity=SEV-1
-[Reporting] Generating incident report for emailservice
-[Reporting] Incident report published: id=INC-20260327-0004, severity=SEV-1
-[Reporting] Generating incident report for emailservice
-[Reporting] Incident report published: id=INC-20260327-0005, severity=SEV-1
-[Reporting] Generating incident report for emailservice
-[Reporting] Incident report published: id=INC-20260327-0006, severity=SEV-1
-[Reporting] Generating incident report for emailservice
-[Reporting] Incident report published: id=INC-20260327-0007, severity=SEV-1
-[Reporting] Generating incident report for emailservice
-[Reporting] Incident report published: id=INC-20260327-0008, severity=SEV-1
-[Reporting] Generating incident report for emailservice
-[Reporting] Incident report published: id=INC-20260327-0009, severity=SEV-1
-[Reporting] Generating incident report for emailservice
-[Reporting] Incident report published: id=INC-20260327-0010, severity=SEV-1
-[Reporting] Generating incident report for emailservice
-[Reporting] Incident report published: id=INC-20260327-0011, severity=SEV-1
-[Reporting] Generating incident report for emailservice
-[Reporting] Incident report published: id=INC-20260327-0012, severity=SEV-1
-[Reporting] Generating incident report for emailservice
-[Reporting] Incident report published: id=INC-20260327-0013, severity=SEV-1
-[Reporting] Generating incident report for emailservice
-[Reporting] Incident report published: id=INC-20260327-0014, severity=SEV-1
-[Reporting] Generating incident report for emailservice
-[Reporting] Incident report published: id=INC-20260327-0015, severity=SEV-1
-[Reporting] Generating incident report for emailservice
-[Reporting] Incident report published: id=INC-20260327-0016, severity=SEV-1
-[Reporting] Generating incident report for emailservice
-[Reporting] Incident report published: id=INC-20260327-0017, severity=SEV-1
-[Reporting] Generating incident report for emailservice
-[Reporting] Incident report published: id=INC-20260327-0018, severity=SEV-1
-[Reporting] Generating incident report for emailservice
-[Reporting] Incident report published: id=INC-20260327-0019, severity=SEV-1
-[Reporting] Generating incident report for emailservice
-[Reporting] Incident report published: id=INC-20260327-0020, severity=SEV-1
-[Reporting] Generating incident report for emailservice
-[Reporting] Incident report published: id=INC-20260327-0021, severity=SEV-1
-[Reporting] Generating incident report for emailservice
-[Reporting] Incident report published: id=INC-20260327-0022, severity=SEV-1
-[Reporting] Generating incident report for emailservice
-[Reporting] Incident report published: id=INC-20260327-0023, severity=SEV-1
-[Reporting] Generating incident report for emailservice
-[Reporting] Incident report published: id=INC-20260327-0024, severity=SEV-1
-[Reporting] Generating incident report for emailservice
-[Reporting] Incident report published: id=INC-20260327-0025, severity=SEV-1
-[Reporting] Generating incident report for emailservice
-[Reporting] Incident report published: id=INC-20260327-0026, severity=SEV-1
-[Reporting] Generating incident report for emailservice
-[Reporting] Incident report published: id=INC-20260327-0027, severity=SEV-1
-[Reporting] Generating incident report for emailservice
-[Reporting] Incident report published: id=INC-20260327-0028, severity=SEV-1
-[Reporting] Generating incident report for emailservice
-[Reporting] Incident report published: id=INC-20260327-0029, severity=SEV-1
-[Reporting] Generating incident report for emailservice
-[Reporting] Incident report published: id=INC-20260327-0030, severity=SEV-1
-[Reporting] Generating incident report for emailservice
-[Reporting] Incident report published: id=INC-20260327-0031, severity=SEV-1
-[Reporting] Generating incident report for emailservice
-[Reporting] Incident report published: id=INC-20260327-0032, severity=SEV-1
-[Reporting] Generating incident report for emailservice
-[Reporting] Incident report published: id=INC-20260327-0033, severity=SEV-1
-[Reporting] Generating incident report for emailservice
-[Reporting] Incident report published: id=INC-20260327-0034, severity=SEV-1
-[Reporting] Generating incident report for emailservice
-[Reporting] Incident report published: id=INC-20260327-0035, severity=SEV-1
-[Reporting] Generating incident report for emailservice
-[Reporting] Incident report published: id=INC-20260327-0036, severity=SEV-1
-[Reporting] Generating incident report for emailservice
-[Reporting] Incident report published: id=INC-20260327-0037, severity=SEV-1
-[Reporting] Generating incident report for emailservice
-[Reporting] Incident report published: id=INC-20260327-0038, severity=SEV-1
-[Reporting] Generating incident report for emailservice
-[Reporting] Incident report published: id=INC-20260327-0039, severity=SEV-1
-[Reporting] Generating incident report for emailservice
-[Reporting] Incident report published: id=INC-20260327-0040, severity=SEV-1
-[Reporting] Generating incident report for emailservice
-[Reporting] Incident report published: id=INC-20260327-0041, severity=SEV-1
-[Reporting] Generating incident report for emailservice
-[Reporting] Incident report published: id=INC-20260327-0042, severity=SEV-1
-[Reporting] Generating incident report for emailservice
-[Reporting] Incident report published: id=INC-20260327-0043, severity=SEV-1
-[Reporting] Generating incident report for emailservice
-[Reporting] Incident report published: id=INC-20260327-0044, severity=SEV-1
-[Reporting] Generating incident report for emailservice
-[Reporting] Incident report published: id=INC-20260327-0045, severity=SEV-1
-[Reporting] Generating incident report for emailservice
-[Reporting] Incident report published: id=INC-20260327-0046, severity=SEV-1
-[Reporting] Generating incident report for emailservice
-[Reporting] Incident report published: id=INC-20260327-0047, severity=SEV-1
-[Reporting] Generating incident report for emailservice
-[Reporting] Incident report published: id=INC-20260327-0048, severity=SEV-1
-[Reporting] Generating incident report for emailservice
-[Reporting] Incident report published: id=INC-20260327-0049, severity=SEV-1
-[Reporting] Generating incident report for emailservice
-[Reporting] Incident report published: id=INC-20260327-0050, severity=SEV-1
-[Reporting] Generating incident report for emailservice
-[Reporting] Incident report published: id=INC-20260327-0051, severity=SEV-1
-[Reporting] Generating incident report for emailservice
-[Reporting] Incident report published: id=INC-20260327-0052, severity=SEV-1
-[Reporting] Generating incident report for emailservice
-[Reporting] Incident report published: id=INC-20260327-0053, severity=SEV-1
-[Reporting] Generating incident report for emailservice
-[Reporting] Incident report published: id=INC-20260327-0054, severity=SEV-1
-[Reporting] Generating incident report for emailservice
-[Reporting] Incident report published: id=INC-20260327-0055, severity=SEV-1
-[Reporting] Generating incident report for emailservice
-[Reporting] Incident report published: id=INC-20260327-0056, severity=SEV-1
-[Reporting] Generating incident report for emailservice
-[Reporting] Incident report published: id=INC-20260327-0057, severity=SEV-1
-[Reporting] Generating incident report for emailservice
-[Reporting] Incident report published: id=INC-20260327-0058, severity=SEV-1
-[Reporting] Generating incident report for emailservice
-[Reporting] Incident report published: id=INC-20260327-0059, severity=SEV-1
-[Reporting] Generating incident report for emailservice
-[Reporting] Incident report published: id=INC-20260327-0060, severity=SEV-1
-[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260327-0003, severity=SEV-1, status=RESOLVED
+[Reporting] Generating incident report for currencyservice
+[Reporting] Incident report published: id=INC-20260327-0004, severity=SEV-1, status=RESOLVED
+[Reporting] Generating incident report for currencyservice
+[Reporting] Incident report published: id=INC-20260327-0005, severity=SEV-1, status=RESOLVED
+[Reporting] Generating incident report for currencyservice
+[Reporting] Incident report published: id=INC-20260327-0006, severity=SEV-1, status=RESOLVED
+[Reporting] Generating incident report for paymentservice
+[Reporting] Incident report published: id=INC-20260327-0007, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for paymentservice
+[Reporting] Incident report published: id=INC-20260327-0008, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for paymentservice
+[Reporting] Incident report published: id=INC-20260327-0009, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for paymentservice
+[Reporting] Incident report published: id=INC-20260327-0010, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for paymentservice
+[Reporting] Incident report published: id=INC-20260327-0011, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for paymentservice
+[Reporting] Incident report published: id=INC-20260327-0012, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for paymentservice
+[Reporting] Incident report published: id=INC-20260327-0013, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for paymentservice
+[Reporting] Incident report published: id=INC-20260327-0014, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for paymentservice
+[Reporting] Incident report published: id=INC-20260327-0015, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for paymentservice
+[Reporting] Incident report published: id=INC-20260327-0016, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for paymentservice
+[Reporting] Incident report published: id=INC-20260327-0017, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for paymentservice
+[Reporting] Incident report published: id=INC-20260327-0018, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for paymentservice
+[Reporting] Incident report published: id=INC-20260327-0019, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for paymentservice
+[Reporting] Incident report published: id=INC-20260327-0020, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for paymentservice
+[Reporting] Incident report published: id=INC-20260327-0021, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for paymentservice
+[Reporting] Incident report published: id=INC-20260327-0022, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for paymentservice
+[Reporting] Incident report published: id=INC-20260327-0023, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for paymentservice
+[Reporting] Incident report published: id=INC-20260327-0024, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for paymentservice
+[Reporting] Incident report published: id=INC-20260327-0025, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for paymentservice
+[Reporting] Incident report published: id=INC-20260327-0026, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for paymentservice
+[Reporting] Incident report published: id=INC-20260327-0027, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for paymentservice
+[Reporting] Incident report published: id=INC-20260327-0028, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for paymentservice
+[Reporting] Incident report published: id=INC-20260327-0029, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for paymentservice
+[Reporting] Incident report published: id=INC-20260327-0030, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for paymentservice
+[Reporting] Incident report published: id=INC-20260327-0031, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for paymentservice
+[Reporting] Incident report published: id=INC-20260327-0032, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for paymentservice
+[Reporting] Incident report published: id=INC-20260327-0033, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for paymentservice
+[Reporting] Incident report published: id=INC-20260327-0034, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for paymentservice
+[Reporting] Incident report published: id=INC-20260327-0035, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for paymentservice
+[Reporting] Incident report published: id=INC-20260327-0036, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for paymentservice
+[Reporting] Incident report published: id=INC-20260327-0037, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for paymentservice
+[Reporting] Incident report published: id=INC-20260327-0038, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for paymentservice
+[Reporting] Incident report published: id=INC-20260327-0039, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for paymentservice
+[Reporting] Incident report published: id=INC-20260327-0040, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for paymentservice
+[Reporting] Incident report published: id=INC-20260327-0041, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for paymentservice
+[Reporting] Incident report published: id=INC-20260327-0042, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for paymentservice
+[Reporting] Incident report published: id=INC-20260327-0043, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for paymentservice
+[Reporting] Incident report published: id=INC-20260327-0044, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for paymentservice
+[Reporting] Incident report published: id=INC-20260327-0045, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for paymentservice
+[Reporting] Incident report published: id=INC-20260327-0046, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for paymentservice
+[Reporting] Incident report published: id=INC-20260327-0047, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for paymentservice
+[Reporting] Incident report published: id=INC-20260327-0048, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for paymentservice
+[Reporting] Incident report published: id=INC-20260327-0049, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for paymentservice
+[Reporting] Incident report published: id=INC-20260327-0050, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for paymentservice

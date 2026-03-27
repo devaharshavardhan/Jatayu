@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find /c/Users/maana/Documents/VS CODES/Github/Jatayu -maxdepth 1 -name *.yaml -o -name *.yml -o -name docker* -o -name requirements* -o -name setup* -o -name pyproject*)",
+      "Bash(python3:*)",
+      "Bash(python -c \"import ast; ast.parse\\(open\\(''C:/Users/maana/Documents/VS CODES/Github/Jatayu/agents/monitoring_agent.py''\\).read\\(\\)\\); print\\(''monitoring_agent OK''\\)\")",
+      "Bash(python -c \"import ast; ast.parse\\(open\\(''C:/Users/maana/Documents/VS CODES/Github/Jatayu/agents/prediction_agent.py''\\).read\\(\\)\\); print\\(''prediction_agent OK''\\)\")",
+      "Bash(python -c \"import ast; ast.parse\\(open\\(''C:/Users/maana/Documents/VS CODES/Github/Jatayu/agents/rca_agent.py''\\).read\\(\\)\\); print\\(''rca_agent OK''\\)\")",
+      "Bash(python -c \"import ast; ast.parse\\(open\\(''C:/Users/maana/Documents/VS CODES/Github/Jatayu/agents/reporting_agent.py''\\).read\\(\\)\\); print\\(''reporting_agent OK''\\)\")",
+      "Bash(python -c \"import ast; ast.parse\\(open\\(''C:/Users/maana/Documents/VS CODES/Github/Jatayu/app/routers/api.py''\\).read\\(\\)\\); print\\(''api.py OK''\\)\")",
+      "Bash(python -c \"import ast; ast.parse\\(open\\(''C:/Users/maana/Documents/VS CODES/Github/Jatayu/agents/reporting_agent.py'', encoding=''utf-8''\\).read\\(\\)\\); print\\(''reporting_agent OK''\\)\")",
+      "Bash(python -c \"import ast; ast.parse\\(open\\(''C:/Users/maana/Documents/VS CODES/Github/Jatayu/app/routers/api.py'', encoding=''utf-8''\\).read\\(\\)\\); print\\(''api.py OK''\\)\")"
+    ]
+  }
+}

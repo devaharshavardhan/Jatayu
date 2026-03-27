@@ -1,33 +1,41 @@
 ---
 name: JATAYU Project State
-description: AIOps platform - full pipeline built with 6 agents, service registry, and complete UI
+description: Production-grade Dynamic IT Orchestrator — 6-agent AIOps pipeline with Kafka, ML prediction, LLM RCA, charts, D3 dependency graph
 type: project
 ---
 
-JATAYU is an Agentic IT Orchestrator / Autonomous AIOps Platform built for hackathon demo on the Google microservices dataset with Kubernetes chaos scenarios.
+JATAYU is a production-grade Dynamic IT Orchestrator / Autonomous AIOps Platform on the Google microservices dataset with Kubernetes chaos scenarios.
 
-**Architecture:** FastAPI + Kafka + 6 specialized agents + React-style dark-theme dashboard
+**Architecture:** FastAPI + Kafka + 6 specialized agents + dark-theme dashboard with Chart.js + D3.js
 
-**Agents built (all in /agents/):**
-- monitoring_agent.py: service_health → monitoring.alerts (pre-existing)
-- prediction_agent.py: service_features → prediction.risks (pre-existing)
-- rca_agent.py: monitoring.alerts + service_health → rca.results (NEW)
-- decision_agent.py: rca.results → decision.intents (NEW)
-- remediation_agent.py: decision.intents → remediation.results (NEW)
-- reporting_agent.py: remediation.results → reporting.incidents (NEW)
+**Pipeline:** Telemetry → Normalizer → Kafka → Monitoring → Prediction → RCA → Decision → Remediation → Reporting → Dashboard
 
-**Service Registry:** /registry/service_registry.json + registry_loader.py (NEW)
+**Agents (all in /agents/):**
+- monitoring_agent.py: service_health → monitoring.alerts + monitoring.incidents (with 5 snapshots)
+- prediction_agent.py: service_features → prediction.risks (Isolation Forest ML + trend + time_to_failure)
+- rca_agent.py: monitoring.alerts + service_health → rca.results (LLM reasoning via Groq/OpenAI or template)
+- decision_agent.py: rca.results → decision.intents (policy engine + safety guards)
+- remediation_agent.py: decision.intents → remediation.results (manual approval required flag)
+- reporting_agent.py: remediation.results → reporting.incidents (full human-readable reports)
 
-**API Endpoints (all at /api/):**
-- /pipeline/state - full pipeline state (all 9 topics)
-- /rca/results, /decisions, /remediation, /incidents
-- /registry, /registry/{service}, /graph
+**Dashboard tabs (at http://localhost:8000):**
+- Agent Pipeline (default) — 7-stage flow bar + 6 agent cards with I/O
+- Overview — service health grid, alerts list, risks list, stats
+- Graphs — Chart.js charts: CPU, Memory, Latency, Error Rate, Prediction Probability, Incident Frequency
+- Service Graph — D3.js force-directed service dependency graph with health status colors
+- Prediction — probability gauges, trend indicators, time-to-failure per service
+- Data Explorer — JSON file viewer + log viewer
+- Incidents — incident cards with 5-snapshot viewer, reasoning, prevention recommendations
+- Approval Panel — Accept/Reject buttons for pending remediations
+- Registry — service registry with criticality and policies
 
-**UI Tabs:** Agent Pipeline (default), Overview, Data Explorer, Incidents, Registry
+**API Endpoints:**
+- /api/pipeline/state, /api/metrics/timeseries, /api/prediction/summary
+- /api/remediation/approve (POST), /api/remediation/approvals
+- /api/incidents, /api/incidents/monitoring, /api/incidents/snapshots
+- /api/rca/results, /api/decisions, /api/graph, /api/registry
 
-**Agent Pipeline Tab:** Shows 7-stage flow bar + 6 agent cards each with I/O panels (input topic + last message, output topic + last message)
+**LLM:** Set GROQ_API_KEY or OPENAI_API_KEY for real LLM reasoning in RCA agent.
 
-**Run command:** ./start_platform.sh (starts Kafka via docker compose + FastAPI + all 6 agents)
-
-**Why:** Built for hackathon demo to show enterprise-grade AIOps platform
-**How to apply:** When user asks about JATAYU, agents, or wants to run/demo the platform, reference this architecture.
+**Run:** ./start_platform.sh (Kafka + FastAPI :8000 + all 6 agents)
+**Why:** Production-grade showcase of enterprise AIOps with chaos engineering.

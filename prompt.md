@@ -1,469 +1,316 @@
-Act as a senior enterprise AI architect, distributed systems engineer, Kubernetes platform engineer, AIOps architect, backend engineer, and production-grade Python system designer.
-
-I want you to build a production-ready hackathon-grade Agentic IT Orchestrator / Autonomous AIOps Platform that simulates enterprise-scale monitoring, root cause analysis, decisioning, and remediation across Kubernetes and multi-cloud-style environments.
-
-This is not a toy demo. Design it as a realistic, modular, extensible system that would impress enterprise project reviewers, hackathon judges, and platform engineering teams.
-
-==================================================
-
-1. # PROJECT GOAL
-
-Build an intelligent orchestration platform that can:
+# Dynamic IT Orchestrator – Production Grade System Build Prompt
 
-- monitor distributed microservices and infrastructure signals
-- ingest logs, metrics, traces/events, and cluster state
-- normalize telemetry into structured events
-- detect anomalies
-- perform root cause analysis (RCA)
-- make remediation decisions
-- execute self-healing actions
-- generate incident summaries and remediation reports
-- support a service registry so remediation adapters know exactly which service/resource to target and how
-
-The platform should be positioned as an:
+You are a senior AI engineer, senior distributed systems architect, DevOps architect, and full stack engineer.  
+Your task is to design and build a production-grade Dynamic IT Orchestrator system with multi-agent architecture for monitoring, prediction, root cause analysis, decision making, remediation, and reporting.
 
-- Agentic AIOps Platform
-- Autonomous IT Orchestrator
-- Self-Healing Infrastructure Control Plane
-- SaaS-style Multi-Cloud Infrastructure Management Prototype
+This system will operate on Kubernetes microservices and chaos engineering scenarios.
 
-# ================================================== 2. PROBLEM STATEMENT / USE CASE
+---
 
-Problem Statement:
-Enterprises struggle to manage complex IT infrastructure across multi-cloud environments in real time. Traditional monitoring tools fail to coordinate auto-remediation and predictive maintenance.
-
-Description:
-Multiple AI agents autonomously monitor servers, cloud instances, network, Kubernetes workloads, and application health, coordinate fixes, predict failures, and optimize resource allocation.
+# SYSTEM OVERVIEW
 
-Why Agentic AI:
-A single AI component cannot effectively handle multi-domain monitoring, incident triage, RCA, remediation decisioning, execution, and reporting simultaneously. Multiple specialized agents should collaborate through structured event exchange and A2A-style communication.
+The system must include the following agents and pipeline:
 
-Workflow:
-Monitoring Agents → Predictive Failure Agents → RCA Agents → Remediation & Deployment Agents → Reporting Agent
+Telemetry → Normalizer → Kafka → Monitoring Agent → Prediction Agent → RCA Agent → Decision Agent → Remediation Agent → Reporting Agent → Dashboard
+
+The system must support chaos scenarios:
+
+- cpu_spike
+- network_delay
+- pod_kill
+- redis_failure
+
+Chaos scenarios are triggered using Chaos Mesh YAML files.
 
-IMPORTANT:
-Also include a Service Registry in the workflow so adapters and remediation agents can use service metadata, ownership, deployment target, namespace, dependencies, and remediation rules to correctly identify and apply changes.
+---
 
-Required improved workflow:
-Telemetry Ingestion → Telemetry Normalizer → Service Registry Lookup → Monitoring Agent → Prediction Agent → RCA Agent → Decision Agent → Remediation/Execution Agent → Reporting Agent → Feedback Loop
+# REQUIRED SYSTEM PIPELINE
 
-# ================================================== 3. CURRENT IMPLEMENTATION CONTEXT TO BUILD AROUND
+When a user triggers a scenario:
 
-The orchestrator must work FIRST on a dataset-based telemetry pipeline, not only live streaming.
+1. Chaos scenario runs.
+2. Telemetry is generated (metrics, logs, events, traces).
+3. Telemetry is sent to Normalizer.
+4. Normalizer converts telemetry into unified schema.
+5. Normalized data is pushed to Kafka topics.
+6. Monitoring agent detects anomaly and creates incident.
+7. Prediction agent predicts failure probability.
+8. RCA agent analyzes service dependency graph + telemetry.
+9. Decision agent selects remediation action.
+10. Remediation agent suggests steps but requires manual approval flag.
+11. Reporting agent generates human-readable report.
+12. Dashboard updates visualizations and incident reports.
+
+---
+
+# DATA PIPELINE REQUIREMENTS
+
+Normalizer should output unified telemetry schema:
 
-Current source format:
-I already have a telemetry dataset generated from chaos experiments on the Google microservices demo app deployed in Kubernetes.
+{
+timestamp,
+service,
+cpu,
+memory,
+latency,
+error_rate,
+log_errors,
+trace_latency,
+pod_restarts,
+network_delay,
+event_type,
+incident_type
+}
 
-Target environment:
-Google microservices demo:
+Kafka Topics Required:
 
-- frontend
-- cartservice
-- checkoutservice
-- currencyservice
-- emailservice
-- paymentservice
-- productcatalogservice
-- recommendationservice
-- redis-cart
-- shippingservice
-- adservice
-- loadgenerator
-
-Chaos scenarios already used:
-
-- c_pod_kill
-- c_cpu_spike
-- c_network_delay
-- c_redis_failure
-
-Dataset structure:
-dataset/
-c_cpu_spike/
-RUN_ID/
-snapshot_0/
-snapshot_1/
-snapshot_2/
-c_network_delay/
-c_pod_kill/
-c_redis_failure/
-
-Each snapshot contains:
-
-- pod_metrics.txt
-- pods.txt
-- events.txt
-- logs/
-  - frontend.log
-  - checkoutservice.log
-  - cartservice.log
-  - redis-cart.log
-- time.txt
-  IMPORTANT CONSTRAINT:
-  The first version of the orchestrator MUST work directly on this dataset format.
-  Do not assume only live Prometheus/OpenTelemetry ingestion.
-  Instead, design the system so that dataset mode and streaming mode can share the same normalized internal schemas.
-
-# ================================================== 4. DESIGN PRINCIPLES
-
-Build this as realistic engineering, not fake agent hype.
-
-The system should primarily rely on:
-
-- rule-based reasoning
-- graph-based dependency analysis
-- timestamp correlation
-- anomaly scoring
-- simple ML where useful
-- optional lightweight prediction module
-
-Do NOT make LLMs the core incident solver.
-LLMs are optional only for:
-
-- incident summaries
-- remediation explanations
-- runbook-style human-readable reports
-- optional RAG over past incidents or runbooks
-
-RCA must be based on:
-
-- service dependency graph
-- telemetry correlation
-- logs + metrics + events + pod state
-- identifying the earliest probable failing upstream dependency
-- distinguishing root cause from symptom propagation
-
-# ================================================== 5. WHAT TO BUILD
-
-Generate the complete architecture and codebase blueprint for a production-style but hackathon-feasible system with the following components.
-
-A. Ingestion Layer
-
-- dataset reader for snapshot folders
-- optional future Kafka/live ingestion abstraction
-- parsers for pod_metrics.txt, pods.txt, events.txt, logs, time.txt
-
-B. Telemetry Normalizer
-Convert raw snapshot files into normalized structured objects such as:
-
-- ServiceMetric
-- PodState
-- ClusterEvent
-- LogSignal
-- SnapshotTelemetry
-- IncidentSignal
-
-C. Service Registry
-Design and implement a service registry module that stores:
-
-- service name
-- namespace
-- team/owner
-- deployment type
-- Kubernetes resource names
-- dependency list
-- criticality
-- remediation policies
-- health check metadata
-- rollout/restart capability
-- scaling rules
-- adapter mapping
-- command templates or action templates
-
-This registry should be used by:
-
-- RCA engine
-- decision engine
-- remediation/execution agent
-- Kubernetes/cloud adapters
-
-D. Dependency Graph Engine
-Build a dependency graph for microservices.
-Must support:
-
-- service-to-service dependencies
-- impact propagation modeling
-- upstream/downstream traversal
-- finding earliest anomalous dependency
-- graph-based root cause ranking
-
-E. Monitoring Agent
-Responsibilities:
-
-- consume normalized snapshot telemetry
-- compute health states per service
-- detect anomalies from metrics, pod states, logs, events
-- emit structured alert/anomaly events
-
-F. Prediction Agent
-Responsibilities:
-
-- optional lightweight predictive scoring
-- detect risk signals such as rising CPU, restart trend, degradation trend
-- forecast possible failure risk from telemetry trends
-- emit prediction events
-  Keep this lightweight and hackathon-feasible.
-
-G. RCA Agent
-Responsibilities:
-
-- correlate anomalies, events, pod states, logs, and dependency graph
-- distinguish symptom vs root cause
-- score candidate root causes
-- output structured RCA result with confidence and evidence
-
-H. Decision Agent
-Responsibilities:
-
-- map RCA output to remediation strategies
-- enforce rules/policies/safety guards
-- decide whether to:
-  - restart pod
-  - roll out deployment restart
-  - scale replicas
-  - isolate service
-  - mark for manual approval
-  - no-op
-- produce action intent objects
-
-I. Remediation / Execution Agent
-Responsibilities:
-
-- read action intents
-- use service registry + adapters to locate actual target resources
-- execute remediation against Kubernetes adapter layer
-- simulate multi-cloud extensibility via adapter interface
-- return execution result and status
-
-J. Reporting Agent
-Responsibilities:
-
-- generate incident timeline
-- summarize detected issue
-- show RCA explanation
-- show remediation action taken
-- show before/after status
-- generate judge-friendly and operator-friendly reports
-  K. FastAPI Control Plane
-  Build a FastAPI backend exposing APIs such as:
-
-- upload/read dataset run
-- process snapshot
-- process full run
-- get anomalies
-- get RCA result
-- get remediation plan
-- trigger remediation
-- get incident summary
-- get service registry entries
-- get dependency graph
-
-# ================================================== 6. ARCHITECTURE REQUIREMENTS
-
-Use a modular, clean architecture with separation of concerns.
-
-Preferred architecture layers:
-
-- api
-- application/services
-- domain/models
-- agents
-- parsers
-- registry
-- graph
-- rca
-- decisioning
-- execution
-- adapters
-- reporting
-- storage
-- config
-- utils
-
-The code should be:
-
-- production-oriented
-- Python 3.11 compatible
-- type hinted
-- testable
-- extensible
-- cleanly structured
-- suitable for running in WSL Ubuntu
-- hackathon-feasible
-
-# ================================================== 7. KAFKA / EVENT-DRIVEN DESIGN
-
-Even if the first implementation runs offline on folders, design the internal contracts so Kafka can be added later.
-
-Define:
-
-- normalized event schemas
-- topic design
-- producer/consumer responsibilities
-- A2A communication pattern using structured event messages
-
-Suggested event flow:
-normalized.telemetry
-→ monitoring.alerts
-→ prediction.risks
-→ rca.results
-→ decision.intents
-→ remediation.results
-→ reporting.incidents
-
-Include sample JSON messages for each.
-
-# ================================================== 8. RCA LOGIC REQUIREMENTS
-
-Design a practical RCA algorithm that works on my available dataset.
-
-It should use:
-
-- pod restarts
-- pod not ready / crash states
-- abnormal CPU or resource patterns
-- Kubernetes events
-- log signatures
-- dependency graph traversal
-- timestamp correlation
-- service criticality
-- upstream failure precedence
-
-For example:
-If frontend fails but cartservice and redis-cart show prior errors, the RCA engine should avoid blaming frontend and instead identify redis-cart or cartservice if evidence supports that.
-
-The RCA engine should output:
-
-- root cause service
-- failure type
-- confidence score
-- evidence list
-- impacted services
-- remediation recommendation
-
-# ================================================== 9. REMEDIATION ENGINE REQUIREMENTS
-
-Build a rule-based remediation engine first.
-
-Examples:
-
-- pod crashloop → restart/redeploy
-- CPU saturation → scale out
-- redis unreachable → restart redis / verify service endpoints / rollout restart dependent service if needed
-- network delay → mark degraded and recommend traffic shift or retry policy action
-- repeated failures → escalate / require human approval
-
-IMPORTANT:
-Use Service Registry data so remediation agent knows:
-
-- which Kubernetes resource maps to which logical service
-- which namespace to operate in
-- which actions are safe
-- what command/action template to execute
-- what fallback strategy applies
-
-# ================================================== 10. USER EXPERIENCE / REVIEWER IMPACT
-
-This project must look impressive to reviewers.
-
-So design it with:
-
-- strong architecture clarity
-- realistic enterprise vocabulary
-- visible agent collaboration
-- structured RCA output
-- explainable remediation decisions
-- modular extensibility
-- clean APIs
-- operational dashboards or JSON outputs that can be demoed clearly
-
-Make the final solution feel like:
-“an enterprise-grade autonomous AIOps control plane prototype”
-
-# ================================================== 11. REQUIRED OUTPUT FORMAT
-
-Provide the solution in the following order:
-
-1. Final architecture overview
-2. End-to-end workflow
-3. Service registry design
-4. Module/folder structure
-5. Domain models / Pydantic schemas
-6. Dataset parser design
-7. Telemetry normalization design
-8. Dependency graph design
-9. Monitoring agent design
-10. Prediction agent design
-11. RCA agent design
-12. Decision agent design
-13. Remediation/execution agent design
-14. Adapter layer design
-15. FastAPI endpoint design
-16. Kafka topic and event schema design
-17. Step-by-step implementation order
-18. Production-ready Python code skeletons for each module
-19. Example JSON inputs/outputs
-20. Demo flow for hackathon judges
-21. README-style explanation of how to run it
-
-# ================================================== 12. CODE GENERATION INSTRUCTIONS
-
-Generate actual code files, not just theory.
-
-Start by producing:
-
-- project folder tree
-- core domain models
-- parsers for dataset files
-- telemetry normalizer
-- service registry loader
-- dependency graph builder
-- monitoring agent
-- RCA engine
-- decision engine
-- remediation executor interface
-- FastAPI main app
-- example config files
-- example service registry file
-- example dependency graph config
-- example sample outputs
+- telemetry_topic
+- incident_topic
+- prediction_topic
+- rca_topic
+- decision_topic
+- remediation_topic
+- reporting_topic
+
+---
+
+# MONITORING AGENT REQUIREMENTS
+
+Monitoring agent must:
+
+- Consume normalized telemetry from Kafka
+- Detect anomalies (cpu spike, latency spike, error spike, pod kill)
+- Create incident
+- When incident is created, generate 5 telemetry snapshots around incident time
+- Snapshots must be stored and shown when user clicks incident
+- Publish incident to Kafka
+
+Incident object must contain:
+{
+incident_id,
+service,
+incident_type,
+severity,
+metrics_snapshot,
+logs_snapshot,
+traces_snapshot,
+timestamp
+}
+
+---
+
+# PREDICTION AGENT REQUIREMENTS
+
+Prediction agent must:
+
+- Analyze telemetry time series
+- Predict probability of failure
+- Detect patterns before crashes
+- Output:
+  {
+  service,
+  predicted_failure,
+  probability,
+  trend,
+  time_to_failure
+  }
+
+Models to use:
+
+- Isolation Forest
+- Random Forest
+- ARIMA or Prophet for time series
+
+---
+
+# RCA AGENT REQUIREMENTS
+
+RCA agent must:
+
+- Use service dependency graph
+- Parse telemetry from Kafka topics
+- Analyze dependency graph
+- Identify root cause service
+- Use OpenAI API or free LLM API for reasoning
+- Perform graph + telemetry reasoning in parallel
+
+RCA Output:
+{
+root_cause_service,
+failure_type,
+affected_services,
+reasoning,
+confidence
+}
+
+---
+
+# DECISION AGENT REQUIREMENTS
+
+Decision agent must:
+
+- Use policy engine
+- Map root cause to remediation action
+- Send action to remediation agent
+
+Policy examples:
+
+- cpu_spike → scale deployment
+- network_delay → restart pod
+- pod_kill → redeploy pod
+- redis_failure → restart redis pod
+
+---
+
+# REMEDIATION AGENT REQUIREMENTS
+
+Remediation agent must:
+
+- Generate remediation steps
+- Show steps to user
+- Provide two buttons:
+  - Accept
+  - Reject
+- Only apply changes if Accept flag is true
+- Execute Kubernetes or Terraform commands
+
+---
+
+# REPORTING AGENT REQUIREMENTS
+
+Reporting agent must generate human readable report including:
+
+- Incident summary
+- Root cause
+- Effects on system
+- Timeline
+- Remediation steps taken
+- Resolution status
+- Future prevention recommendation
+
+Example report format:
+
+Incident Summary:
+Root Cause:
+Affected Services:
+Impact:
+Resolution Steps:
+System Recovery
+
+Time:
+Recommendations:
+
+---
+
+# UI REQUIREMENTS
+
+Dashboard must include:
+
+1. Incident Reports (must not be blank)
+2. Service Dependency Graph Viewer
+3. Incident Snapshots Viewer
+4. Remediation Approval Panel
+5. Prediction Panel
+6. Graphs and Visualizations:
+   - CPU usage over time
+   - Memory usage
+   - Latency
+   - Error rate
+   - Incident timeline
+7. Remove any "Hackathon Demo" text from UI
+8. When clicking incident → show 5 snapshots
+9. Button to view Service Dependency Graph
+
+---
+
+# VISUALIZATIONS REQUIRED
+
+Include graphs:
+
+- CPU usage graph
+- Memory usage graph
+- Latency graph
+- Error rate graph
+- Incident frequency graph
+- Failure prediction probability graph
+- Service dependency graph visualization
 
 Use:
 
-- Python 3.11
-- FastAPI
-- Pydantic
-- NetworkX for dependency graph
-- clean dataclasses or Pydantic models
-- structured logging
-- uvicorn
-- optional Kafka abstraction interface
-- no unnecessary complexity
+- Grafana
+- Plotly
+- Chart.js
+- D3.js
 
-# ================================================== 13. IMPORTANT ENGINEERING CONSTRAINTS
+---
 
-- Keep the system production-style but hackathon-feasible
-- Do not overcomplicate with unnecessary distributed infrastructure
-- Do not require LLM training
-- Do not make tracing mandatory in v1
-- Build for dataset-first execution
-- Make streaming/Kafka an extensible layer, not a hard dependency
-- Use rule-based + graph-based RCA first
-- Use service registry centrally in remediation workflow
-- Make outputs explainable and demo-friendly
-- Prefer correctness, clarity, and modularity over buzzwords
+# CHAOS SCENARIO INTEGRATION
 
-# ================================================== 14. EXECUTION STYLE
+System must detect and handle these scenarios:
 
-When generating the solution:
+1. CPU Stress
+2. Network Delay
+3. Pod Kill
+4. Redis Failure
 
-- think like a principal engineer
-- make practical design decisions
-- avoid generic filler
-- explain why each component exists
-- generate code that can actually be implemented
-- include comments where useful
-- choose realistic defaults
-- ensure the folder structure and code modules align with each other
+When scenario runs:
+Telemetry → Normalizer → Kafka → Agents → Remediation → Reporting
 
-Now generate the complete production-ready orchestrator blueprint and starter implementation for Cursor AI.
+---
+
+# ARCHITECTURE IMPROVEMENTS (IMPORTANT)
+
+Improve system architecture by including:
+
+- Telemetry Normalizer Service
+- Incident Snapshot Service
+- Service Graph Builder (from traces)
+- Incident Database
+- Feedback Learning System
+- Policy Engine
+- Event-driven agent communication
+- Manual remediation approval flag
+- LLM-based RCA reasoning
+- Prediction agent using ML models
+- Reporting agent generating natural language reports
+
+---
+
+# FINAL SYSTEM COMPONENTS
+
+The system should include:
+
+- Microservices Demo App
+- OpenTelemetry
+- Prometheus
+- Loki
+- Tempo
+- Kafka
+- Telemetry Normalizer
+- Monitoring Agent
+- Prediction Agent
+- RCA Agent
+- Decision Agent
+- Remediation Agent
+- Reporting Agent
+- Dashboard UI
+- Incident Database
+- Service Dependency Graph Builder
+- Chaos Mesh scenarios
+- Visualization dashboard
+
+---
+
+# FINAL GOAL
+
+Build a production-grade Dynamic IT Orchestrator that:
+
+- Detects incidents
+- Predicts failures
+- Finds root cause
+- Suggests remediation
+- Applies remediation after approval
+- Generates reports
+- Shows graphs and dependency graph
+- Stores incident history
+- Works for chaos scenarios

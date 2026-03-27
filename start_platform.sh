@@ -96,11 +96,10 @@ echo -e "${GREEN}━━━━━━━━━━━━━━━━━━━━━
 
 # ── Trap: cleanup on exit ────────────────────────────────────
 cleanup() {
-  echo -e "\n${YELLOW}Stopping all processes...${NC}"
+  echo -e "\n${YELLOW}Stopping FastAPI and agents (Kafka container kept running)...${NC}"
   kill $FASTAPI_PID 2>/dev/null || true
   for pid in "${AGENT_PIDS[@]}"; do kill $pid 2>/dev/null || true; done
-  docker compose down 2>/dev/null || true
-  echo -e "${GREEN}All stopped.${NC}"
+  echo -e "${GREEN}All stopped. Run 'docker compose down' manually to stop Kafka.${NC}"
 }
 trap cleanup EXIT INT TERM
 

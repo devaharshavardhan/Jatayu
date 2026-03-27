@@ -1,4 +1,11 @@
-"""RCA Agent: correlate alerts + service health + dependency graph to identify root cause."""
+"""RCA Agent: correlate alerts + service health + dependency graph to identify root cause.
+
+Uses parallel analysis:
+- Dependency graph traversal (graph-based reasoning)
+- Telemetry correlation (metric-based reasoning)
+- LLM-based natural language reasoning (via OpenAI/Groq API if key available,
+  otherwise uses sophisticated template-based reasoning)
+"""
 from __future__ import annotations
 
 import json
@@ -14,6 +21,13 @@ from messaging.consumer import get_consumer
 from messaging.healthcheck import check_kafka_connection
 from messaging.producer import get_producer
 from messaging.topics import TOPICS
+
+# Optional LLM imports
+try:
+    import urllib.request
+    _HTTP_AVAILABLE = True
+except ImportError:
+    _HTTP_AVAILABLE = False
 
 # Dependency graph
 _GRAPH_PATH = Path(__file__).resolve().parent.parent / "dependency_graph.json"
@@ -238,11 +252,231 @@ def _build_evidence(
     return evidence[:8]  # limit evidence list
 
 
+def _generate_llm_reasoning(
+    rca: Dict[str, Any],
+    health_snapshot: Dict[str, Dict[str, Any]],
+    graph: Dict[str, List[str]],
+) -> str:
+    """
+    Generate LLM-based reasoning about the root cause.
+    If OPENAI_API_KEY or GROQ_API_KEY is set, calls the actual LLM API.
+    Otherwise, generates sophisticated template-based reasoning.
+    """
+    api_key = os.environ.get("OPENAI_API_KEY") or os.environ.get("GROQ_API_KEY")
+    groq_key = os.environ.get("GROQ_API_KEY")
+
+    if groq_key and _HTTP_AVAILABLE:
+        try:
+            reasoning = _call_groq_api(groq_key, rca, health_snapshot, graph)
+            if reasoning:
+                return reasoning
+        except Exception as exc:
+            print(f"[RCA][LLM] Groq API call failed: {exc} — falling back to template")
+    elif api_key and _HTTP_AVAILABLE:
+        try:
+            reasoning = _call_openai_api(api_key, rca, health_snapshot, graph)
+            if reasoning:
+                return reasoning
+        except Exception as exc:
+            print(f"[RCA][LLM] OpenAI API call failed: {exc} — falling back to template")
+
+    return _template_reasoning(rca, health_snapshot, graph)
+
+
+def _build_llm_prompt(rca: Dict[str, Any], health_snapshot: Dict[str, Dict[str, Any]], graph: Dict[str, List[str]]) -> str:
+    service = rca.get("root_cause_service", "unknown")
+    failure_type = rca.get("failure_type", "unknown")
+    confidence = rca.get("confidence_score", 0)
+    impacted = rca.get("impacted_services", [])
+    evidence = rca.get("evidence", [])
+    propagation = rca.get("propagation_path", [])
+    deps = graph.get(service, [])
+
+    health_info = ""
+    svc_health = health_snapshot.get(service, {})
+    if svc_health:
+        health_info = (
+            f"Status: {svc_health.get('status', 'unknown')}, "
+            f"Severity: {svc_health.get('severity_score', 0):.2f}, "
+            f"Flags: {svc_health.get('anomaly_flags', [])}"
+        )
+
+    prompt = (
+        f"You are an SRE expert performing root cause analysis on a Kubernetes microservices incident.\n\n"
+        f"Root Cause Service: {service}\n"
+        f"Failure Type: {failure_type}\n"
+        f"Confidence: {confidence:.0%}\n"
+        f"Service Health: {health_info}\n"
+        f"Dependencies: {deps}\n"
+        f"Propagation Path: {' → '.join(propagation)}\n"
+        f"Impacted Services: {impacted}\n"
+        f"Evidence: {evidence}\n\n"
+        f"Provide a concise 3-4 sentence technical analysis explaining:\n"
+        f"1. Why this service is the root cause\n"
+        f"2. How the failure is propagating\n"
+        f"3. The most likely underlying reason\n"
+        f"Be specific and technical."
+    )
+    return prompt
+
+
+def _call_groq_api(api_key: str, rca: Dict[str, Any], health_snapshot: Dict[str, Dict[str, Any]], graph: Dict[str, List[str]]) -> str:
+    """Call Groq free-tier LLM API."""
+    import json as json_lib
+    import urllib.request
+    import urllib.error
+
+    prompt = _build_llm_prompt(rca, health_snapshot, graph)
+
+    payload = json_lib.dumps({
+        "model": "llama3-8b-8192",
+        "messages": [{"role": "user", "content": prompt}],
+        "max_tokens": 200,
+        "temperature": 0.3,
+    }).encode("utf-8")
+
+    req = urllib.request.Request(
+        "https://api.groq.com/openai/v1/chat/completions",
+        data=payload,
+        headers={
+            "Authorization": f"Bearer {api_key}",
+            "Content-Type": "application/json",
+        },
+        method="POST",
+    )
+    with urllib.request.urlopen(req, timeout=10) as resp:
+        data = json_lib.loads(resp.read())
+        return data["choices"][0]["message"]["content"].strip()
+
+
+def _call_openai_api(api_key: str, rca: Dict[str, Any], health_snapshot: Dict[str, Dict[str, Any]], graph: Dict[str, List[str]]) -> str:
+    """Call OpenAI API for LLM reasoning."""
+    import json as json_lib
+    import urllib.request
+
+    prompt = _build_llm_prompt(rca, health_snapshot, graph)
+
+    payload = json_lib.dumps({
+        "model": "gpt-3.5-turbo",
+        "messages": [{"role": "user", "content": prompt}],
+        "max_tokens": 200,
+        "temperature": 0.3,
+    }).encode("utf-8")
+
+    req = urllib.request.Request(
+        "https://api.openai.com/v1/chat/completions",
+        data=payload,
+        headers={
+            "Authorization": f"Bearer {api_key}",
+            "Content-Type": "application/json",
+        },
+        method="POST",
+    )
+    with urllib.request.urlopen(req, timeout=10) as resp:
+        data = json_lib.loads(resp.read())
+        return data["choices"][0]["message"]["content"].strip()
+
+
+def _template_reasoning(
+    rca: Dict[str, Any],
+    health_snapshot: Dict[str, Dict[str, Any]],
+    graph: Dict[str, List[str]],
+) -> str:
+    """Generate sophisticated template-based LLM-style reasoning."""
+    service = rca.get("root_cause_service", "unknown")
+    failure_type = rca.get("failure_type", "unknown")
+    confidence = rca.get("confidence_score", 0)
+    impacted = rca.get("impacted_services", [])
+    evidence = rca.get("evidence", [])
+    propagation = rca.get("propagation_path", [])
+    deps = graph.get(service, [])
+
+    svc_health = health_snapshot.get(service, {})
+    flags = svc_health.get("anomaly_flags", [])
+    severity = svc_health.get("severity_score", 0)
+    status = svc_health.get("status", "unknown")
+
+    # Build context-aware reasoning
+    failure_context = {
+        "cpu_saturation": (
+            f"The {service} service is experiencing CPU saturation, with resource utilization "
+            f"exceeding safe thresholds. The elevated CPU is causing request processing delays "
+            f"and potential thread pool exhaustion."
+        ),
+        "pod_killed": (
+            f"The {service} pod was forcibly terminated, either by the Kubernetes scheduler "
+            f"due to OOM conditions, node pressure, or an external chaos experiment. "
+            f"The pod termination is causing service unavailability."
+        ),
+        "pod_instability": (
+            f"The {service} pod is exhibiting crash-loop behavior with repeated restarts. "
+            f"The instability pattern suggests an application-level error, misconfiguration, "
+            f"or resource constraint causing the container to fail on startup."
+        ),
+        "readiness_failure": (
+            f"The {service} service is failing readiness probe checks, indicating the "
+            f"application is not ready to serve traffic. This typically signals startup "
+            f"issues, dependency unavailability, or application initialization failures."
+        ),
+        "network_degradation": (
+            f"The {service} service is experiencing network-level degradation, with increased "
+            f"latency and potential packet loss. This points to network policy issues, "
+            f"service mesh misconfiguration, or underlying node network problems."
+        ),
+        "service_degradation": (
+            f"The {service} service is in a degraded state with elevated error rates and "
+            f"reduced throughput. The service is responding to requests but with degraded "
+            f"quality, suggesting resource contention or upstream dependency issues."
+        ),
+    }
+
+    context = failure_context.get(
+        failure_type,
+        f"The {service} service is experiencing {failure_type.replace('_', ' ')}, "
+        f"as indicated by its current {status} status and severity score of {severity:.2f}."
+    )
+
+    # Propagation analysis
+    if len(propagation) > 1:
+        path_str = " → ".join(propagation)
+        prop_text = (
+            f"The failure is propagating along the dependency chain: {path_str}. "
+            f"Downstream services {impacted} are experiencing cascading failures."
+        )
+    elif impacted:
+        prop_text = (
+            f"The failure in {service} is causing degradation in {len(impacted)} dependent "
+            f"service(s): {', '.join(impacted[:3])}."
+        )
+    else:
+        prop_text = f"The failure appears isolated to {service} with no confirmed downstream propagation at this time."
+
+    # Evidence summary
+    if evidence:
+        ev_text = f"Key evidence: {evidence[0]}"
+        if len(evidence) > 1:
+            ev_text += f"; {evidence[1]}"
+    else:
+        ev_text = f"Evidence includes anomaly flags: {', '.join(flags[:3])}." if flags else ""
+
+    # Confidence note
+    if confidence >= 0.85:
+        conf_text = f"Analysis confidence is high ({confidence:.0%}), with strong causal evidence."
+    elif confidence >= 0.70:
+        conf_text = f"Analysis confidence is moderate ({confidence:.0%}); additional monitoring recommended."
+    else:
+        conf_text = f"Analysis confidence is lower ({confidence:.0%}); consider manual investigation to confirm root cause."
+
+    reasoning = f"{context} {prop_text} {ev_text} {conf_text}".strip()
+    return reasoning
+
+
 def _build_rca_result(
     rca: Dict[str, Any],
     snapshot_time: Optional[str],
     scenario: Optional[str],
     run_id: Optional[str],
+    reasoning: str = "",
 ) -> Dict[str, Any]:
     return {
         "event_type": "rca_result",
@@ -252,12 +486,15 @@ def _build_rca_result(
         "root_cause_service": rca["root_cause_service"],
         "failure_type": rca["failure_type"],
         "confidence_score": rca["confidence_score"],
+        "confidence": rca["confidence_score"],  # alias for spec compliance
         "evidence": rca["evidence"],
         "impacted_services": rca["impacted_services"],
+        "affected_services": rca["impacted_services"],  # alias for spec compliance
         "remediation_recommendation": rca["remediation_recommendation"],
         "propagation_path": rca.get("propagation_path", []),
         "root_cause_status": rca.get("root_cause_status", "unknown"),
         "root_cause_severity": rca.get("root_cause_severity", 0.0),
+        "reasoning": reasoning,
         "analyzed_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
     }
 
@@ -370,8 +607,11 @@ def run() -> None:
                 print(f"[RCA] No root cause found yet (health snapshot: {len(health_snapshot)} services)")
                 continue
 
+            # Generate LLM-based reasoning (parallel to graph analysis)
+            reasoning = _generate_llm_reasoning(rca, health_snapshot, graph)
+
             result = _build_rca_result(
-                rca, last_snapshot_time, last_scenario, last_run_id
+                rca, last_snapshot_time, last_scenario, last_run_id, reasoning
             )
 
             key = result["root_cause_service"]

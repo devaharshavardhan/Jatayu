@@ -3,6 +3,7 @@ services:
     image: apache/kafka:4.1.2
     container_name: jatayu-kafka
     hostname: kafka
+    restart: unless-stopped
     ports:
       - "9092:9092"
     environment:

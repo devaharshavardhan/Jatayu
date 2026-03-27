@@ -59,12 +59,25 @@
   <button class="tab-btn" data-tab="overview">
     <span class="tab-icon">◈</span> Overview
   </button>
+  <button class="tab-btn" data-tab="graphs">
+    <span class="tab-icon">📊</span> Graphs
+  </button>
+  <button class="tab-btn" data-tab="depgraph">
+    <span class="tab-icon">🔗</span> Service Graph
+  </button>
+  <button class="tab-btn" data-tab="prediction">
+    <span class="tab-icon">🔮</span> Prediction
+  </button>
   <button class="tab-btn" data-tab="data">
     <span class="tab-icon">⊞</span> Data Explorer
   </button>
   <button class="tab-btn" data-tab="incidents">
     <span class="tab-icon">⚑</span> Incidents
     <span id="incident-badge" class="notif-badge hidden">0</span>
+  </button>
+  <button class="tab-btn" data-tab="remediation">
+    <span class="tab-icon">✅</span> Approval Panel
+    <span id="approval-badge" class="notif-badge notif-yellow hidden">0</span>
   </button>
   <button class="tab-btn" data-tab="registry">
     <span class="tab-icon">☷</span> Registry
@@ -133,7 +146,7 @@
           <span class="agent-icon">📡</span>
           <div>
             <div class="agent-name">Monitoring Agent</div>
-            <div class="agent-desc">Detects anomalies from service health and emits structured alerts</div>
+            <div class="agent-desc">Detects anomalies, creates incidents with 5 telemetry snapshots</div>
           </div>
         </div>
         <span class="agent-status-badge" id="status-monitoring">IDLE</span>
@@ -150,7 +163,7 @@
         <div class="io-pane io-out">
           <div class="io-header">
             <span class="io-arrow out-arrow">↑ OUTPUT</span>
-            <span class="io-topic">jatayu.agent.monitoring.alerts</span>
+            <span class="io-topic">monitoring.alerts + monitoring.incidents</span>
           </div>
           <pre class="io-json" id="out-monitoring">No alerts yet…</pre>
         </div>
@@ -164,7 +177,7 @@
           <span class="agent-icon">🔮</span>
           <div>
             <div class="agent-name">Prediction Agent</div>
-            <div class="agent-desc">Scores failure risk from feature trends and predicts upcoming failures</div>
+            <div class="agent-desc">ML-based failure prediction using Isolation Forest + trend analysis</div>
           </div>
         </div>
         <span class="agent-status-badge" id="status-prediction">IDLE</span>
@@ -195,7 +208,7 @@
           <span class="agent-icon">🔍</span>
           <div>
             <div class="agent-name">RCA Agent</div>
-            <div class="agent-desc">Traverses dependency graph to distinguish root cause from symptom propagation</div>
+            <div class="agent-desc">Dependency graph traversal + LLM-based reasoning for root cause analysis</div>
           </div>
         </div>
         <span class="agent-status-badge" id="status-rca">IDLE</span>
@@ -226,7 +239,7 @@
           <span class="agent-icon">⚖️</span>
           <div>
             <div class="agent-name">Decision Agent</div>
-            <div class="agent-desc">Maps RCA findings to remediation intents with safety guards and policy checks</div>
+            <div class="agent-desc">Policy engine + safety guards: cpu_spike→scale, pod_kill→redeploy</div>
           </div>
         </div>
         <span class="agent-status-badge" id="status-decision">IDLE</span>
@@ -257,7 +270,7 @@
           <span class="agent-icon">🔧</span>
           <div>
             <div class="agent-name">Remediation Agent</div>
-            <div class="agent-desc">Executes kubectl actions against Kubernetes adapter, simulates multi-cloud extensibility</div>
+            <div class="agent-desc">Generates steps, requires manual approval flag before applying changes</div>
           </div>
         </div>
         <span class="agent-status-badge" id="status-remediation">IDLE</span>
@@ -288,7 +301,7 @@
           <span class="agent-icon">📋</span>
           <div>
             <div class="agent-name">Reporting Agent</div>
-            <div class="agent-desc">Generates incident timelines, runbooks, and operator-friendly summaries</div>
+            <div class="agent-desc">Generates human-readable reports with impact assessment and prevention recommendations</div>
           </div>
         </div>
         <span class="agent-status-badge" id="status-reporting">IDLE</span>
@@ -325,6 +338,7 @@
             <option value="jatayu.telemetry.service_health">telemetry.service_health</option>
             <option value="jatayu.telemetry.service_features">telemetry.service_features</option>
             <option value="jatayu.agent.monitoring.alerts">agent.monitoring.alerts</option>
+            <option value="jatayu.agent.monitoring.incidents">agent.monitoring.incidents</option>
             <option value="jatayu.agent.prediction.risks">agent.prediction.risks</option>
             <option value="jatayu.agent.rca.results">agent.rca.results</option>
             <option value="jatayu.agent.decision.intents">agent.decision.intents</option>
@@ -417,6 +431,101 @@
 </div>
 
 <!-- ═══════════════════════════════════════════════════════
+     TAB: GRAPHS & VISUALIZATIONS
+════════════════════════════════════════════════════════ -->
+<div id="tab-graphs" class="tab-content">
+  <div style="padding:12px 16px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #162036">
+    <h2 style="font-size:15px;color:#cbd5e1">Telemetry Visualizations</h2>
+    <div style="display:flex;gap:8px;align-items:center">
+      <select id="graph-svc-filter" style="background:#0e1624;border:1px solid #1a2840;color:#e2e8f0;padding:4px 8px;border-radius:4px;font-size:12px">
+        <option value="all">All Services</option>
+        <option value="frontend">frontend</option>
+        <option value="cartservice">cartservice</option>
+        <option value="checkoutservice">checkoutservice</option>
+        <option value="recommendationservice">recommendationservice</option>
+        <option value="paymentservice">paymentservice</option>
+        <option value="productcatalogservice">productcatalogservice</option>
+        <option value="redis-cart">redis-cart</option>
+      </select>
+      <button id="btn-load-graphs" class="small-btn">↻ Load Charts</button>
+      <span class="muted small" id="graphs-status">Select a scenario and run, then click Load Charts</span>
+    </div>
+  </div>
+  <div id="graphs-grid">
+    <div class="chart-panel">
+      <div class="chart-title">CPU Usage (millicores) over Snapshots</div>
+      <canvas id="chart-cpu" height="120"></canvas>
+    </div>
+    <div class="chart-panel">
+      <div class="chart-title">Memory Usage (MiB) over Snapshots</div>
+      <canvas id="chart-memory" height="120"></canvas>
+    </div>
+    <div class="chart-panel">
+      <div class="chart-title">HTTP Error Rate over Snapshots</div>
+      <canvas id="chart-errors" height="120"></canvas>
+    </div>
+    <div class="chart-panel">
+      <div class="chart-title">Average Latency (ms) over Snapshots</div>
+      <canvas id="chart-latency" height="120"></canvas>
+    </div>
+    <div class="chart-panel">
+      <div class="chart-title">Failure Prediction Probability (from Pipeline)</div>
+      <canvas id="chart-prediction" height="120"></canvas>
+    </div>
+    <div class="chart-panel">
+      <div class="chart-title">Incident Severity Timeline</div>
+      <canvas id="chart-incidents" height="120"></canvas>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     TAB: SERVICE DEPENDENCY GRAPH
+════════════════════════════════════════════════════════ -->
+<div id="tab-depgraph" class="tab-content">
+  <div style="padding:12px 16px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #162036">
+    <h2 style="font-size:15px;color:#cbd5e1">Service Dependency Graph</h2>
+    <div style="display:flex;gap:8px;align-items:center">
+      <button id="btn-load-graph" class="small-btn">↻ Load Graph</button>
+      <span class="muted small">Click nodes to see details · Drag to rearrange</span>
+    </div>
+  </div>
+  <div id="dep-graph-legend" style="padding:8px 16px;display:flex;gap:16px;font-size:11px;border-bottom:1px solid #162036">
+    <span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#10b981;margin-right:4px"></span>Healthy</span>
+    <span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#f59e0b;margin-right:4px"></span>Degraded</span>
+    <span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#ef4444;margin-right:4px"></span>Failed</span>
+    <span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#475569;margin-right:4px"></span>Unknown</span>
+    <span class="muted" style="margin-left:auto">Node size = criticality · Arrow = dependency direction</span>
+  </div>
+  <div id="dep-graph-container">
+    <svg id="dep-graph-svg"></svg>
+    <div id="dep-graph-tooltip" class="dep-tooltip hidden"></div>
+  </div>
+  <div id="dep-graph-detail" style="display:none;padding:12px 16px;border-top:1px solid #162036;font-size:12px">
+    <div style="color:#94a3b8;margin-bottom:4px">Selected Service</div>
+    <div id="dep-graph-detail-content"></div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     TAB: PREDICTION PANEL
+════════════════════════════════════════════════════════ -->
+<div id="tab-prediction" class="tab-content">
+  <div style="padding:12px 16px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #162036">
+    <h2 style="font-size:15px;color:#cbd5e1">Failure Prediction Panel</h2>
+    <div style="display:flex;gap:8px;align-items:center">
+      <span class="live-pill">● LIVE</span>
+      <button id="btn-refresh-prediction" class="small-btn">↻ Refresh</button>
+    </div>
+  </div>
+  <div id="prediction-grid">
+    <div class="muted small" style="padding:24px;text-align:center">
+      No predictions yet. Publish snapshots and let the prediction agent run.
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
      TAB: DATA EXPLORER
 ════════════════════════════════════════════════════════ -->
 <div id="tab-data" class="tab-content">
@@ -474,11 +583,56 @@
     <div style="display:flex;gap:8px;align-items:center">
       <span class="live-pill">● LIVE</span>
       <button id="btn-refresh-incidents" class="small-btn">↻ Refresh</button>
+      <button id="btn-load-mon-incidents" class="small-btn">Load Snapshot Incidents</button>
     </div>
   </div>
+
+  <!-- Incident Snapshot Viewer (appears when clicking incident) -->
+  <div id="incident-snapshot-viewer" style="display:none;margin:12px 16px;background:#0a1220;border:1px solid #1e3a5f;border-radius:8px;overflow:hidden">
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px;border-bottom:1px solid #1e2d45">
+      <div>
+        <span style="font-weight:600;color:#22d3ee;margin-right:8px" id="snap-viewer-title">Incident Snapshots</span>
+        <span class="muted small" id="snap-viewer-subtitle">5 telemetry snapshots around incident time</span>
+      </div>
+      <button onclick="document.getElementById('incident-snapshot-viewer').style.display='none'" class="small-btn">✕ Close</button>
+    </div>
+    <div id="incident-snapshots-grid" style="display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:#162036">
+    </div>
+  </div>
+
   <div id="incidents-list">
     <div class="muted small" style="padding:24px;text-align:center">
       No incidents yet. Publish a snapshot and let the agent pipeline run.
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     TAB: REMEDIATION APPROVAL PANEL
+════════════════════════════════════════════════════════ -->
+<div id="tab-remediation" class="tab-content">
+  <div style="padding:12px 16px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #162036">
+    <h2 style="font-size:15px;color:#cbd5e1">Remediation Approval Panel</h2>
+    <div style="display:flex;gap:8px;align-items:center">
+      <span class="live-pill">● LIVE</span>
+      <button id="btn-refresh-approvals" class="small-btn">↻ Refresh</button>
+    </div>
+  </div>
+  <div style="padding:8px 16px;background:#080e1c;border-bottom:1px solid #162036;font-size:11px;color:#475569">
+    ⚠ Critical and high-risk remediations require explicit operator approval before execution.
+    Review each action carefully before accepting.
+  </div>
+  <div id="approval-queue">
+    <div class="muted small" style="padding:24px;text-align:center">
+      No pending remediations. The pipeline will populate this panel when decisions require human approval.
+    </div>
+  </div>
+
+  <!-- Approval History -->
+  <div style="padding:12px 16px;border-top:1px solid #162036;margin-top:8px">
+    <h3 style="font-size:13px;color:#94a3b8;margin-bottom:8px">Approval History</h3>
+    <div id="approval-history">
+      <div class="muted small">No approval decisions yet.</div>
     </div>
   </div>
 </div>
