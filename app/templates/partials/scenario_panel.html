@@ -1,0 +1,24 @@
+<h2>Incident Control</h2>
+<div class="form-row">
+  <label for="scenario">Scenario</label>
+  <select id="scenario">
+    <option value="">-- select --</option>
+    {% for s in scenarios %}
+    <option value="{{s}}">{{s}}</option>
+    {% endfor %}
+  </select>
+</div>
+<div class="form-row">
+  <label for="run">Run ID</label>
+  <select id="run"></select>
+</div>
+<div class="form-row">
+  <label for="snapshot">Snapshot</label>
+  <select id="snapshot"></select>
+</div>
+<div class="button-row">
+  <button id="load-run">Load Run</button>
+  <button id="publish-snapshot">Publish Snapshot</button>
+  <button id="publish-next">Publish Next</button>
+  <button id="publish-all">Publish All</button>
+</div>

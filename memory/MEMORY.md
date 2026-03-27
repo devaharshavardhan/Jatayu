@@ -1,0 +1,1 @@
+- [JATAYU Project State](project_jatayu.md) — Full AIOps platform: 6 agents, service registry, pipeline UI

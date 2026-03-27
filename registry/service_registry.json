@@ -1,0 +1,100 @@
+{
+  "services": {
+    "frontend": {
+      "namespace": "default", "team": "platform", "deployment": "frontend",
+      "k8s_resource": "deployment/frontend", "criticality": "high",
+      "dependencies": ["cartservice", "checkoutservice", "recommendationservice", "productcatalogservice"],
+      "remediation_policies": ["restart_pod", "rollout_restart"],
+      "adapter": "kubernetes", "safe_to_auto_remediate": true,
+      "max_replicas": 3, "min_replicas": 1
+    },
+    "cartservice": {
+      "namespace": "default", "team": "cart", "deployment": "cartservice",
+      "k8s_resource": "deployment/cartservice", "criticality": "high",
+      "dependencies": ["redis-cart"],
+      "remediation_policies": ["restart_pod", "rollout_restart"],
+      "adapter": "kubernetes", "safe_to_auto_remediate": true,
+      "max_replicas": 2, "min_replicas": 1
+    },
+    "checkoutservice": {
+      "namespace": "default", "team": "checkout", "deployment": "checkoutservice",
+      "k8s_resource": "deployment/checkoutservice", "criticality": "critical",
+      "dependencies": ["paymentservice", "shippingservice", "emailservice", "currencyservice", "cartservice", "productcatalogservice"],
+      "remediation_policies": ["restart_pod", "scale_out", "manual_approval"],
+      "adapter": "kubernetes", "safe_to_auto_remediate": false,
+      "max_replicas": 3, "min_replicas": 1
+    },
+    "paymentservice": {
+      "namespace": "default", "team": "payments", "deployment": "paymentservice",
+      "k8s_resource": "deployment/paymentservice", "criticality": "critical",
+      "dependencies": [],
+      "remediation_policies": ["manual_approval"],
+      "adapter": "kubernetes", "safe_to_auto_remediate": false,
+      "max_replicas": 2, "min_replicas": 1
+    },
+    "productcatalogservice": {
+      "namespace": "default", "team": "catalog", "deployment": "productcatalogservice",
+      "k8s_resource": "deployment/productcatalogservice", "criticality": "high",
+      "dependencies": [],
+      "remediation_policies": ["restart_pod", "rollout_restart", "scale_out"],
+      "adapter": "kubernetes", "safe_to_auto_remediate": true,
+      "max_replicas": 3, "min_replicas": 1
+    },
+    "recommendationservice": {
+      "namespace": "default", "team": "discovery", "deployment": "recommendationservice",
+      "k8s_resource": "deployment/recommendationservice", "criticality": "medium",
+      "dependencies": ["productcatalogservice"],
+      "remediation_policies": ["restart_pod", "scale_out"],
+      "adapter": "kubernetes", "safe_to_auto_remediate": true,
+      "max_replicas": 3, "min_replicas": 1
+    },
+    "shippingservice": {
+      "namespace": "default", "team": "logistics", "deployment": "shippingservice",
+      "k8s_resource": "deployment/shippingservice", "criticality": "medium",
+      "dependencies": [],
+      "remediation_policies": ["restart_pod", "rollout_restart"],
+      "adapter": "kubernetes", "safe_to_auto_remediate": true,
+      "max_replicas": 2, "min_replicas": 1
+    },
+    "emailservice": {
+      "namespace": "default", "team": "notifications", "deployment": "emailservice",
+      "k8s_resource": "deployment/emailservice", "criticality": "low",
+      "dependencies": [],
+      "remediation_policies": ["restart_pod"],
+      "adapter": "kubernetes", "safe_to_auto_remediate": true,
+      "max_replicas": 2, "min_replicas": 1
+    },
+    "currencyservice": {
+      "namespace": "default", "team": "finance", "deployment": "currencyservice",
+      "k8s_resource": "deployment/currencyservice", "criticality": "high",
+      "dependencies": [],
+      "remediation_policies": ["restart_pod", "rollout_restart"],
+      "adapter": "kubernetes", "safe_to_auto_remediate": true,
+      "max_replicas": 2, "min_replicas": 1
+    },
+    "redis-cart": {
+      "namespace": "default", "team": "infrastructure", "deployment": "redis-cart",
+      "k8s_resource": "deployment/redis-cart", "criticality": "high",
+      "dependencies": [],
+      "remediation_policies": ["restart_pod", "rollout_restart", "verify_endpoints"],
+      "adapter": "kubernetes", "safe_to_auto_remediate": true,
+      "max_replicas": 1, "min_replicas": 1
+    },
+    "adservice": {
+      "namespace": "default", "team": "ads", "deployment": "adservice",
+      "k8s_resource": "deployment/adservice", "criticality": "low",
+      "dependencies": [],
+      "remediation_policies": ["restart_pod"],
+      "adapter": "kubernetes", "safe_to_auto_remediate": true,
+      "max_replicas": 2, "min_replicas": 1
+    },
+    "loadgenerator": {
+      "namespace": "default", "team": "testing", "deployment": "loadgenerator",
+      "k8s_resource": "deployment/loadgenerator", "criticality": "low",
+      "dependencies": ["frontend"],
+      "remediation_policies": ["restart_pod"],
+      "adapter": "kubernetes", "safe_to_auto_remediate": true,
+      "max_replicas": 1, "min_replicas": 0
+    }
+  }
+}

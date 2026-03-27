@@ -1,0 +1,499 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- ═══════════════════════════════════════════════════════
+     SCENARIO LAUNCHER BAR
+════════════════════════════════════════════════════════ -->
+<div id="launcher">
+  <div id="scenario-btns">
+    <button class="scn-btn" data-scenario="c_cpu_spike">
+      <span class="scn-icon">⚡</span>
+      <span class="scn-label">CPU Spike</span>
+      <span class="scn-sub">recommendationservice</span>
+    </button>
+    <button class="scn-btn" data-scenario="c_network_delay">
+      <span class="scn-icon">🌐</span>
+      <span class="scn-label">Network Delay</span>
+      <span class="scn-sub">frontend 200ms</span>
+    </button>
+    <button class="scn-btn" data-scenario="c_redis_failure">
+      <span class="scn-icon">🗄️</span>
+      <span class="scn-label">Redis Failure</span>
+      <span class="scn-sub">pod kill</span>
+    </button>
+    <button class="scn-btn" data-scenario="c_pod_kill">
+      <span class="scn-icon">💀</span>
+      <span class="scn-label">Pod Kill</span>
+      <span class="scn-sub">frontend</span>
+    </button>
+  </div>
+
+  <div id="run-controls">
+    <div class="ctrl-group">
+      <label>Run</label>
+      <select id="run-sel"><option value="">—</option></select>
+    </div>
+    <div class="ctrl-group">
+      <span class="snap-indicator" id="snap-indicator">Snapshot — / —</span>
+    </div>
+    <div class="ctrl-group btn-group">
+      <button id="btn-prev" title="Previous snapshot">◀ Prev</button>
+      <button id="btn-next" title="Next snapshot">Next ▶</button>
+      <button id="btn-auto" title="Auto-play through all snapshots">▶ Play</button>
+      <button id="btn-pub-all" title="Publish all snapshots to Kafka">⬆ Pub All</button>
+    </div>
+    <div id="pipeline-badge" class="pipeline-badge">
+      <span class="dot dot-idle"></span>
+      <span id="pipeline-status-text">Idle</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     MAIN TAB BAR
+════════════════════════════════════════════════════════ -->
+<div id="tab-bar">
+  <button class="tab-btn active" data-tab="pipeline">
+    <span class="tab-icon">⟳</span> Agent Pipeline
+  </button>
+  <button class="tab-btn" data-tab="overview">
+    <span class="tab-icon">◈</span> Overview
+  </button>
+  <button class="tab-btn" data-tab="data">
+    <span class="tab-icon">⊞</span> Data Explorer
+  </button>
+  <button class="tab-btn" data-tab="incidents">
+    <span class="tab-icon">⚑</span> Incidents
+    <span id="incident-badge" class="notif-badge hidden">0</span>
+  </button>
+  <button class="tab-btn" data-tab="registry">
+    <span class="tab-icon">☷</span> Registry
+  </button>
+  <div class="tab-spacer"></div>
+  <span class="live-pill" id="live-indicator">● LIVE</span>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     TAB: AGENT PIPELINE
+════════════════════════════════════════════════════════ -->
+<div id="tab-pipeline" class="tab-content active">
+
+  <!-- Pipeline Flow Visualization -->
+  <div id="pipeline-flow-bar">
+    <div class="flow-stage" id="stage-ingestion">
+      <div class="stage-dot" id="dot-ingestion"></div>
+      <div class="stage-label">Ingestion</div>
+      <div class="stage-sub">Snapshot Publisher</div>
+    </div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-stage" id="stage-monitoring">
+      <div class="stage-dot" id="dot-monitoring"></div>
+      <div class="stage-label">Monitoring</div>
+      <div class="stage-sub">Health → Alerts</div>
+    </div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-stage" id="stage-prediction">
+      <div class="stage-dot" id="dot-prediction"></div>
+      <div class="stage-label">Prediction</div>
+      <div class="stage-sub">Features → Risks</div>
+    </div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-stage" id="stage-rca">
+      <div class="stage-dot" id="dot-rca"></div>
+      <div class="stage-label">RCA</div>
+      <div class="stage-sub">Alerts → Root Cause</div>
+    </div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-stage" id="stage-decision">
+      <div class="stage-dot" id="dot-decision"></div>
+      <div class="stage-label">Decision</div>
+      <div class="stage-sub">RCA → Action</div>
+    </div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-stage" id="stage-remediation">
+      <div class="stage-dot" id="dot-remediation"></div>
+      <div class="stage-label">Remediation</div>
+      <div class="stage-sub">Action → Execute</div>
+    </div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-stage" id="stage-reporting">
+      <div class="stage-dot" id="dot-reporting"></div>
+      <div class="stage-label">Reporting</div>
+      <div class="stage-sub">Result → Incident</div>
+    </div>
+  </div>
+
+  <!-- Agent Cards Grid -->
+  <div id="agent-grid">
+
+    <!-- Monitoring Agent -->
+    <div class="agent-card" id="card-monitoring">
+      <div class="agent-header">
+        <div class="agent-title-group">
+          <span class="agent-icon">📡</span>
+          <div>
+            <div class="agent-name">Monitoring Agent</div>
+            <div class="agent-desc">Detects anomalies from service health and emits structured alerts</div>
+          </div>
+        </div>
+        <span class="agent-status-badge" id="status-monitoring">IDLE</span>
+      </div>
+      <div class="agent-io">
+        <div class="io-pane io-in">
+          <div class="io-header">
+            <span class="io-arrow in-arrow">↓ INPUT</span>
+            <span class="io-topic">jatayu.telemetry.service_health</span>
+          </div>
+          <pre class="io-json" id="in-monitoring">Waiting for data…</pre>
+        </div>
+        <div class="io-divider">→</div>
+        <div class="io-pane io-out">
+          <div class="io-header">
+            <span class="io-arrow out-arrow">↑ OUTPUT</span>
+            <span class="io-topic">jatayu.agent.monitoring.alerts</span>
+          </div>
+          <pre class="io-json" id="out-monitoring">No alerts yet…</pre>
+        </div>
+      </div>
+    </div>
+
+    <!-- Prediction Agent -->
+    <div class="agent-card" id="card-prediction">
+      <div class="agent-header">
+        <div class="agent-title-group">
+          <span class="agent-icon">🔮</span>
+          <div>
+            <div class="agent-name">Prediction Agent</div>
+            <div class="agent-desc">Scores failure risk from feature trends and predicts upcoming failures</div>
+          </div>
+        </div>
+        <span class="agent-status-badge" id="status-prediction">IDLE</span>
+      </div>
+      <div class="agent-io">
+        <div class="io-pane io-in">
+          <div class="io-header">
+            <span class="io-arrow in-arrow">↓ INPUT</span>
+            <span class="io-topic">jatayu.telemetry.service_features</span>
+          </div>
+          <pre class="io-json" id="in-prediction">Waiting for data…</pre>
+        </div>
+        <div class="io-divider">→</div>
+        <div class="io-pane io-out">
+          <div class="io-header">
+            <span class="io-arrow out-arrow">↑ OUTPUT</span>
+            <span class="io-topic">jatayu.agent.prediction.risks</span>
+          </div>
+          <pre class="io-json" id="out-prediction">No risks yet…</pre>
+        </div>
+      </div>
+    </div>
+
+    <!-- RCA Agent -->
+    <div class="agent-card" id="card-rca">
+      <div class="agent-header">
+        <div class="agent-title-group">
+          <span class="agent-icon">🔍</span>
+          <div>
+            <div class="agent-name">RCA Agent</div>
+            <div class="agent-desc">Traverses dependency graph to distinguish root cause from symptom propagation</div>
+          </div>
+        </div>
+        <span class="agent-status-badge" id="status-rca">IDLE</span>
+      </div>
+      <div class="agent-io">
+        <div class="io-pane io-in">
+          <div class="io-header">
+            <span class="io-arrow in-arrow">↓ INPUT</span>
+            <span class="io-topic">jatayu.agent.monitoring.alerts</span>
+          </div>
+          <pre class="io-json" id="in-rca">Waiting for alerts…</pre>
+        </div>
+        <div class="io-divider">→</div>
+        <div class="io-pane io-out">
+          <div class="io-header">
+            <span class="io-arrow out-arrow">↑ OUTPUT</span>
+            <span class="io-topic">jatayu.agent.rca.results</span>
+          </div>
+          <pre class="io-json" id="out-rca">No RCA results yet…</pre>
+        </div>
+      </div>
+    </div>
+
+    <!-- Decision Agent -->
+    <div class="agent-card" id="card-decision">
+      <div class="agent-header">
+        <div class="agent-title-group">
+          <span class="agent-icon">⚖️</span>
+          <div>
+            <div class="agent-name">Decision Agent</div>
+            <div class="agent-desc">Maps RCA findings to remediation intents with safety guards and policy checks</div>
+          </div>
+        </div>
+        <span class="agent-status-badge" id="status-decision">IDLE</span>
+      </div>
+      <div class="agent-io">
+        <div class="io-pane io-in">
+          <div class="io-header">
+            <span class="io-arrow in-arrow">↓ INPUT</span>
+            <span class="io-topic">jatayu.agent.rca.results</span>
+          </div>
+          <pre class="io-json" id="in-decision">Waiting for RCA results…</pre>
+        </div>
+        <div class="io-divider">→</div>
+        <div class="io-pane io-out">
+          <div class="io-header">
+            <span class="io-arrow out-arrow">↑ OUTPUT</span>
+            <span class="io-topic">jatayu.agent.decision.intents</span>
+          </div>
+          <pre class="io-json" id="out-decision">No decisions yet…</pre>
+        </div>
+      </div>
+    </div>
+
+    <!-- Remediation Agent -->
+    <div class="agent-card" id="card-remediation">
+      <div class="agent-header">
+        <div class="agent-title-group">
+          <span class="agent-icon">🔧</span>
+          <div>
+            <div class="agent-name">Remediation Agent</div>
+            <div class="agent-desc">Executes kubectl actions against Kubernetes adapter, simulates multi-cloud extensibility</div>
+          </div>
+        </div>
+        <span class="agent-status-badge" id="status-remediation">IDLE</span>
+      </div>
+      <div class="agent-io">
+        <div class="io-pane io-in">
+          <div class="io-header">
+            <span class="io-arrow in-arrow">↓ INPUT</span>
+            <span class="io-topic">jatayu.agent.decision.intents</span>
+          </div>
+          <pre class="io-json" id="in-remediation">Waiting for decisions…</pre>
+        </div>
+        <div class="io-divider">→</div>
+        <div class="io-pane io-out">
+          <div class="io-header">
+            <span class="io-arrow out-arrow">↑ OUTPUT</span>
+            <span class="io-topic">jatayu.agent.remediation.results</span>
+          </div>
+          <pre class="io-json" id="out-remediation">No executions yet…</pre>
+        </div>
+      </div>
+    </div>
+
+    <!-- Reporting Agent -->
+    <div class="agent-card" id="card-reporting">
+      <div class="agent-header">
+        <div class="agent-title-group">
+          <span class="agent-icon">📋</span>
+          <div>
+            <div class="agent-name">Reporting Agent</div>
+            <div class="agent-desc">Generates incident timelines, runbooks, and operator-friendly summaries</div>
+          </div>
+        </div>
+        <span class="agent-status-badge" id="status-reporting">IDLE</span>
+      </div>
+      <div class="agent-io">
+        <div class="io-pane io-in">
+          <div class="io-header">
+            <span class="io-arrow in-arrow">↓ INPUT</span>
+            <span class="io-topic">jatayu.agent.remediation.results</span>
+          </div>
+          <pre class="io-json" id="in-reporting">Waiting for results…</pre>
+        </div>
+        <div class="io-divider">→</div>
+        <div class="io-pane io-out">
+          <div class="io-header">
+            <span class="io-arrow out-arrow">↑ OUTPUT</span>
+            <span class="io-topic">jatayu.agent.reporting.incidents</span>
+          </div>
+          <pre class="io-json" id="out-reporting">No incidents yet…</pre>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /agent-grid -->
+
+  <!-- Kafka Inspector -->
+  <div id="kafka-inspector-row">
+    <div class="panel kafka-panel-wide">
+      <div class="panel-header">
+        <h2>Kafka Topic Inspector</h2>
+        <div style="display:flex;gap:8px;align-items:center">
+          <select id="topic-select">
+            <option value="jatayu.snapshot.context">snapshot.context</option>
+            <option value="jatayu.telemetry.service_health">telemetry.service_health</option>
+            <option value="jatayu.telemetry.service_features">telemetry.service_features</option>
+            <option value="jatayu.agent.monitoring.alerts">agent.monitoring.alerts</option>
+            <option value="jatayu.agent.prediction.risks">agent.prediction.risks</option>
+            <option value="jatayu.agent.rca.results">agent.rca.results</option>
+            <option value="jatayu.agent.decision.intents">agent.decision.intents</option>
+            <option value="jatayu.agent.remediation.results">agent.remediation.results</option>
+            <option value="jatayu.agent.reporting.incidents">agent.reporting.incidents</option>
+          </select>
+          <button id="btn-refresh-topic" class="small-btn">↻ Refresh</button>
+          <button id="btn-clear-pub" class="small-btn">✕ Clear Log</button>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 300px;gap:0">
+        <pre class="json-view" id="kafka-json" style="max-height:220px;border-right:1px solid #1e2d45">Select a topic above to inspect messages.</pre>
+        <div id="publish-log" style="max-height:220px;overflow-y:auto;padding:8px 12px;font-size:11px;font-family:monospace">
+          <div class="muted small">Publish log will appear here.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /tab-pipeline -->
+
+<!-- ═══════════════════════════════════════════════════════
+     TAB: OVERVIEW
+════════════════════════════════════════════════════════ -->
+<div id="tab-overview" class="tab-content">
+  <div id="overview-grid">
+
+    <!-- Service Health -->
+    <div class="panel" id="health-panel">
+      <div class="panel-header">
+        <h2>Service Health</h2>
+        <span id="health-time" class="muted small"></span>
+      </div>
+      <div id="health-grid">
+        <div class="muted small" style="padding:10px 14px">Select a scenario to view service health.</div>
+      </div>
+    </div>
+
+    <!-- Monitoring Alerts -->
+    <div class="panel">
+      <div class="panel-header">
+        <h2>Monitoring Alerts</h2>
+        <span class="live-pill">● LIVE</span>
+      </div>
+      <div id="alerts-list" style="overflow-y:auto;max-height:260px;padding:8px;display:flex;flex-direction:column;gap:6px">
+        <div class="muted small">No alerts yet.</div>
+      </div>
+    </div>
+
+    <!-- Prediction Risks -->
+    <div class="panel">
+      <div class="panel-header">
+        <h2>Prediction Risks</h2>
+        <span class="live-pill">● LIVE</span>
+      </div>
+      <div id="risks-list" style="overflow-y:auto;max-height:260px;padding:8px;display:flex;flex-direction:column;gap:6px">
+        <div class="muted small">No predictions yet.</div>
+      </div>
+    </div>
+
+    <!-- Stats Row -->
+    <div class="stats-row">
+      <div class="stat-card">
+        <div class="stat-label">Alerts</div>
+        <div class="stat-value" id="stat-alerts">0</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Risks</div>
+        <div class="stat-value" id="stat-risks">0</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">RCA Results</div>
+        <div class="stat-value" id="stat-rca">0</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Actions</div>
+        <div class="stat-value" id="stat-decisions">0</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Remediated</div>
+        <div class="stat-value" id="stat-remediated">0</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Incidents</div>
+        <div class="stat-value" id="stat-incidents">0</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     TAB: DATA EXPLORER
+════════════════════════════════════════════════════════ -->
+<div id="tab-data" class="tab-content">
+  <div id="data-explorer-grid">
+
+    <!-- JSON File Viewer -->
+    <div class="panel" id="data-panel">
+      <div class="panel-header">
+        <h2>Snapshot Data</h2>
+        <div class="file-tabs" id="file-tabs">
+          <button class="ftab active" data-file="snapshot_context.json">Context</button>
+          <button class="ftab" data-file="k8s_events.json">K8s Events</button>
+          <button class="ftab" data-file="pod_metrics.json">Pod Metrics</button>
+          <button class="ftab" data-file="pod_status.json">Pod Status</button>
+          <button class="ftab" data-file="service_features.json">Features</button>
+          <button class="ftab" data-file="service_health.json">Health</button>
+        </div>
+      </div>
+      <div class="json-toolbar">
+        <span id="json-file-label" class="muted small">snapshot_context.json</span>
+        <button id="btn-copy-json" class="small-btn" title="Copy JSON">⎘ Copy</button>
+      </div>
+      <pre class="json-view" id="snap-json" style="max-height:420px">Select a scenario and run to explore snapshots.</pre>
+    </div>
+
+    <!-- Log Viewer -->
+    <div class="panel" id="log-panel">
+      <div class="panel-header">
+        <h2>Log Viewer</h2>
+        <div class="log-filters">
+          <select id="log-svc-filter"><option value="">All Services</option></select>
+          <select id="log-sev-filter">
+            <option value="">All Levels</option>
+            <option value="error">Error</option>
+            <option value="warning">Warning</option>
+            <option value="info">Info</option>
+          </select>
+          <span id="log-count" class="muted small"></span>
+        </div>
+      </div>
+      <div id="log-feed" style="overflow-y:auto;max-height:380px;padding:6px 0;font-family:monospace;font-size:11.5px">
+        <div class="muted small log-empty" style="padding:10px 14px">No logs loaded. Select a scenario snapshot.</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     TAB: INCIDENTS
+════════════════════════════════════════════════════════ -->
+<div id="tab-incidents" class="tab-content">
+  <div id="incidents-header">
+    <h2 style="font-size:16px;color:#cbd5e1">Incident Reports</h2>
+    <div style="display:flex;gap:8px;align-items:center">
+      <span class="live-pill">● LIVE</span>
+      <button id="btn-refresh-incidents" class="small-btn">↻ Refresh</button>
+    </div>
+  </div>
+  <div id="incidents-list">
+    <div class="muted small" style="padding:24px;text-align:center">
+      No incidents yet. Publish a snapshot and let the agent pipeline run.
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     TAB: REGISTRY
+════════════════════════════════════════════════════════ -->
+<div id="tab-registry" class="tab-content">
+  <div id="registry-header">
+    <h2 style="font-size:16px;color:#cbd5e1">Service Registry</h2>
+    <span class="muted small">12 registered services · Kubernetes adapter</span>
+  </div>
+  <div id="registry-grid">
+    <div class="muted small" style="padding:24px;text-align:center">Loading registry…</div>
+  </div>
+</div>
+
+{% endblock %}

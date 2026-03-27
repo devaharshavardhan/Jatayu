@@ -1,0 +1,23 @@
+<h2>Kafka Topic Inspector</h2>
+<div class="form-row">
+  <label for="topic-select">Topic</label>
+  <select id="topic-select">
+    <option value="jatayu.snapshot.context">jatayu.snapshot.context</option>
+    <option value="jatayu.telemetry.service_features">
+      jatayu.telemetry.service_features
+    </option>
+    <option value="jatayu.telemetry.service_health">
+      jatayu.telemetry.service_health
+    </option>
+    <option value="jatayu.agent.monitoring.alerts">
+      jatayu.agent.monitoring.alerts
+    </option>
+    <option value="jatayu.agent.prediction.risks">
+      jatayu.agent.prediction.risks
+    </option>
+  </select>
+  <button id="refresh-topic">Refresh</button>
+</div>
+<pre class="json-view" id="topic-json">
+Select a topic to view recent messages.</pre
+>
