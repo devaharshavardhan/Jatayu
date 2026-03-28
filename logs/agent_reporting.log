@@ -1,0 +1,733 @@
+[Healthcheck] Kafka reachable at localhost:9092
+[Reporting] Starting agent | consume=jatayu.agent.remediation.results | publish=jatayu.agent.reporting.incidents
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0001, severity=SEV-1, status=RESOLVED
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0002, severity=SEV-1, status=RESOLVED
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0003, severity=SEV-1, status=RESOLVED
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0004, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0005, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0006, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0007, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0008, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0009, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0010, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0011, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0012, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0013, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0014, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0015, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0016, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0017, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0018, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0019, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0020, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0021, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0022, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0023, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0024, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0025, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0026, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0027, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0028, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0029, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0030, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0031, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0032, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0033, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0034, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0035, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0036, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0037, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0038, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0039, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0040, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0041, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0042, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0043, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0044, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0045, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0046, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0047, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0048, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0049, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0050, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0051, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0052, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0053, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0054, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0055, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0056, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0057, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0058, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0059, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0060, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0061, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0062, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0063, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0064, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0065, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0066, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0067, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0068, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0069, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0070, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0071, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0072, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0073, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0074, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0075, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0076, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0077, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0078, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0079, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0080, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0081, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0082, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0083, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0084, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0085, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0086, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0087, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0088, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0089, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0090, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0091, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0092, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0093, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0094, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0095, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0096, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0097, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0098, severity=SEV-1, status=RESOLVED
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0099, severity=SEV-1, status=RESOLVED
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0100, severity=SEV-1, status=RESOLVED
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0101, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0102, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0103, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0104, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0105, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0106, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0107, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0108, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0109, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0110, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0111, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0112, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0113, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0114, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0115, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0116, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0117, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0118, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0119, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0120, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0121, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0122, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0123, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0124, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0125, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0126, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0127, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0128, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0129, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0130, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0131, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0132, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0133, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0134, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0135, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0136, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0137, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0138, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0139, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0140, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0141, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0142, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0143, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0144, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0145, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0146, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0147, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0148, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0149, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0150, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0151, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0152, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0153, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0154, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0155, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0156, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0157, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0158, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0159, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0160, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0161, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0162, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0163, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0164, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0165, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0166, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0167, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0168, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0169, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0170, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0171, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0172, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0173, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0174, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0175, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0176, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0177, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0178, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0179, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0180, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0181, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0182, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0183, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0184, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0185, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0186, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0187, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0188, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0189, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0190, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0191, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0192, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0193, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0194, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0195, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0196, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0197, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0198, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0199, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0200, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0201, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0202, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0203, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0204, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0205, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0206, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0207, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0208, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0209, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0210, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0211, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0212, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0213, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0214, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0215, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0216, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0217, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0218, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0219, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0220, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0221, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0222, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0223, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0224, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0225, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0226, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0227, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0228, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0229, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0230, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0231, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0232, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0233, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0234, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0235, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0236, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0237, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0238, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0239, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0240, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0241, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0242, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0243, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0244, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0245, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0246, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0247, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0248, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0249, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0250, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0251, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0252, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0253, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0254, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0255, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0256, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0257, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0258, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0259, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0260, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0261, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0262, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0263, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0264, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0265, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0266, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0267, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0268, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0269, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0270, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0271, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0272, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0273, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0274, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0275, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0276, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0277, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0278, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0279, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0280, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0281, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0282, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0283, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0284, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0285, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0286, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0287, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0288, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0289, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0290, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0291, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0292, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0293, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0294, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0295, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0296, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0297, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0298, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0299, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0300, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0301, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0302, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0303, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0304, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0305, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0306, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0307, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0308, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0309, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0310, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0311, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0312, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0313, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0314, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0315, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0316, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0317, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0318, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0319, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0320, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0321, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0322, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0323, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0324, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0325, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0326, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0327, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0328, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0329, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0330, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0331, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0332, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0333, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0334, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0335, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for redis-cart
+[Reporting] Incident report published: id=INC-20260328-0336, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0337, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0338, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0339, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0340, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0341, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0342, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0343, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0344, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0345, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0346, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0347, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0348, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0349, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0350, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0351, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0352, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0353, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0354, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0355, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0356, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0357, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0358, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0359, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0360, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0361, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0362, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0363, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0364, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice
+[Reporting] Incident report published: id=INC-20260328-0365, severity=SEV-1, status=PENDING APPROVAL
+[Reporting] Generating incident report for emailservice

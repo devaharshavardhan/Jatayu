@@ -1200,17 +1200,58 @@ async function loadMonitoringIncidents() {
   try {
     const data = await api.monitoringIncidents();
     const items = data.messages || [];
+    const container = $('incidents-list');
     if (!items.length) {
-      $('incidents-list').innerHTML += '<div class="muted small" style="padding:8px 24px">No snapshot-based incidents available yet.</div>';
+      container.innerHTML += '<div class="muted small" style="padding:8px 24px">No snapshot-based incidents available yet.</div>';
       return;
     }
-    // Prepend monitoring incidents card header
-    const container = $('incidents-list');
     const section = document.createElement('div');
     section.style.cssText = 'padding:8px 16px;border-bottom:1px solid #162036;color:#94a3b8;font-size:11px;margin-top:8px';
-    section.textContent = `📸 Snapshot Incidents (${items.length}) — Contains 5 telemetry snapshots each`;
+    section.textContent = `📸 Snapshot Incidents (${items.length}) — 5 telemetry snapshots per incident`;
     container.insertBefore(section, container.firstChild);
-  } catch { /* silent */ }
+    // Render each monitoring incident with its embedded snapshot data
+    const cards = items.map(inc => renderMonitoringIncidentCard(inc)).join('');
+    const wrapper = document.createElement('div');
+    wrapper.innerHTML = cards;
+    container.insertBefore(wrapper, section.nextSibling);
+  } catch (e) {
+    $('incidents-list').innerHTML += `<div class="muted small" style="padding:8px 24px;color:#ef4444">Failed to load snapshot incidents: ${e.message}</div>`;
+  }
+}
+
+function renderMonitoringIncidentCard(inc) {
+  const sevColor = inc.severity === 'critical' ? '#ef4444' : inc.severity === 'warning' ? '#f59e0b' : '#94a3b8';
+  const flags = (inc.anomaly_flags || []).map(f => `<span class="snap-flag">${escHtml(f)}</span>`).join('');
+  const evidence = (inc.evidence || []).slice(0, 3).map(e => `<li>${escHtml(e)}</li>`).join('');
+  const metrics = inc.metrics_snapshot || [];
+  const logs = inc.logs_snapshot || [];
+
+  const snapCols = metrics.map((m, i) => {
+    const l = logs[i] || {};
+    return `<div class="inc-snap-cell">
+      <div class="inc-snap-header">T${i + 1}</div>
+      <div class="inc-snap-metric"><span>CPU</span><span class="val">${m.cpu_millicores ?? '—'}m</span></div>
+      <div class="inc-snap-metric"><span>Mem</span><span class="val">${m.memory_mib ?? '—'}MiB</span></div>
+      <div class="inc-snap-metric"><span>Restarts</span><span class="val">${m.restart_count ?? '—'}</span></div>
+      <div class="inc-snap-metric"><span>Errors</span><span class="val">${l.log_error_count ?? '—'}</span></div>
+      <div class="inc-snap-metric"><span>Status</span><span class="val" style="color:${m.pod_status==='failed'?'#ef4444':m.pod_status==='unknown'?'#f59e0b':'#10b981'}">${m.pod_status ?? '—'}</span></div>
+    </div>`;
+  }).join('');
+
+  return `<div class="incident-card" style="border-left:3px solid ${sevColor}">
+    <div class="inc-header">
+      <div class="inc-id-group">
+        <span class="inc-sev" style="background:${sevColor}20;color:${sevColor};border:1px solid ${sevColor}40">${(inc.severity||'info').toUpperCase()}</span>
+        <span class="inc-id">${escHtml(inc.incident_id || '—')}</span>
+        <span class="inc-service">${escHtml(inc.service || '—')}</span>
+        <span class="muted small" style="margin-left:4px">${escHtml(inc.incident_type || '')}</span>
+      </div>
+      <span class="inc-time muted small">${timeAgo(inc.timestamp)}</span>
+    </div>
+    ${flags ? `<div style="padding:4px 0;display:flex;flex-wrap:wrap;gap:4px">${flags}</div>` : ''}
+    ${evidence ? `<ul class="evidence-list" style="margin:4px 0">${evidence}</ul>` : ''}
+    ${snapCols ? `<div style="display:grid;grid-template-columns:repeat(${metrics.length},1fr);gap:1px;background:#162036;margin-top:8px;border-radius:4px;overflow:hidden">${snapCols}</div>` : ''}
+  </div>`;
 }
 
 // ══════════════════════════════════════════════════════════════════════════

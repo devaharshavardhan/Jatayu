@@ -13,6 +13,7 @@ SAFE_TOPICS = {
     "jatayu.telemetry.service_features",
     "jatayu.telemetry.service_health",
     "jatayu.agent.monitoring.alerts",
+    "jatayu.agent.monitoring.incidents",
     "jatayu.agent.prediction.risks",
     "jatayu.agent.rca.results",
     "jatayu.agent.decision.intents",
