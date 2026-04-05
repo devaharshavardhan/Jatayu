@@ -9,7 +9,10 @@
       "Bash(python -c \"import ast; ast.parse\\(open\\(''C:/Users/maana/Documents/VS CODES/Github/Jatayu/agents/reporting_agent.py''\\).read\\(\\)\\); print\\(''reporting_agent OK''\\)\")",
       "Bash(python -c \"import ast; ast.parse\\(open\\(''C:/Users/maana/Documents/VS CODES/Github/Jatayu/app/routers/api.py''\\).read\\(\\)\\); print\\(''api.py OK''\\)\")",
       "Bash(python -c \"import ast; ast.parse\\(open\\(''C:/Users/maana/Documents/VS CODES/Github/Jatayu/agents/reporting_agent.py'', encoding=''utf-8''\\).read\\(\\)\\); print\\(''reporting_agent OK''\\)\")",
-      "Bash(python -c \"import ast; ast.parse\\(open\\(''C:/Users/maana/Documents/VS CODES/Github/Jatayu/app/routers/api.py'', encoding=''utf-8''\\).read\\(\\)\\); print\\(''api.py OK''\\)\")"
+      "Bash(python -c \"import ast; ast.parse\\(open\\(''C:/Users/maana/Documents/VS CODES/Github/Jatayu/app/routers/api.py'', encoding=''utf-8''\\).read\\(\\)\\); print\\(''api.py OK''\\)\")",
+      "Bash(python -c \"import docx; print\\(''python-docx available''\\)\")",
+      "Bash(find . -type d -not -path */.* -not -path */__pycache__* -not -path */.venv* -not -path */node_modules*)",
+      "Bash(wc -l agents/*.py app/routers/*.py app/services/*.py messaging/*.py)"
     ]
   }
 }
